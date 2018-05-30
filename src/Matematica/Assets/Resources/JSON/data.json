@@ -40,6 +40,16 @@
 			"1abcd(n+1)", 
 			"1abcd(n-1)"
 			]
+		},
+		{
+		"module": "5",
+		"title":"¿Cuál es el resultado de #abcm : n?#",
+		"results":
+			[
+			"2abc(m-n)", 
+			"2abc(m-n+1)", 
+			"2abc(m-n-1)"
+			]
 		}
 	]
 }

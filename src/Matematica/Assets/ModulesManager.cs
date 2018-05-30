@@ -19,6 +19,8 @@ public class ModulesManager : MonoBehaviour {
 			actualModule = new Module3 ();
 		else if(data.module == 4)
 			actualModule = new Module4 ();
+		else if(data.module == 5)
+			actualModule = new Module5 ();
 
 		actualModule.Init (data);
 	}

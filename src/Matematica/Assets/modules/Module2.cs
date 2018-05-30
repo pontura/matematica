@@ -29,7 +29,7 @@ public class Module2 : ModuleData {
 				value_b = UnityEngine.Random.Range (1, 9);
 				newTitle += value_b;
 			} else if (textToDecode [b].ToString () == "c") {
-				value_c = UnityEngine.Random.Range (1, 9);
+				value_c = UnityEngine.Random.Range (2, 9);
 				newTitle += value_c;
 			} else
 				newTitle += textToDecode [b].ToString ();

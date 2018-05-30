@@ -43,7 +43,7 @@ public class Trivia : MonoBehaviour {
 	public void NextExercise()
 	{
 		modulesManager.moduleID++;
-		if (modulesManager.moduleID >= Data.Instance.settings.all.exercises.Count-1)
+		if (modulesManager.moduleID > Data.Instance.settings.all.exercises.Count-1)
 			modulesManager.moduleID=0;
 		CreateNewModule ();
 	}
