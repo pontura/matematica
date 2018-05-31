@@ -3,36 +3,6 @@
 	[
 		{
 		"module": "1",
-		"title":"¿Cuál es el resultado de #a+bxc?#",
-		"results":
-			[
-			"a+(bxc)", 
-			"(a+b)xc", 
-			"bxc"
-			]
-		},
-		{
-		"module": "2",
-		"title":"¿Cuál es el resultado de #a0-bxc?#",
-		"results":
-			[
-			"a0-(bxc)", 
-			"bxc", 
-			"(a0-b)xc"
-			]
-		},
-		{
-		"module": "3",
-		"title":"¿Cuál es el resultado de #a0+b0:c?#",
-		"results":
-			[
-			"a0+(b0:c)", 
-			"(a0+b0):c", 
-			"b0:c"
-			]
-		},
-		{
-		"module": "4",
 		"title":"¿Cuál es el resultado de #1a.bcd x n?#",
 		"results":
 			[
@@ -42,7 +12,7 @@
 			]
 		},
 		{
-		"module": "5",
+		"module": "2",
 		"title":"¿Cuál es el resultado de #abcm : n?#",
 		"results":
 			[
@@ -50,6 +20,37 @@
 			"2abc(m-n+1)", 
 			"2abc(m-n-1)"
 			]
+		},
+		{
+		"module": "7",
+		"title":"¿Cuál es el resultado de #a+bxc?#",
+		"results":
+			[
+			"a+(bxc)", 
+			"(a+b)xc", 
+			"bxc"
+			]
+		},
+		{
+		"module": "8",
+		"title":"¿Cuál es el resultado de #a0-bxc?#",
+		"results":
+			[
+			"a0-(bxc)", 
+			"bxc", 
+			"(a0-b)xc"
+			]
+		},
+		{
+		"module": "9",
+		"title":"¿Cuál es el resultado de #a0+b0:c?#",
+		"results":
+			[
+			"a0+(b0:c)", 
+			"(a0+b0):c", 
+			"b0:c"
+			]
 		}
+
 	]
 }

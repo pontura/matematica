@@ -27,24 +27,24 @@ public class Trivia : MonoBehaviour {
 
 	public void PrevModule()
 	{
-		modulesManager.moduleID--;
-		if (modulesManager.moduleID < 0)
-			modulesManager.moduleID = 0;
+		modulesManager.moduleIndex--;
+		if (modulesManager.moduleIndex < 0)
+			modulesManager.moduleIndex = 0;
 		CreateNewModule ();
 	}
 	public void NextModule()
 	{
-		modulesManager.moduleID++;
-		if (modulesManager.moduleID >= Data.Instance.settings.all.exercises.Count-1)
-			modulesManager.moduleID = Data.Instance.settings.all.exercises.Count-1;
+		modulesManager.moduleIndex++;
+		if (modulesManager.moduleIndex >= Data.Instance.settings.all.exercises.Count-1)
+			modulesManager.moduleIndex = Data.Instance.settings.all.exercises.Count-1;
 		CreateNewModule ();
 	}
 
 	public void NextExercise()
 	{
-		modulesManager.moduleID++;
-		if (modulesManager.moduleID > Data.Instance.settings.all.exercises.Count-1)
-			modulesManager.moduleID=0;
+		modulesManager.moduleIndex++;
+		if (modulesManager.moduleIndex > Data.Instance.settings.all.exercises.Count-1)
+			modulesManager.moduleIndex=0;
 		CreateNewModule ();
 	}
 

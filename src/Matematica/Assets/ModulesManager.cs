@@ -5,22 +5,22 @@ using UnityEngine;
 public class ModulesManager : MonoBehaviour {
 
 	public ModuleData actualModule;
-	public int moduleID;
+	public int moduleIndex;
 
 	public void SetNewModuleActive () {
 
-		ExercisesData data = Data.Instance.settings.all.exercises[moduleID];
+		ExercisesData data = Data.Instance.settings.all.exercises[moduleIndex];
 
 		if(data.module == 1)
 			actualModule = new Module1 ();
 		else if(data.module == 2)
 			actualModule = new Module2 ();
-		else if(data.module == 3)
-			actualModule = new Module3 ();
-		else if(data.module == 4)
-			actualModule = new Module4 ();
-		else if(data.module == 5)
-			actualModule = new Module5 ();
+		else if(data.module == 7)
+			actualModule = new Module7 ();
+		else if(data.module == 8)
+			actualModule = new Module8 ();
+		else if(data.module == 9)
+			actualModule = new Module9 ();
 
 		actualModule.Init (data);
 	}
