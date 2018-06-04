@@ -17,7 +17,10 @@ public class Trivia : MonoBehaviour {
 		modulesManager = Data.Instance.modulesManager;
 		Events.NextExercise += NextExercise;
 		Events.AddScore += AddScore;
-		Invoke ("NextExercise",1);
+		if (Data.Instance.settings.all.exercises.Count > 0)
+			NextExercise ();
+		else
+			Invoke ("NextExercise",1);
 	}
 
 	void OnDestroy(){

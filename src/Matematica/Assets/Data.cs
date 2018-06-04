@@ -14,7 +14,7 @@ public class Data : MonoBehaviour
 	public Settings settings;
 	public ModulesManager modulesManager;
 
-    public static Data Instance
+	public static Data Instance
     {
         get
         {
@@ -38,6 +38,7 @@ public class Data : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(aLevelName);
     }
+
     void Awake()
     {
 		QualitySettings.vSyncCount = 1;
