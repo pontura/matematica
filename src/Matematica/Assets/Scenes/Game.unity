@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 995105381}
   - component: {fileID: 995105380}
   m_Layer: 0
-  m_Name: Text
+  m_Name: pregunta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
