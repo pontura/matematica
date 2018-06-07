@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ac5e11d12a461b545ae7be1c3288ad0e
+timeCreated: 1528382243
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Neutra Text TF
+  fontNames:
+  - Neutra Text TF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
