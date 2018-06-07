@@ -15,6 +15,7 @@ public class LoadingBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		loadingBar = GetComponent<Image> ();
+		playButton.SetActive (false);
 	}
 
 	public void SetFill(float f){

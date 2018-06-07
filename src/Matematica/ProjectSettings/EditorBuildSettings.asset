@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Persistent.unity
     guid: 1d4927a752fab4f81921cd3508d43034
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/MenuScreen.unity
-    guid: be040925c4e561a4e918c1969a6e18bd
+    path: Assets/Scenes/Kunak.unity
+    guid: 0abfe3e0181accc40b5118e6b32dfcd8
   - enabled: 1
     path: Assets/Scenes/Game.unity
-    guid: a40c998ae1a9d5342862b1e62b699978
+    guid: ac791dc6c02370847936798c71007eee
