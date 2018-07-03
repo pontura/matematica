@@ -9,8 +9,12 @@ public class Trivia : MonoBehaviour {
 	public ResultButton resultButton_to_instantiate;
 	public Transform buttonsContainer;
 	public Slider puntos;
+	public Text NumPregunta;
 	public Text debug;
+
 	ModulesManager modulesManager;
+
+	int nPregunta;
 
 	void Start()
 	{
@@ -45,6 +49,8 @@ public class Trivia : MonoBehaviour {
 
 	public void NextExercise()
 	{
+		nPregunta++;
+		NumPregunta.text = "" + nPregunta;
 		modulesManager.moduleIndex++;
 		if (modulesManager.moduleIndex > Data.Instance.settings.all.exercises.Count-1)
 			modulesManager.moduleIndex=0;
