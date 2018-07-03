@@ -9,5 +9,6 @@ public static class Events {
 	public static System.Action NextExercise = delegate { };
 
 	public static System.Action AddScore = delegate { };
+	public static System.Action BadAnswer = delegate { };
 
 }
