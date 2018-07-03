@@ -794,7 +794,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7149451cad6a6ae44a2961c4ba100504,
+      objectReference: {fileID: 21300000, guid: 5e8989fd0c5228a4cba0ef15114ed000,
         type: 3}
     - target: {fileID: 114772943462483578, guid: 1bb91eeba617c25409a3daaafa23f28e,
         type: 2}
@@ -835,6 +835,26 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772943462483578, guid: 1bb91eeba617c25409a3daaafa23f28e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114495405170714182, guid: 1bb91eeba617c25409a3daaafa23f28e,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 224605593172093750, guid: 1bb91eeba617c25409a3daaafa23f28e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 91.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772943462483578, guid: 1bb91eeba617c25409a3daaafa23f28e,
+        type: 2}
+      propertyPath: m_Type
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bb91eeba617c25409a3daaafa23f28e, type: 2}
