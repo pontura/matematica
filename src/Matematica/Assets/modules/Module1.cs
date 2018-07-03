@@ -45,10 +45,12 @@ public class Module1 : ModuleData {
 				}
 				newTitle += Utils.SetFormatedNumber ("1" + newStr);
 			} else
-				newTitle += textToDecode [b].ToString ();
+				newTitle += textToDecode [b].ToString ();			
 
 			title += newTitle;
 			SetResults (data.results);
+			
+			CheckValues ();
 
 	}
 	void SetResults(List<string> data)

@@ -41,6 +41,7 @@ public class Module9 : ModuleData {
 
 			title += newTitle;
 			SetResults (data.results);
+			CheckValues ();
 
 	}
 	void SetResults(List<string> data)

@@ -30,8 +30,9 @@ public class Module7 : ModuleData {
 				title += value_c;
 			} else
 				title += textToDecode [b].ToString ();
-		
+
 		SetResults (data.results);
+		CheckValues ();
 	}
 	void SetResults(List<string> data)
 	{

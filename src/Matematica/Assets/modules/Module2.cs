@@ -51,8 +51,10 @@ public class Module2 : ModuleData {
 			} else
 				newTitle += textToDecode [b].ToString ();
 
+
 			title += newTitle;
 			SetResults (data.results);
+			CheckValues ();
 
 	}
 	void SetResults(List<string> data)

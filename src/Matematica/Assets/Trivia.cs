@@ -8,7 +8,7 @@ public class Trivia : MonoBehaviour {
 	public Text title;
 	public ResultButton resultButton_to_instantiate;
 	public Transform buttonsContainer;
-	public Slider puntos;
+	public Image puntos;
 	public Text NumPregunta;
 	public Text debug;
 
@@ -84,6 +84,6 @@ public class Trivia : MonoBehaviour {
 	}
 
 	void AddScore(){
-		puntos.value += 0.1f;
+		puntos.fillAmount += 0.1f;
 	}
 }

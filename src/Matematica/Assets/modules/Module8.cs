@@ -36,9 +36,10 @@ public class Module8 : ModuleData {
 		if (value_a * 10 <= value_b * value_c) {
 			Debug.Log ("Recalculate porque a: " + (value_a*10) + " es menor que BxC (" + value_b + "x" + value_c + ")");
 			Calculate ();
-		} else {
+		} else {			
 			title += newTitle;
 			SetResults (data.results);
+			CheckValues ();
 		}
 	}
 	void SetResults(List<string> data)
