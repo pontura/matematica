@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Kunak : MonoBehaviour {
 
 	public LoadingBar loadingBar;
+	public Image mascara;
+	public float fadeSpeed;
+
 	bool loadDone;
+	bool fadeOut;
 
 	// Use this for initialization
 	void Start () {
@@ -15,11 +20,19 @@ public class Kunak : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (fadeOut) {
+			Color c = mascara.color;
+			c.a += fadeSpeed;
+			mascara.color = c;
+			if (mascara.color.a >= 1) {
+				loadDone = true;
+				fadeOut = false;
+			}				
+		}
 	}
 
 	public void LoadScene(){
-		loadDone = true;
+		fadeOut = true;
 	}
 
 	IEnumerator AsynchronousLoad (string scene)
