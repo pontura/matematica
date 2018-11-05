@@ -6118,6 +6118,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090807613}
   m_CullTransparentMesh: 0
+--- !u!1 &1110264711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1781961477052422, guid: ceaf6c11bf6f453468b1cb5457bd0e31,
+    type: 2}
+  m_PrefabInternal: {fileID: 99790141}
+--- !u!114 &1110264712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110264711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbc616cf1d89ab4a83e94b9c8dbbbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filename: Frases_Kumak.csv
+  externalTexts: []
 --- !u!1 &1147046659
 GameObject:
   m_ObjectHideFlags: 0
