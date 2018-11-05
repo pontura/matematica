@@ -11,6 +11,7 @@ public class Trivia : MonoBehaviour {
 	public Image puntos;
 	public Text NumPregunta;
 	public Text debug;
+	public GameObject levelSelector;
 
 	ModulesManager modulesManager;
 
@@ -21,6 +22,7 @@ public class Trivia : MonoBehaviour {
 		modulesManager = Data.Instance.modulesManager;
 		Events.NextExercise += NextExercise;
 		Events.AddScore += AddScore;
+		Events.AreaChange += AreaChange;
 		if (Data.Instance.settings.all.exercises.Count > 0)
 			NextExercise ();
 		else
@@ -30,6 +32,7 @@ public class Trivia : MonoBehaviour {
 	void OnDestroy(){
 		Events.NextExercise -= NextExercise;
 		Events.AddScore -= AddScore;
+		Events.AreaChange -= AreaChange;
 	}
 
 	public void PrevModule()
@@ -83,7 +86,15 @@ public class Trivia : MonoBehaviour {
 		}
 	}
 
+	public void ShowLevelSelector(bool enable){
+		levelSelector.SetActive(enable);
+	}
+
+	void AreaChange(int i){
+		puntos.fillAmount = 0;
+	}
+
 	void AddScore(){
-		puntos.fillAmount += 0.1f;
+		puntos.fillAmount += (1f/Data.Instance.levelData.CurrentLevel.length);
 	}
 }

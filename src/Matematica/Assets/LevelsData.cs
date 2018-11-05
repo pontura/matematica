@@ -7,6 +7,7 @@ public class LevelsData : MonoBehaviour {
 
 	public List<Level> levels;
 	public int currentLevel;
+	int currentLevelIndex;
 
 	[Serializable]
 	public class Level
@@ -37,24 +38,28 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void AddScore(){
-		Invoke ("SetCurrentLevel", 0.1f);
+		Invoke ("SetCurrentLevel", 2f);
 	}
 
 	public void SetCurrentLevel(){
 		for (int i = 0; i < levels.Count; i++) {
-			Debug.Log (Data.Instance.playerData.correctAnswers + " : " + levels [i].lastLevelQuestion);
 			if (Data.Instance.playerData.correctAnswers <= levels [i].lastLevelQuestion) {
 				if (levels [i].id != currentLevel) {
-					Debug.Log ("ACA1");
 					currentLevel = levels [i].id;
+					currentLevelIndex = i;
 					Events.AreaChange (currentLevel);
 					Events.SubAreaChange (0);
 				}else if(Data.Instance.playerData.correctAnswers>= (levels [i].lastLevelQuestion+1)-0.5*levels[i].length){
-					Debug.Log ("ACA2");
 					Events.SubAreaChange (1);
 				}
 				i = levels.Count;
 			} 
+		}
+	}
+
+	public Level CurrentLevel{
+		get{
+			return levels [currentLevelIndex];
 		}
 	}
 }
