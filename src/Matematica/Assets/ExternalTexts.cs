@@ -4,11 +4,11 @@ using UnityEngine;
 using System;
 using System.IO;
 
-public class LoadExternalTexts : MonoBehaviour {
+public class ExternalTexts : MonoBehaviour {
 
 	public string filename="Frases_Kumak.csv";
 
-	public ExternalText[] externalTexts;
+	public ExternalText[] texts;
 
 	[Serializable]
 	public class ExternalText
@@ -24,7 +24,7 @@ public class LoadExternalTexts : MonoBehaviour {
 		string filePath = Path.Combine (Application.streamingAssetsPath + "/", filename);
 		if (File.Exists (filePath)) {			
 			string dataAsJson = Utils.CSV2JSON(File.ReadAllText (filePath),'#');
-			externalTexts = JsonHelper.FromJson<ExternalText> (dataAsJson);
+			texts = JsonHelper.FromJson<ExternalText> (dataAsJson);
 		}
 	}
 	

@@ -13,6 +13,9 @@ public class Data : MonoBehaviour
     static Data mInstance = null;
 	public Settings settings;
 	public ModulesManager modulesManager;
+	public ExternalTexts externalTexts;
+	public PlayerData playerData;
+	public LevelsData levelData;
 
 	public static Data Instance
     {
@@ -57,6 +60,11 @@ public class Data : MonoBehaviour
 
 		settings = GetComponent<Settings> ();
 		modulesManager = GetComponent<ModulesManager> ();
+		externalTexts = GetComponent<ExternalTexts> ();
+		playerData = GetComponent<PlayerData> ();
+		levelData = GetComponent<LevelsData> ();
+
+		PlayerPrefs.DeleteAll ();
 
     }
     void Update()
