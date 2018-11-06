@@ -27,6 +27,8 @@ public class Trivia : MonoBehaviour {
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
 
+		nPregunta = Data.Instance.levelData.triviaCount;
+
 		if (Data.Instance.settings.all.exercises.Count > 0)
 			NextExercise ();
 		else
@@ -56,6 +58,7 @@ public class Trivia : MonoBehaviour {
 
 	public void NextExercise()
 	{
+		Data.Instance.levelData.AddTriviaCount ();
 		nPregunta++;
 		NumPregunta.text = "" + nPregunta;
 		modulesManager.moduleIndex++;

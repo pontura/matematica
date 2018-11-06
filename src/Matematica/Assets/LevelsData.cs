@@ -9,6 +9,17 @@ public class LevelsData : MonoBehaviour {
 	public int currentLevel;
 	public int currentLevelIndex;
 
+	public int triviaCount;
+
+	public bool allAreasCompleted;
+
+	public KunakStates kunakState;
+	public enum KunakStates{
+		inicio,
+		area,
+		subarea
+	}
+
 	[Serializable]
 	public class Level
 	{
@@ -21,8 +32,10 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
+		kunakState = KunakStates.inicio;
 		Events.AddScore += AddScore;
+		triviaCount = PlayerPrefs.GetInt ("triviaCount");
 		int count=-1;
 		for (int i = 0; i < levels.Count; i++) {
 			count += levels [i].length; 
@@ -40,6 +53,11 @@ public class LevelsData : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void AddTriviaCount(){
+		triviaCount++;
+		PlayerPrefs.SetInt ("triviaCount", triviaCount);
 	}
 
 	void AddScore(){
