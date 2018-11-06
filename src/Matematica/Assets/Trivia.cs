@@ -23,6 +23,10 @@ public class Trivia : MonoBehaviour {
 		Events.NextExercise += NextExercise;
 		Events.AddScore += AddScore;
 		Events.AreaChange += AreaChange;
+
+		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
+		puntos.fillAmount = 1f * l.localPoints / l.length;
+
 		if (Data.Instance.settings.all.exercises.Count > 0)
 			NextExercise ();
 		else

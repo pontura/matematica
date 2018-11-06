@@ -21,14 +21,16 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		Events.AddScore += AddScore;
 		int count=-1;
 		for (int i = 0; i < levels.Count; i++) {
 			count += levels [i].length; 
 			levels [i].lastLevelQuestion = count;
 		}
-		SetCurrentLevel ();
+		for (int i = 0; i < Data.Instance.playerData.correctAnswers+1; i++) {
+			SetCurrentLevel (i);
+		}
 	}
 
 	void OnDestroy(){
@@ -45,14 +47,18 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	public void SetCurrentLevel(){
+		SetCurrentLevel (Data.Instance.playerData.correctAnswers);
+	}
+
+	public void SetCurrentLevel(int correctAnswers){
 		for (int i = 0; i < levels.Count; i++) {
-			if (Data.Instance.playerData.correctAnswers <= levels [i].lastLevelQuestion) {
+			if (correctAnswers <= levels [i].lastLevelQuestion) {
 				if (levels [i].id != currentLevel) {
 					if (i > 0) {
 						SetLevelCompleted (i - 1);
 					}
 					UnlockLevel (i);
-				} else if (Data.Instance.playerData.correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
+				} else if (correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
 					LevelAreaChange (i);
 				} else {
 					levels [i].localPoints++;

@@ -12,6 +12,14 @@ public class LevelSelector : MonoBehaviour {
 	void Start () {
 		Events.LevelSelectorUpdate += LevelSelectorUpdate;
 		Events.AreaChange += AreaChange;
+		for (int i = 0; i < Data.Instance.levelData.currentLevelIndex+1; i++) {			
+			levelButtons [i].interactable = true;
+			if (i < Data.Instance.levelData.currentLevelIndex) {
+				puntajes [i].fillAmount = 1f;
+			} else {
+				LevelSelectorUpdate (i);
+			}
+		}
 	}
 
 	void OnDestroy(){
