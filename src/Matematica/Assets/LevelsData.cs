@@ -17,6 +17,7 @@ public class LevelsData : MonoBehaviour {
 		public int localPoints;
 		public int lastLevelQuestion;
 		public bool unlocked;
+		public bool levelCompleted;
 	}
 
 	// Use this for initialization
@@ -48,25 +49,37 @@ public class LevelsData : MonoBehaviour {
 			if (Data.Instance.playerData.correctAnswers <= levels [i].lastLevelQuestion) {
 				if (levels [i].id != currentLevel) {
 					if (i > 0) {
-						levels [i - 1].localPoints++;
-						Events.LevelSelectorUpdate (i-1);
+						SetLevelCompleted (i - 1);
 					}
-					currentLevel = levels [i].id;
-					currentLevelIndex = i;
-					levels [i].unlocked = true;
-					Events.AreaChange (currentLevel);
-					Events.SubAreaChange (0);
+					UnlockLevel (i);
 				} else if (Data.Instance.playerData.correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
-					levels [i].localPoints++;
-					Events.SubAreaChange (1);
+					LevelAreaChange (i);
 				} else {
 					levels [i].localPoints++;
 				}
-				Debug.Log ("a");
 				Events.LevelSelectorUpdate (i);
 				i = levels.Count;
 			} 
 		}
+	}
+
+	void UnlockLevel(int i){
+		currentLevel = levels [i].id;
+		currentLevelIndex = i;
+		levels [i].unlocked = true;
+		Events.AreaChange (currentLevel);
+		Events.SubAreaChange (0);
+	}
+
+	void LevelAreaChange(int i){
+		levels [i].localPoints++;
+		Events.SubAreaChange (1);
+	}
+
+	void SetLevelCompleted(int index){
+		levels [index].localPoints++;
+		levels [index].levelCompleted = true;
+		Events.LevelSelectorUpdate (index);
 	}
 
 	public Level CurrentLevel{
