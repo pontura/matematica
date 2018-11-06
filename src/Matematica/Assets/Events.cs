@@ -14,4 +14,6 @@ public static class Events {
 	public static System.Action<int> AreaChange = delegate { };
 	public static System.Action<int> SubAreaChange = delegate { };
 
+	public static System.Action<int> LevelSelectorUpdate = delegate { };
+
 }

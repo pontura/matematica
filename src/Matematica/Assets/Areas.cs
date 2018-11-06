@@ -33,7 +33,6 @@ public class Areas : MonoBehaviour {
 	}
 
 	void SubAreaChange(int index){
-		Debug.Log (index);
 		for (int i = 0; i < areas [actualArea].subareas.Count; i++) {
 			if (i == index)
 				areas [actualArea].subareas [i].SetActive (true);

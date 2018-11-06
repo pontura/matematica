@@ -64,7 +64,7 @@ public class Data : MonoBehaviour
 		playerData = GetComponent<PlayerData> ();
 		levelData = GetComponent<LevelsData> ();
 
-		//PlayerPrefs.DeleteAll ();
+		PlayerPrefs.DeleteAll ();
 
     }
     void Update()

@@ -7,14 +7,16 @@ public class LevelsData : MonoBehaviour {
 
 	public List<Level> levels;
 	public int currentLevel;
-	int currentLevelIndex;
+	public int currentLevelIndex;
 
 	[Serializable]
 	public class Level
 	{
 		public int id;
 		public int length;
+		public int localPoints;
 		public int lastLevelQuestion;
+		public bool unlocked;
 	}
 
 	// Use this for initialization
@@ -45,13 +47,23 @@ public class LevelsData : MonoBehaviour {
 		for (int i = 0; i < levels.Count; i++) {
 			if (Data.Instance.playerData.correctAnswers <= levels [i].lastLevelQuestion) {
 				if (levels [i].id != currentLevel) {
+					if (i > 0) {
+						levels [i - 1].localPoints++;
+						Events.LevelSelectorUpdate (i-1);
+					}
 					currentLevel = levels [i].id;
 					currentLevelIndex = i;
+					levels [i].unlocked = true;
 					Events.AreaChange (currentLevel);
 					Events.SubAreaChange (0);
-				}else if(Data.Instance.playerData.correctAnswers>= (levels [i].lastLevelQuestion+1)-0.5*levels[i].length){
+				} else if (Data.Instance.playerData.correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
+					levels [i].localPoints++;
 					Events.SubAreaChange (1);
+				} else {
+					levels [i].localPoints++;
 				}
+				Debug.Log ("a");
+				Events.LevelSelectorUpdate (i);
 				i = levels.Count;
 			} 
 		}
