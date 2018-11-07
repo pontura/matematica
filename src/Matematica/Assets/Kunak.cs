@@ -41,9 +41,15 @@ public class Kunak : MonoBehaviour {
 	}
 
 	public void LoadScene(){
-		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio)
+		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
-		fadeOut = true;
+			fadeOut = true;
+		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
+			fadeOut = true;
+		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
+			fadeOut = false;
+			Events.NextDialog ();
+		}
 	}
 
 	IEnumerator AsynchronousLoad (string scene)

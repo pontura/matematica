@@ -16,4 +16,6 @@ public static class Events {
 
 	public static System.Action<int> LevelSelectorUpdate = delegate { };
 
+	public static System.Action NextDialog = delegate { };
+
 }

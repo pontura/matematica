@@ -2,85 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class TextsManager : MonoBehaviour {
 
 	public Text kunakText;
 	public Text buttonText;
 
+	int dialog_index;
+
 	// Use this for initialization
 	void Start () {
+		Events.NextDialog += Init;
 		Invoke ("Init", 1);
+	}
+
+	void OnDestroy(){
+		Events.NextDialog -= Init;
 	}
 
 	void Init(){
 		kunakText.transform.parent.gameObject.SetActive (true);
+		ExternalTexts.ExternalText eText = null;
 		if (Data.Instance.levelData.triviaCount == 0) {
 			if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
-				kunakText.text = Data.Instance.externalTexts.texts [0].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [0].button_text;
-			} else {
+				eText = Data.Instance.externalTexts.texts [0];
+			} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
 				buttonText.transform.parent.gameObject.SetActive (true);
-				kunakText.text = Data.Instance.externalTexts.texts [2].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [2].button_text;
+				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
+				dialog_index = 0;
+			} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
+				buttonText.transform.parent.gameObject.SetActive (true);
+				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
+				if (!eText.next)
+					Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 			}
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			if (Data.Instance.levelData.allAreasCompleted) {
-				kunakText.text = Data.Instance.externalTexts.texts [18].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [18].button_text;
+				eText = Data.Instance.externalTexts.texts [18];
 			} else {
 				buttonText.transform.parent.gameObject.SetActive (true);
-				kunakText.text = Data.Instance.externalTexts.texts [1].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [1].button_text;
+				eText = Data.Instance.externalTexts.texts [1];
 			}
-		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
+		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {			
 			buttonText.transform.parent.gameObject.SetActive (true);
-			if (Data.Instance.levelData.currentLevel == 1) {
-				kunakText.text = Data.Instance.externalTexts.texts [2].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [2].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 2) {
-				kunakText.text = Data.Instance.externalTexts.texts [4].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [4].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 3) {
-				kunakText.text = Data.Instance.externalTexts.texts [6].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [6].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 4) {
-				kunakText.text = Data.Instance.externalTexts.texts [8].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [8].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 5) {
-				kunakText.text = Data.Instance.externalTexts.texts [10].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [10].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 6) {
-				kunakText.text = Data.Instance.externalTexts.texts [12].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [12].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 7) {
-				kunakText.text = Data.Instance.externalTexts.texts [14].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [14].button_text;
-			}
-		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.subarea) {
+			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
+			dialog_index = 0;
+		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
 			buttonText.transform.parent.gameObject.SetActive (true);
-			if (Data.Instance.levelData.currentLevel == 1) {
-				kunakText.text = Data.Instance.externalTexts.texts [3].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [3].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 2) {
-				kunakText.text = Data.Instance.externalTexts.texts [5].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [5].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 3) {
-				kunakText.text = Data.Instance.externalTexts.texts [7].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [7].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 4) {
-				kunakText.text = Data.Instance.externalTexts.texts [9].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [9].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 5) {
-				kunakText.text = Data.Instance.externalTexts.texts [11].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [11].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 6) {
-				kunakText.text = Data.Instance.externalTexts.texts [13].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [13].button_text;
-			}else if (Data.Instance.levelData.currentLevel == 7) {
-				kunakText.text = Data.Instance.externalTexts.texts [15].frase;
-				buttonText.text = Data.Instance.externalTexts.texts [15].button_text;
-			}
+			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
+			if (!eText.next)
+				Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
+		}
+		kunakText.text = eText.frase;
+		buttonText.text = eText.button_text;
+		if (eText.next) {
+			dialog_index++;
+			Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 		}
 	}
 	

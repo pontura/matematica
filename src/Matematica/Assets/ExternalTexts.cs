@@ -14,9 +14,12 @@ public class ExternalTexts : MonoBehaviour {
 	public class ExternalText
 	{
 		public int id;
+		public int area_id;
+		public int dialog_index;
 		public string condition;
 		public string frase;
 		public string button_text;
+		public bool next;
 	}
 
 	void Start () {

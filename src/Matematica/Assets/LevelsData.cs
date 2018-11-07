@@ -19,7 +19,7 @@ public class LevelsData : MonoBehaviour {
 	public enum KunakStates{
 		inicio,
 		area,
-		subarea
+		dialog
 	}
 
 	[Serializable]
@@ -107,10 +107,6 @@ public class LevelsData : MonoBehaviour {
 		levels [i].localPoints++;
 		subAreaIndex = 1;
 		Events.SubAreaChange (subAreaIndex);
-		if (SceneManager.GetActiveScene ().name == "Game") {
-			Data.Instance.levelData.kunakState = KunakStates.subarea;
-			Data.Instance.LoadScene ("Kunak");
-		}
 	}
 
 	void SetLevelCompleted(int index){
