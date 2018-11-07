@@ -23,7 +23,7 @@ public class OnAnswerChangeImage : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		Events.BadAnswer += BadAnswer;
+		Events.BadAnswer -= BadAnswer;
 		Events.AddScore -= AddScore;
 		Events.NextExercise -= NextExercise;
 	}

@@ -8,6 +8,7 @@ public class Kunak : MonoBehaviour {
 
 	public LoadingBar loadingBar;
 	public Image mascara;
+	public GameObject entradaBg;
 	public float fadeSpeed;
 
 	bool loadDone;
@@ -15,7 +16,15 @@ public class Kunak : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (AsynchronousLoad("Game"));
+		Debug.Log (Data.Instance.levelData.kunakState);
+		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
+			loadingBar.transform.parent.gameObject.SetActive (true);
+			StartCoroutine (AsynchronousLoad ("Kunak"));
+		} else {
+			entradaBg.SetActive (false);
+			loadingBar.transform.parent.gameObject.SetActive (false);
+			StartCoroutine (AsynchronousLoad ("Game"));
+		}
 	}
 	
 	// Update is called once per frame
@@ -32,6 +41,8 @@ public class Kunak : MonoBehaviour {
 	}
 
 	public void LoadScene(){
+		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio)
+			Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 		fadeOut = true;
 	}
 
@@ -46,7 +57,7 @@ public class Kunak : MonoBehaviour {
 		{			
 			// [0, 0.9] > [0, 1]\
 			float progress = Mathf.Clamp01(ao.progress / 0.9f);
-			loadingBar.SetFill(progress);
+				loadingBar.SetFill(progress);
 
 			yield return new WaitForSeconds(1);
 			// Loading completed

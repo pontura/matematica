@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class LevelsData : MonoBehaviour {
@@ -8,6 +9,7 @@ public class LevelsData : MonoBehaviour {
 	public List<Level> levels;
 	public int currentLevel;
 	public int currentLevelIndex;
+	public int subAreaIndex;
 
 	public int triviaCount;
 
@@ -77,7 +79,8 @@ public class LevelsData : MonoBehaviour {
 					}
 					UnlockLevel (i);
 				} else if (correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
-					LevelAreaChange (i);
+					if(subAreaIndex==0)
+						LevelSubareaChange (i);
 				} else {
 					levels [i].localPoints++;
 				}
@@ -92,12 +95,22 @@ public class LevelsData : MonoBehaviour {
 		currentLevelIndex = i;
 		levels [i].unlocked = true;
 		Events.AreaChange (currentLevel);
-		Events.SubAreaChange (0);
+		subAreaIndex = 0;
+		Events.SubAreaChange (subAreaIndex);
+		if(SceneManager.GetActiveScene().name=="Game"){
+			Data.Instance.levelData.kunakState = KunakStates.area;
+			Data.Instance.LoadScene ("Kunak");			
+		}
 	}
 
-	void LevelAreaChange(int i){
+	void LevelSubareaChange(int i){
 		levels [i].localPoints++;
-		Events.SubAreaChange (1);
+		subAreaIndex = 1;
+		Events.SubAreaChange (subAreaIndex);
+		if (SceneManager.GetActiveScene ().name == "Game") {
+			Data.Instance.levelData.kunakState = KunakStates.subarea;
+			Data.Instance.LoadScene ("Kunak");
+		}
 	}
 
 	void SetLevelCompleted(int index){

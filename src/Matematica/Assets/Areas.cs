@@ -12,6 +12,8 @@ public class Areas : MonoBehaviour {
 	void Start () {
 		Events.AreaChange += AreaChange;
 		Events.SubAreaChange += SubAreaChange;
+		AreaChange (Data.Instance.levelData.currentLevel);
+		SubAreaChange (Data.Instance.levelData.subAreaIndex);
 	}
 
 	void OnDestroy(){
