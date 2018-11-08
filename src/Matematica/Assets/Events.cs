@@ -15,9 +15,13 @@ public static class Events {
 	public static System.Action<int> SubAreaChange = delegate { };
 
 	public static System.Action<int> LevelSelectorUpdate = delegate { };
+	public static System.Action<bool> ShowLevelSelector = delegate { };
 
 	public static System.Action NextDialog = delegate { };
 
 	public static System.Action AllAreasCompleted = delegate { };
 
+	public static System.Action<int> AddStar = delegate { };
+
+	public static System.Action<int> ReplayArea = delegate { };
 }

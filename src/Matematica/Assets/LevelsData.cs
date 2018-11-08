@@ -11,9 +11,14 @@ public class LevelsData : MonoBehaviour {
 	public int currentLevelIndex;
 	public int subAreaIndex;
 
+	public int playingLevelIndex;
+
 	public int triviaCount;
 
 	public bool allAreasCompleted;
+
+	public bool replay;
+	int replayAreaId;
 
 	public KunakStates kunakState;
 	public enum KunakStates{
@@ -32,17 +37,20 @@ public class LevelsData : MonoBehaviour {
 		public int lastLevelQuestion;
 		public bool unlocked;
 		public bool levelCompleted;
+		public int stars;
 	}
 
 	// Use this for initialization
 	void Start () {
 		kunakState = KunakStates.inicio;
 		Events.AddScore += AddScore;
+		Events.ReplayArea += ReplayArea;
 		triviaCount = PlayerPrefs.GetInt ("triviaCount");
 		int count=-1;
 		for (int i = 0; i < levels.Count; i++) {
 			count += levels [i].length; 
 			levels [i].lastLevelQuestion = count;
+			levels[i].stars = PlayerPrefs.GetInt("stars_"+i);
 		}
 		for (int i = 0; i < Data.Instance.playerData.correctAnswers+1; i++) {
 			SetCurrentLevel (i);
@@ -51,6 +59,7 @@ public class LevelsData : MonoBehaviour {
 
 	void OnDestroy(){
 		Events.AddScore -= AddScore;
+		Events.ReplayArea -= ReplayArea;
 	}
 	
 	// Update is called once per frame
@@ -64,11 +73,36 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void AddScore(){
-		Invoke ("SetCurrentLevel", 2f);
+		if(replay)
+			Invoke ("ReplayingLevel", 2f);			
+		else
+			Invoke ("SetCurrentLevel", 2f);
+
 	}
 
 	public void SetCurrentLevel(){
 		SetCurrentLevel (Data.Instance.playerData.correctAnswers);
+	}
+
+	void ReplayArea(int id){
+		if (id != currentLevel) {
+			replay = true;
+			replayAreaId = id;
+			playingLevelIndex = levels.FindIndex (x => x.id == id);
+		} else {
+			replay = false;
+			playingLevelIndex = currentLevelIndex;
+		}
+	}
+
+	void ReplayingLevel(){
+		levels [playingLevelIndex].localPoints++;
+		if (levels [playingLevelIndex].localPoints >= levels [playingLevelIndex].length) {
+			SetLevelCompleted (playingLevelIndex);
+		} else if (levels [playingLevelIndex].localPoints > (levels [playingLevelIndex].lastLevelQuestion + 1) - 0.5 * levels [playingLevelIndex].length) {
+			if (subAreaIndex == 0)
+				LevelSubareaChange (playingLevelIndex);			
+		}
 	}
 
 	public void SetCurrentLevel(int correctAnswers){
@@ -101,6 +135,7 @@ public class LevelsData : MonoBehaviour {
 	void UnlockLevel(int i){
 		currentLevel = levels [i].id;
 		currentLevelIndex = i;
+		playingLevelIndex = i;
 		levels [i].unlocked = true;
 		Events.AreaChange (currentLevel);
 		subAreaIndex = 0;
@@ -127,14 +162,26 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void SetLevelCompleted(int index){
-		levels [index].localPoints++;
+		levels [index].localPoints = 0;
 		levels [index].levelCompleted = true;
-		Events.LevelSelectorUpdate (index);
+		if (replay) {
+			Events.ShowLevelSelector (true);
+		} else {
+			Events.LevelSelectorUpdate (index);
+		}
+	}
+
+	public void AddStars(){
+		levels [playingLevelIndex].stars++;
+		if(levels [playingLevelIndex].stars>3)
+			levels [playingLevelIndex].stars = 3;
+		PlayerPrefs.SetInt("stars_"+playingLevelIndex,levels [playingLevelIndex].stars);
+		Events.AddStar (playingLevelIndex);
 	}
 
 	public Level CurrentLevel{
 		get{
-			return levels [currentLevelIndex];
+			return levels [playingLevelIndex];
 		}
 	}
 }

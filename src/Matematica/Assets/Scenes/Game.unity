@@ -325,7 +325,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &40916374
@@ -15423,6 +15434,14 @@ MonoBehaviour:
   - {fileID: 415701787}
   - {fileID: 1159929712}
   - {fileID: 1439700205}
+  stars:
+  - {fileID: 1938194694}
+  - {fileID: 823591672}
+  - {fileID: 1789083576}
+  - {fileID: 1729984700}
+  - {fileID: 790281390}
+  - {fileID: 414974536}
+  - {fileID: 1467716178}
 --- !u!1 &380765784
 GameObject:
   m_ObjectHideFlags: 0
@@ -15497,7 +15516,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1507539470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &412910261
@@ -15577,6 +15607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414974535}
+  - component: {fileID: 414974536}
   m_Layer: 0
   m_Name: stars_6
   m_TagString: Untagged
@@ -15606,6 +15637,22 @@ RectTransform:
   m_AnchoredPosition: {x: -207.99997, y: 212.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &414974536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414974534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 575509488}
+  - {fileID: 699362695}
+  - {fileID: 1337640133}
+  - {fileID: 1828378145}
 --- !u!1 &415701785
 GameObject:
   m_ObjectHideFlags: 0
@@ -15680,7 +15727,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 250462919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &435176428
@@ -16686,6 +16744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790281389}
+  - component: {fileID: 790281390}
   m_Layer: 0
   m_Name: stars_5
   m_TagString: Untagged
@@ -16715,6 +16774,22 @@ RectTransform:
   m_AnchoredPosition: {x: -207.99997, y: 107.10004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &790281390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 790281388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 1700963289}
+  - {fileID: 498351131}
+  - {fileID: 1395193757}
+  - {fileID: 28926328}
 --- !u!1 &823591670
 GameObject:
   m_ObjectHideFlags: 0
@@ -16723,6 +16798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823591671}
+  - component: {fileID: 823591672}
   m_Layer: 0
   m_Name: stars_2
   m_TagString: Untagged
@@ -16752,6 +16828,22 @@ RectTransform:
   m_AnchoredPosition: {x: -208, y: -208.80002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &823591672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823591670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 412910261}
+  - {fileID: 1806782202}
+  - {fileID: 120569299}
+  - {fileID: 1156430305}
 --- !u!1 &960709639
 GameObject:
   m_ObjectHideFlags: 0
@@ -26870,7 +26962,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615346544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1156430305
@@ -27016,7 +27119,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1298022290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1165174823
@@ -32623,7 +32737,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 13698203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1453176058
@@ -32703,6 +32828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1467716177}
+  - component: {fileID: 1467716178}
   m_Layer: 0
   m_Name: stars_7
   m_TagString: Untagged
@@ -32732,6 +32858,22 @@ RectTransform:
   m_AnchoredPosition: {x: -207.99991, y: 318.79987}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1467716178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467716176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 560522086}
+  - {fileID: 960709639}
+  - {fileID: 1453176058}
+  - {fileID: 2023868555}
 --- !u!1 &1501531378
 GameObject:
   m_ObjectHideFlags: 0
@@ -32806,7 +32948,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1383553326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347280285}
+        m_MethodName: SelectArea
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1507539468
@@ -33381,6 +33534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729984699}
+  - component: {fileID: 1729984700}
   m_Layer: 0
   m_Name: stars_4
   m_TagString: Untagged
@@ -33410,6 +33564,22 @@ RectTransform:
   m_AnchoredPosition: {x: -207.99997, y: 2.8999548}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1729984700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1729984698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 234602370}
+  - {fileID: 2004783645}
+  - {fileID: 124945729}
+  - {fileID: 999957197}
 --- !u!1001 &1780435211
 Prefab:
   m_ObjectHideFlags: 0
@@ -33522,6 +33692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1789083575}
+  - component: {fileID: 1789083576}
   m_Layer: 0
   m_Name: stars_3
   m_TagString: Untagged
@@ -33551,6 +33722,22 @@ RectTransform:
   m_AnchoredPosition: {x: -208, y: -103.299995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1789083576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789083574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 725150029}
+  - {fileID: 661425586}
+  - {fileID: 2008755048}
+  - {fileID: 1960223125}
 --- !u!1 &1792793650
 GameObject:
   m_ObjectHideFlags: 0
@@ -33904,6 +34091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938194693}
+  - component: {fileID: 1938194694}
   m_Layer: 0
   m_Name: stars_1
   m_TagString: Untagged
@@ -33933,6 +34121,22 @@ RectTransform:
   m_AnchoredPosition: {x: -208, y: -315}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1938194694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938194692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51273ff13c60c124d8a7566a0ce982fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 1396306737}
+  - {fileID: 1846406861}
+  - {fileID: 485591135}
+  - {fileID: 1269620770}
 --- !u!1 &1960223125
 GameObject:
   m_ObjectHideFlags: 0

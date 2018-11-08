@@ -7,10 +7,12 @@ public class LevelSelector : MonoBehaviour {
 
 	public List<Image> puntajes;
 	public List<Button> levelButtons;
+	public List<Stars> stars;
 
 	// Use this for initialization
 	void Start () {
 		Events.LevelSelectorUpdate += LevelSelectorUpdate;
+		Events.AddStar += AddStar;
 		Events.AreaChange += AreaChange;
 		for (int i = 0; i < Data.Instance.levelData.currentLevelIndex+1; i++) {			
 			levelButtons [i].interactable = true;
@@ -20,11 +22,20 @@ public class LevelSelector : MonoBehaviour {
 				LevelSelectorUpdate (i);
 			}
 		}
+
+		for (int i = 0; i < stars.Count; i++) {
+			stars[i].SetStars(Data.Instance.levelData.levels[i].stars);
+		}
 	}
 
 	void OnDestroy(){
 		Events.LevelSelectorUpdate -= LevelSelectorUpdate;
+		Events.AddStar -= AddStar;
 		Events.AreaChange -= AreaChange;
+	}
+
+	void AddStar(int index){
+		stars[index].SetStars(Data.Instance.levelData.levels[index].stars);
 	}
 
 	void LevelSelectorUpdate(int index){
@@ -33,7 +44,8 @@ public class LevelSelector : MonoBehaviour {
 	}
 
 	void AreaChange(int id){
-		levelButtons [Data.Instance.levelData.currentLevelIndex].interactable = true;
+		if(Data.Instance.levelData.currentLevelIndex>0)
+			levelButtons [Data.Instance.levelData.currentLevelIndex-1].interactable = true;
 	}
 	
 	// Update is called once per frame

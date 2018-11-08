@@ -12,6 +12,7 @@ public class Areas : MonoBehaviour {
 	void Start () {
 		Events.AreaChange += AreaChange;
 		Events.SubAreaChange += SubAreaChange;
+		Events.ReplayArea += AreaChange;
 		AreaChange (Data.Instance.levelData.currentLevel);
 		SubAreaChange (Data.Instance.levelData.subAreaIndex);
 	}
@@ -19,6 +20,7 @@ public class Areas : MonoBehaviour {
 	void OnDestroy(){
 		Events.AreaChange -= AreaChange;
 		Events.SubAreaChange -= SubAreaChange;
+		Events.ReplayArea -= AreaChange;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +28,7 @@ public class Areas : MonoBehaviour {
 		
 	}
 
-	void AreaChange(int id){
+	public void AreaChange(int id){
 		for (int i = 0; i < areas.Count; i++){			
 			areas[i].gameObject.SetActive (id == areas[i].id);
 			if (id == areas [i].id)

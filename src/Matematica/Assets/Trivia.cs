@@ -29,6 +29,8 @@ public class Trivia : MonoBehaviour {
 		Events.AddScore += AddScore;
 		Events.BadAnswer += BadAnswer;
 		Events.AreaChange += AreaChange;
+		Events.ReplayArea += AreaChange;
+		Events.ShowLevelSelector += ShowLevelSelector;
 
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -49,7 +51,9 @@ public class Trivia : MonoBehaviour {
 		Events.NextExercise -= NextExercise;
 		Events.AddScore -= AddScore;
 		Events.AreaChange -= AreaChange;
+		Events.ReplayArea -= AreaChange;
 		Events.BadAnswer -= BadAnswer;
+		Events.ShowLevelSelector -= ShowLevelSelector;
 	}
 
 	public void PrevModule()
@@ -124,9 +128,9 @@ public class Trivia : MonoBehaviour {
 		levelSelector.SetActive(enable);
 	}
 
-	void AreaChange(int i){
-		puntos.fillAmount = 0;
-
+	void AreaChange(int i){		
+		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
+		puntos.fillAmount = 1f * l.localPoints / l.length;
 	}
 
 	void BadAnswer(){
@@ -138,6 +142,7 @@ public class Trivia : MonoBehaviour {
 		puntos.fillAmount += (1f/Data.Instance.levelData.CurrentLevel.length);
 		if (puntos.fillAmount > 0.98f) {
 			winFX.SetActive (true);
+			Data.Instance.levelData.AddStars ();
 			Invoke ("CloseWFx", 2f);
 		} else {
 			rightFX.SetActive (true);
@@ -151,5 +156,10 @@ public class Trivia : MonoBehaviour {
 
 	void CloseWFx(){
 		winFX.SetActive (false);
+	}
+
+	public void SelectArea(int id){
+		Events.ReplayArea (id);
+		levelSelector.SetActive (false);
 	}
 }
