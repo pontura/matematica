@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Kunak : MonoBehaviour {
 
+	public GameObject KunakAvatar;
+	public GameObject humoFX;
 	public LoadingBar loadingBar;
 	public Image mascara;
 	public GameObject entradaBg;
@@ -25,6 +27,11 @@ public class Kunak : MonoBehaviour {
 			loadingBar.transform.parent.gameObject.SetActive (false);
 			StartCoroutine (AsynchronousLoad ("Game"));
 		}
+		Invoke ("CloseHumoFx", 3f);
+	}
+
+	void CloseHumoFx(){
+		humoFX.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -43,13 +50,21 @@ public class Kunak : MonoBehaviour {
 	public void LoadScene(){
 		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
-			fadeOut = true;
+			humoFX.SetActive (true);
+			KunakAvatar.SetActive (false);
+			Invoke ("WaitKunakExit",3);
 		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
-			fadeOut = true;
+			humoFX.SetActive (true);
+			KunakAvatar.SetActive (false);
+			Invoke ("WaitKunakExit",3);
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog || Data.Instance.levelData.kunakState == LevelsData.KunakStates.allcomplete) {
 			fadeOut = false;
 			Events.NextDialog ();
 		}
+	}
+
+	void WaitKunakExit(){
+		fadeOut = true;
 	}
 
 	IEnumerator AsynchronousLoad (string scene)

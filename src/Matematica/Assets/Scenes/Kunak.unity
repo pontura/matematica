@@ -772,6 +772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fd5ead9ebffab448d7a76d54f40b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KunakAvatar: {fileID: 1135112770}
+  humoFX: {fileID: 1049824273}
   loadingBar: {fileID: 68286743}
   mascara: {fileID: 1881034632}
   entradaBg: {fileID: 1419250866}
@@ -5832,12 +5834,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   doTween: 1
+  reverse: 0
   tweenPos: 0
   originPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
   tweenScale: 1
   originScale: {x: 0, y: 0, z: 0}
   targetScale: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!1 &1135112770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1190358849096904, guid: dd372c23b735bc64795dbef11b053931,
+    type: 2}
+  m_PrefabInternal: {fileID: 1017063918}
 --- !u!1 &1187836732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5928,6 +5936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   doTween: 0
+  reverse: 0
   tweenPos: 0
   originPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -6294,6 +6303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.04
   doTween: 1
+  reverse: 0
   tweenPos: 0
   originPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -20880,6 +20890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   doTween: 1
+  reverse: 0
   tweenPos: 0
   originPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
