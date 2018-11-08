@@ -46,7 +46,7 @@ public class Kunak : MonoBehaviour {
 			fadeOut = true;
 		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
 			fadeOut = true;
-		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
+		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog || Data.Instance.levelData.kunakState == LevelsData.KunakStates.allcomplete) {
 			fadeOut = false;
 			Events.NextDialog ();
 		}

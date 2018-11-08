@@ -14,11 +14,17 @@ public class TextsManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Events.NextDialog += Init;
+		Events.AllAreasCompleted += AllAreasCompleted;
 		Invoke ("Init", 1);
 	}
 
 	void OnDestroy(){
 		Events.NextDialog -= Init;
+		Events.AllAreasCompleted -= AllAreasCompleted;
+	}
+
+	void AllAreasCompleted(){
+		dialog_index = 0;
 	}
 
 	void Init(){
@@ -31,6 +37,8 @@ public class TextsManager : MonoBehaviour {
 				buttonText.transform.parent.gameObject.SetActive (true);
 				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
 				dialog_index = 0;
+				if (eText.next)
+					Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 			} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
 				buttonText.transform.parent.gameObject.SetActive (true);
 				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
@@ -48,9 +56,16 @@ public class TextsManager : MonoBehaviour {
 			buttonText.transform.parent.gameObject.SetActive (true);
 			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
 			dialog_index = 0;
+			if (eText.next) 
+				Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
 			buttonText.transform.parent.gameObject.SetActive (true);
 			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
+			if (!eText.next)
+				Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
+		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.allcomplete) {
+			buttonText.transform.parent.gameObject.SetActive (true);
+			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == 8 && e.dialog_index==dialog_index);
 			if (!eText.next)
 				Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 		}
@@ -58,7 +73,6 @@ public class TextsManager : MonoBehaviour {
 		buttonText.text = eText.button_text;
 		if (eText.next) {
 			dialog_index++;
-			Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 		}
 	}
 	

@@ -14724,6 +14724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 158396391}
+  - component: {fileID: 158396392}
   m_Layer: 0
   m_Name: puntos
   m_TagString: Untagged
@@ -14751,6 +14752,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -51}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &158396392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158396390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0.4, y: 0.4, z: 0.4}
 --- !u!1 &177156389
 GameObject:
   m_ObjectHideFlags: 0
@@ -15365,6 +15386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moduleField: {fileID: 46463526}
   title: {fileID: 995105380}
+  popupPregunta: {fileID: 1127607456}
   resultButton_to_instantiate: {fileID: 114511839730219872, guid: 045eb492ef287fe40b2577c409119e69,
     type: 2}
   buttonsContainer: {fileID: 1017642958}
@@ -15372,6 +15394,8 @@ MonoBehaviour:
   NumPregunta: {fileID: 435176430}
   debug: {fileID: 1111606049}
   levelSelector: {fileID: 325193173}
+  rightFX: {fileID: 2079031264}
+  winFX: {fileID: 1054250951}
 --- !u!114 &347280286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15745,6 +15769,7 @@ GameObject:
   - component: {fileID: 439913580}
   - component: {fileID: 439913579}
   - component: {fileID: 439913581}
+  - component: {fileID: 439913582}
   m_Layer: 0
   m_Name: contenedor numero
   m_TagString: Untagged
@@ -15820,6 +15845,26 @@ MonoBehaviour:
   badImg: {fileID: 21300000, guid: 915620450260f094aae91a254a648754, type: 3}
   goodImg: {fileID: 21300000, guid: c7659efe168169940a1fdbc0d29dce44, type: 3}
   text: {fileID: 435176430}
+--- !u!114 &439913582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439913577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0.45, y: 0.45, z: 0.45}
 --- !u!224 &471824140 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224621004624277564, guid: 045eb492ef287fe40b2577c409119e69,
@@ -16033,6 +16078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 538579180}
+  - component: {fileID: 538579181}
   m_Layer: 0
   m_Name: bottom buttons
   m_TagString: Untagged
@@ -16060,6 +16106,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 106}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &538579181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538579179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
 --- !u!1 &560522086
 GameObject:
   m_ObjectHideFlags: 0
@@ -16834,6 +16900,7 @@ GameObject:
   - component: {fileID: 995105379}
   - component: {fileID: 995105381}
   - component: {fileID: 995105380}
+  - component: {fileID: 995105382}
   m_Layer: 0
   m_Name: pregunta
   m_TagString: Untagged
@@ -16899,6 +16966,26 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 995105378}
   m_CullTransparentMesh: 0
+--- !u!114 &995105382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995105378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
 --- !u!1 &999957197
 GameObject:
   m_ObjectHideFlags: 0
@@ -16977,6 +17064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017642958}
   - component: {fileID: 1017642959}
+  - component: {fileID: 1017642960}
   m_Layer: 0
   m_Name: buttons
   m_TagString: Untagged
@@ -17025,6 +17113,26 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &1017642960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017642957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1054250951
 GameObject:
   m_ObjectHideFlags: 0
@@ -17041,7 +17149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1054250952
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -21931,6 +22039,7 @@ GameObject:
   - component: {fileID: 1127607453}
   - component: {fileID: 1127607455}
   - component: {fileID: 1127607454}
+  - component: {fileID: 1127607456}
   m_Layer: 0
   m_Name: popup pregunta
   m_TagString: Untagged
@@ -21990,6 +22099,26 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127607452}
   m_CullTransparentMesh: 0
+--- !u!114 &1127607456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127607452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  reverse: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0.45, y: 0.45, z: 0.45}
 --- !u!1 &1135139228
 GameObject:
   m_ObjectHideFlags: 0
@@ -38933,7 +39062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &2079031265
 ParticleSystemRenderer:
   serializedVersion: 6

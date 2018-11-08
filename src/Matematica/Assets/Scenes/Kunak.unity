@@ -158,6 +158,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114172111592411436, guid: ceaf6c11bf6f453468b1cb5457bd0e31,
+        type: 2}
+      propertyPath: correctAnswers
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 114061336573561616, guid: ceaf6c11bf6f453468b1cb5457bd0e31,
+        type: 2}
+      propertyPath: triviaCount
+      value: 99
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceaf6c11bf6f453468b1cb5457bd0e31, type: 2}
   m_IsPrefabAsset: 0
@@ -177,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &183840682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -795,7 +805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &926782836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5696,6 +5706,7 @@ GameObject:
   - component: {fileID: 1090807617}
   - component: {fileID: 1090807616}
   - component: {fileID: 1090807615}
+  - component: {fileID: 1090807618}
   m_Layer: 5
   m_Name: Jugar
   m_TagString: Untagged
@@ -5808,6 +5819,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090807613}
   m_CullTransparentMesh: 0
+--- !u!114 &1090807618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090807613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  doTween: 1
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &1187836732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5818,6 +5848,7 @@ GameObject:
   - component: {fileID: 1187836733}
   - component: {fileID: 1187836735}
   - component: {fileID: 1187836734}
+  - component: {fileID: 1187836736}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -5884,6 +5915,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187836732}
   m_CullTransparentMesh: 0
+--- !u!114 &1187836736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187836732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 0
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1244111831
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,7 +6234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1069422168456766, guid: 1bb91eeba617c25409a3daaafa23f28e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bb91eeba617c25409a3daaafa23f28e, type: 2}
@@ -6202,6 +6252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367456849}
+  - component: {fileID: 1367456850}
   m_Layer: 5
   m_Name: KunakHablando
   m_TagString: Untagged
@@ -6230,6 +6281,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -39}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1367456850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367456848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.04
+  doTween: 1
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1373820348
 GameObject:
   m_ObjectHideFlags: 0
@@ -20737,6 +20807,7 @@ GameObject:
   - component: {fileID: 1903919341}
   - component: {fileID: 1903919343}
   - component: {fileID: 1903919342}
+  - component: {fileID: 1903919344}
   m_Layer: 5
   m_Name: globo
   m_TagString: Untagged
@@ -20796,6 +20867,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1903919340}
   m_CullTransparentMesh: 0
+--- !u!114 &1903919344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903919340}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b40f8111973dc4c9c1aa3447376e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  doTween: 1
+  tweenPos: 0
+  originPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  tweenScale: 1
+  originScale: {x: 0, y: 0, z: 0}
+  targetScale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &2008524821
 GameObject:
   m_ObjectHideFlags: 0

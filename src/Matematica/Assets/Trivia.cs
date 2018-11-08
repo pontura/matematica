@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class Trivia : MonoBehaviour {
 	public Text moduleField;
 	public Text title;
+	public Tween popupPregunta;
 	public ResultButton resultButton_to_instantiate;
 	public Transform buttonsContainer;
 	public Image puntos;
 	public Text NumPregunta;
 	public Text debug;
 	public GameObject levelSelector;
+	public GameObject rightFX;
+	public GameObject winFX;
+
+	Tween preguntaTween,buttonsTween,nroTween;
 
 	ModulesManager modulesManager;
 
@@ -22,12 +27,17 @@ public class Trivia : MonoBehaviour {
 		modulesManager = Data.Instance.modulesManager;
 		Events.NextExercise += NextExercise;
 		Events.AddScore += AddScore;
+		Events.BadAnswer += BadAnswer;
 		Events.AreaChange += AreaChange;
 
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
 
 		nPregunta = Data.Instance.levelData.triviaCount;
+
+		preguntaTween = title.gameObject.GetComponent<Tween> ();
+		buttonsTween = buttonsContainer.GetComponent<Tween> ();
+		nroTween = NumPregunta.GetComponentInParent<Tween> ();
 
 		if (Data.Instance.settings.all.exercises.Count > 0)
 			NextExercise ();
@@ -39,6 +49,7 @@ public class Trivia : MonoBehaviour {
 		Events.NextExercise -= NextExercise;
 		Events.AddScore -= AddScore;
 		Events.AreaChange -= AreaChange;
+		Events.BadAnswer -= BadAnswer;
 	}
 
 	public void PrevModule()
@@ -69,6 +80,7 @@ public class Trivia : MonoBehaviour {
 
 	public void CreateNewModule()
 	{
+		ShowQuestions (true);
 		modulesManager.SetNewModuleActive ();
 		moduleField.text = "MODULE " + modulesManager.actualModule.module;
 		title.text = modulesManager.actualModule.title;
@@ -81,6 +93,21 @@ public class Trivia : MonoBehaviour {
 			button.Init (modulesManager.actualModule.values [i], i == 0);
 		}
 		ShuffleChildOrder (buttonsContainer);
+	}
+
+	void ShowQuestions (bool enable){
+		buttonsTween.reverse = !enable;
+		buttonsTween.doTween = true;
+		preguntaTween.reverse = !enable;
+		preguntaTween.doTween = true;
+		popupPregunta.reverse = !enable;
+		popupPregunta.doTween = true;
+		nroTween.reverse = !enable;
+		nroTween.doTween = true;
+	}
+
+	void HideQuestions(){
+		ShowQuestions (false);
 	}
 
 	public void ShuffleChildOrder(Transform container){
@@ -99,9 +126,30 @@ public class Trivia : MonoBehaviour {
 
 	void AreaChange(int i){
 		puntos.fillAmount = 0;
+
+	}
+
+	void BadAnswer(){
+		Invoke ("HideQuestions", 1);
 	}
 
 	void AddScore(){
+		Invoke ("HideQuestions", 1);
 		puntos.fillAmount += (1f/Data.Instance.levelData.CurrentLevel.length);
+		if (puntos.fillAmount > 0.98f) {
+			winFX.SetActive (true);
+			Invoke ("CloseWFx", 2f);
+		} else {
+			rightFX.SetActive (true);
+			Invoke ("CloseRFx", 2);
+		}
+	}
+
+	void CloseRFx(){
+		rightFX.SetActive (false);
+	}
+
+	void CloseWFx(){
+		winFX.SetActive (false);
 	}
 }

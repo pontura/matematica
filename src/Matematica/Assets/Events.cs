@@ -18,4 +18,6 @@ public static class Events {
 
 	public static System.Action NextDialog = delegate { };
 
+	public static System.Action AllAreasCompleted = delegate { };
+
 }

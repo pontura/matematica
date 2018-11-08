@@ -19,7 +19,8 @@ public class LevelsData : MonoBehaviour {
 	public enum KunakStates{
 		inicio,
 		area,
-		dialog
+		dialog,
+		allcomplete
 	}
 
 	[Serializable]
@@ -71,22 +72,29 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	public void SetCurrentLevel(int correctAnswers){
-		for (int i = 0; i < levels.Count; i++) {
-			if (correctAnswers <= levels [i].lastLevelQuestion) {
-				if (levels [i].id != currentLevel) {
-					if (i > 0) {
-						SetLevelCompleted (i - 1);
+		if (correctAnswers > 99) {
+			if (!allAreasCompleted)
+				SetAllLevelCompleted ();
+		} else {
+			for (int i = 0; i < levels.Count; i++) {
+				if (correctAnswers <= levels [i].lastLevelQuestion) {
+					if (levels [i].id != currentLevel) {
+						if (i > 0) {
+							SetLevelCompleted (i - 1);
+						}
+						UnlockLevel (i);
+					} else if (correctAnswers > (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
+						if (subAreaIndex == 0)
+							LevelSubareaChange (i);
+						else
+							levels [i].localPoints++;
+					} else {
+						levels [i].localPoints++;
 					}
-					UnlockLevel (i);
-				} else if (correctAnswers >= (levels [i].lastLevelQuestion + 1) - 0.5 * levels [i].length) {
-					if(subAreaIndex==0)
-						LevelSubareaChange (i);
-				} else {
-					levels [i].localPoints++;
+					Events.LevelSelectorUpdate (i);
+					i = levels.Count;
 				}
-				Events.LevelSelectorUpdate (i);
-				i = levels.Count;
-			} 
+			}
 		}
 	}
 
@@ -107,6 +115,15 @@ public class LevelsData : MonoBehaviour {
 		levels [i].localPoints++;
 		subAreaIndex = 1;
 		Events.SubAreaChange (subAreaIndex);
+	}
+
+	void SetAllLevelCompleted(){
+		SetLevelCompleted (currentLevelIndex);
+		Events.AllAreasCompleted ();
+		if(SceneManager.GetActiveScene().name=="Game"){
+			Data.Instance.levelData.kunakState = KunakStates.allcomplete;
+			Data.Instance.LoadScene ("Kunak");			
+		}
 	}
 
 	void SetLevelCompleted(int index){
