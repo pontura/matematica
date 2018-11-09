@@ -137,9 +137,9 @@ public class LevelsData : MonoBehaviour {
 		currentLevelIndex = i;
 		playingLevelIndex = i;
 		levels [i].unlocked = true;
-		Events.AreaChange (currentLevel);
+		//Events.AreaChange (currentLevel);
 		subAreaIndex = 0;
-		Events.SubAreaChange (subAreaIndex);
+		//Events.SubAreaChange (subAreaIndex);
 		if(SceneManager.GetActiveScene().name=="Game"){
 			Data.Instance.levelData.kunakState = KunakStates.area;
 			Data.Instance.LoadScene ("Kunak");			

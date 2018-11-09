@@ -11,10 +11,12 @@ public class LoadingBar : MonoBehaviour {
 	Image loadingBar;
 	float fill;
 	bool done;
+	Tween buttonTween;
 
 	// Use this for initialization
 	void Start () {
 		loadingBar = GetComponent<Image> ();
+		buttonTween = playButton.GetComponent<Tween> ();
 		playButton.SetActive (false);
 	}
 
@@ -26,9 +28,11 @@ public class LoadingBar : MonoBehaviour {
 	void Update () {
 		if (loadingBar.fillAmount < fill) {
 			loadingBar.fillAmount += step;
-		} else if (!done && fill>0f) {
+		} else if (!done && fill>0.98f) {
+			//Debug.Log ("aca");
 			loading.SetActive (false);
 			playButton.SetActive (true);
+			//buttonTween.doTween = true;
 			done = true;
 		}
 	}

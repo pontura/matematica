@@ -12,6 +12,8 @@ public class Kunak : MonoBehaviour {
 	public Image mascara;
 	public GameObject entradaBg;
 	public float fadeSpeed;
+	public Tween kunakDTween;
+	public Tween buttonTween;
 
 	bool loadDone;
 	bool fadeOut;
@@ -50,10 +52,18 @@ public class Kunak : MonoBehaviour {
 	public void LoadScene(){
 		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
+			kunakDTween.reverse = true;
+			kunakDTween.doTween = true;
+			buttonTween.reverse = true;
+			buttonTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
 			Invoke ("WaitKunakExit",3);
 		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
+			kunakDTween.reverse = true;
+			kunakDTween.doTween = true;
+			buttonTween.reverse = true;
+			buttonTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
 			Invoke ("WaitKunakExit",3);
