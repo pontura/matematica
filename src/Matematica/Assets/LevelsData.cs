@@ -38,12 +38,14 @@ public class LevelsData : MonoBehaviour {
 		public bool unlocked;
 		public bool levelCompleted;
 		public int stars;
+		public int comboCondition;
+		public int comboReward;
 	}
 
 	// Use this for initialization
 	void Start () {
 		kunakState = KunakStates.inicio;
-		Events.AddScore += AddScore;
+		//Events.AddScore += AddScore;
 		Events.ReplayArea += ReplayArea;
 		triviaCount = PlayerPrefs.GetInt ("triviaCount");
 		int count=-1;
@@ -58,7 +60,7 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		Events.AddScore -= AddScore;
+		//Events.AddScore -= AddScore;
 		Events.ReplayArea -= ReplayArea;
 	}
 	
@@ -72,16 +74,29 @@ public class LevelsData : MonoBehaviour {
 		PlayerPrefs.SetInt ("triviaCount", triviaCount);
 	}
 
-	void AddScore(){
+	/*void AddScore(){
 		if(replay)
 			Invoke ("ReplayingLevel", 2f);			
 		else
 			Invoke ("SetCurrentLevel", 2f);
 
-	}
+	}*/
 
 	public void SetCurrentLevel(){
-		SetCurrentLevel (Data.Instance.playerData.correctAnswers);
+		if (replay)
+			ReplayingLevel ();
+		else
+			SetCurrentLevel (Data.Instance.playerData.correctAnswers);		
+	}
+
+	void ReplayingLevel(){
+		levels [playingLevelIndex].localPoints++;
+		if (levels [playingLevelIndex].localPoints >= levels [playingLevelIndex].length) {
+			SetLevelCompleted (playingLevelIndex);
+		} else if (levels [playingLevelIndex].localPoints > (levels [playingLevelIndex].lastLevelQuestion + 1) - 0.5 * levels [playingLevelIndex].length) {
+			if (subAreaIndex == 0)
+				LevelSubareaChange (playingLevelIndex);			
+		}
 	}
 
 	void ReplayArea(int id){
@@ -92,16 +107,6 @@ public class LevelsData : MonoBehaviour {
 		} else {
 			replay = false;
 			playingLevelIndex = currentLevelIndex;
-		}
-	}
-
-	void ReplayingLevel(){
-		levels [playingLevelIndex].localPoints++;
-		if (levels [playingLevelIndex].localPoints >= levels [playingLevelIndex].length) {
-			SetLevelCompleted (playingLevelIndex);
-		} else if (levels [playingLevelIndex].localPoints > (levels [playingLevelIndex].lastLevelQuestion + 1) - 0.5 * levels [playingLevelIndex].length) {
-			if (subAreaIndex == 0)
-				LevelSubareaChange (playingLevelIndex);			
 		}
 	}
 

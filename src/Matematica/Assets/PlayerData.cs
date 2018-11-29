@@ -30,4 +30,11 @@ public class PlayerData : MonoBehaviour {
 			PlayerPrefs.SetInt ("correctAnswers", correctAnswers);
 		}
 	}
+
+	public void AddScore(int add){
+		if (!Data.Instance.levelData.replay) {
+			correctAnswers+=add;
+			PlayerPrefs.SetInt ("correctAnswers", correctAnswers);
+		}
+	}
 }

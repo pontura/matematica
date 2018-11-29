@@ -42,12 +42,13 @@ public class ResultButton : MonoBehaviour {
 			b.interactable = false;
 		}
 
-		if (correct)
+		if (correct) {
 			Events.AddScore ();
-		else
+		} else {
 			Events.BadAnswer ();
-		
-		Invoke ("NextExercise", 2);
+			Invoke ("NextExercise", 2);
+		}	
+
 	}
 
 	void NextExercise(){

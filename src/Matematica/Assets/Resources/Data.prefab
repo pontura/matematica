@@ -59,26 +59,75 @@ MonoBehaviour:
   levels:
   - id: 1
     length: 3
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 0
+    comboReward: 0
   - id: 2
     length: 5
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 4
+    comboReward: 1
   - id: 3
     length: 8
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 5
+    comboReward: 2
   - id: 4
     length: 13
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 6
+    comboReward: 3
   - id: 5
     length: 18
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 7
+    comboReward: 4
   - id: 6
     length: 24
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 8
+    comboReward: 5
   - id: 7
     length: 29
+    localPoints: 0
     lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 9
+    comboReward: 6
   currentLevel: 0
+  currentLevelIndex: 0
+  subAreaIndex: 0
+  playingLevelIndex: 0
+  triviaCount: 0
+  allAreasCompleted: 0
+  replay: 0
+  kunakState: 0
 --- !u!114 &114109487064868242
 MonoBehaviour:
   m_ObjectHideFlags: 1
