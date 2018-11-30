@@ -40,7 +40,6 @@ public class Creditos : MonoBehaviour {
 			Vector3 p =	rt.position;
 
 			rt.position = new Vector3 (p.x, p.y + speed, p.z);
-			Debug.Log (p.y);
 			if (p.y >= yLimit) {
 				rt.position = new Vector3 (p.x, 0, p.z);
 				run = false;

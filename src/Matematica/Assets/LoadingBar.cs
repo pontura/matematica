@@ -30,6 +30,7 @@ public class LoadingBar : MonoBehaviour {
 			loadingBar.fillAmount += step;
 		} else if (!done && fill>0.98f) {
 			//Debug.Log ("aca");
+			Events.KunakSfx(true);
 			loading.SetActive (false);
 			playButton.SetActive (true);
 			//buttonTween.doTween = true;

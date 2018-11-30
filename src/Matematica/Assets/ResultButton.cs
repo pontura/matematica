@@ -25,6 +25,7 @@ public class ResultButton : MonoBehaviour {
 	}
 
 	public void SetResult(){
+		Data.Instance.interfaceSfx.ClickSfx (1f);
 		if (correct) {
 			field.color = Color.white;
 			image.sprite = goodImg;

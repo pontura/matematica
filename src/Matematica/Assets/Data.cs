@@ -16,6 +16,7 @@ public class Data : MonoBehaviour
 	public ExternalTexts externalTexts;
 	public PlayerData playerData;
 	public LevelsData levelData;
+	public InterfaceSfx interfaceSfx;
 
 	public static Data Instance
     {
@@ -63,8 +64,9 @@ public class Data : MonoBehaviour
 		externalTexts = GetComponent<ExternalTexts> ();
 		playerData = GetComponent<PlayerData> ();
 		levelData = GetComponent<LevelsData> ();
+		interfaceSfx = GetComponent<InterfaceSfx> ();
 
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 
     }
     void Update()

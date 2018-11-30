@@ -14,12 +14,17 @@ public class Kunak : MonoBehaviour {
 	public float fadeSpeed;
 	public Tween kunakDTween;
 	public Tween buttonTween;
+	public AudioSource kunaksfx;
+	AudioSource source;
+
 
 	bool loadDone;
 	bool fadeOut;
 
 	// Use this for initialization
 	void Start () {
+		source = GetComponent<AudioSource> ();
+		Events.KunakSfx += KunakSfx;
 		Debug.Log (Data.Instance.levelData.kunakState);
 		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			loadingBar.transform.parent.gameObject.SetActive (true);
@@ -27,9 +32,21 @@ public class Kunak : MonoBehaviour {
 		} else {
 			entradaBg.SetActive (false);
 			loadingBar.transform.parent.gameObject.SetActive (false);
+			KunakSfx (true);
 			StartCoroutine (AsynchronousLoad ("Game"));
 		}
 		Invoke ("CloseHumoFx", 3f);
+	}
+
+	void OnDestroy(){
+		Events.KunakSfx -= KunakSfx;
+	}
+
+	void KunakSfx(bool enable){
+		if (enable) {
+			kunaksfx.Play (44100);
+			source.Play ();
+		}
 	}
 
 	void CloseHumoFx(){
@@ -50,6 +67,8 @@ public class Kunak : MonoBehaviour {
 	}
 
 	public void LoadScene(){
+		float r = Random.Range(0,10) * 0.05f;
+		Data.Instance.interfaceSfx.ClickSfx (0.75f+r);
 		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
 			Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 			kunakDTween.reverse = true;
@@ -58,7 +77,9 @@ public class Kunak : MonoBehaviour {
 			buttonTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
-			Invoke ("WaitKunakExit",3);
+			source.pitch = 0.5f;
+			source.Play ();
+			Invoke ("WaitKunakExit",5);
 		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
 			kunakDTween.reverse = true;
 			kunakDTween.doTween = true;
@@ -66,7 +87,9 @@ public class Kunak : MonoBehaviour {
 			buttonTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
-			Invoke ("WaitKunakExit",3);
+			source.pitch = 0.5f;
+			source.Play ();
+			Invoke ("WaitKunakExit",5);
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog || Data.Instance.levelData.kunakState == LevelsData.KunakStates.allcomplete) {
 			fadeOut = false;
 			Events.NextDialog ();

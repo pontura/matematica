@@ -40,7 +40,10 @@ public class LevelSelector : MonoBehaviour {
 
 	void LevelSelectorUpdate(int index){
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
-		puntajes [index].fillAmount = 1f * l.localPoints / l.length;
+		if (l.levelCompleted && l.localPoints == 0)
+			puntajes [index].fillAmount = 1;
+		else
+			puntajes [index].fillAmount = 1f * l.localPoints / l.length;
 	}
 
 	void AreaChange(int id){

@@ -25,4 +25,6 @@ public static class Events {
 	public static System.Action<int> AddStar = delegate { };
 
 	public static System.Action<int> ReplayArea = delegate { };
+
+	public static System.Action<bool> KunakSfx = delegate { };
 }

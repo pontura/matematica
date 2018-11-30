@@ -20,6 +20,8 @@ public class LevelsData : MonoBehaviour {
 	public bool replay;
 	int replayAreaId;
 
+	bool loading;
+
 	public KunakStates kunakState;
 	public enum KunakStates{
 		inicio,
@@ -44,6 +46,7 @@ public class LevelsData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		loading = true;
 		kunakState = KunakStates.inicio;
 		//Events.AddScore += AddScore;
 		Events.ReplayArea += ReplayArea;
@@ -57,6 +60,8 @@ public class LevelsData : MonoBehaviour {
 		for (int i = 0; i < Data.Instance.playerData.correctAnswers+1; i++) {
 			SetCurrentLevel (i);
 		}
+
+		loading = false;
 	}
 
 	void OnDestroy(){
@@ -158,8 +163,11 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void SetAllLevelCompleted(){
+		if(!loading)
+			Data.Instance.interfaceSfx.WinGameSfx ();
 		SetLevelCompleted (currentLevelIndex);
 		Events.AllAreasCompleted ();
+		allAreasCompleted = true;
 		if(SceneManager.GetActiveScene().name=="Game"){
 			Data.Instance.levelData.kunakState = KunakStates.allcomplete;
 			Data.Instance.LoadScene ("Kunak");			
