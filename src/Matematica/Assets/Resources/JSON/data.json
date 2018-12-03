@@ -50,6 +50,28 @@
 			"(a0+b0):c", 
 			"b0:c"
 			]
+		},
+
+		{
+		"module": "10",
+		"title":"Elegí el cálculo que traduce la siguiente frase: la diferencia entre *X y *Y supera a *Z",
+		"results":
+			[
+			"*X-*Y>*Z", 
+			"*X+*Y>*Z", 
+			"*X-*Y<*Z"
+			]
+		},
+
+		{
+		"module": "11",
+		"title":"Elegí la frase que traduce el siguiente cálculo: *a x *n + *m",
+		"results":
+			[
+			"El *a de *n aumentado en *m.", 
+			"El *a de *n disminuido en *m. ", 
+			"El *a de *n aumentado en *m."
+			]
 		}
 
 	]

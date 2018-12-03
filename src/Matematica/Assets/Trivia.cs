@@ -13,8 +13,16 @@ public class Trivia : MonoBehaviour {
 	public Text NumPregunta;
 	public Text debug;
 	public GameObject levelSelector;
+	public GameObject menu;
+	public GameObject creditos;
 	public GameObject rightFX;
 	public GameObject winFX;
+	public GameObject comboFX;
+	public GameObject combo;
+	public Text comboText;
+	public GameObject levelCompleteSign;
+
+	AudioSource audiosource;
 
 	Tween preguntaTween,buttonsTween,nroTween;
 
@@ -22,8 +30,11 @@ public class Trivia : MonoBehaviour {
 
 	int nPregunta;
 
+	int comboCount;
+
 	void Start()
 	{
+		audiosource = GetComponent<AudioSource> ();
 		modulesManager = Data.Instance.modulesManager;
 		Events.NextExercise += NextExercise;
 		Events.AddScore += AddScore;
@@ -31,6 +42,7 @@ public class Trivia : MonoBehaviour {
 		Events.AreaChange += AreaChange;
 		Events.ReplayArea += AreaChange;
 		Events.ShowLevelSelector += ShowLevelSelector;
+		Events.ShowLevelMenu += ShowMenu;
 
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -41,10 +53,15 @@ public class Trivia : MonoBehaviour {
 		buttonsTween = buttonsContainer.GetComponent<Tween> ();
 		nroTween = NumPregunta.GetComponentInParent<Tween> ();
 
-		if (Data.Instance.settings.all.exercises.Count > 0)
-			NextExercise ();
-		else
-			Invoke ("NextExercise",1);
+		if (!Data.Instance.levelData.allAreasCompleted) {
+			if (Data.Instance.settings.all.exercises.Count > 0)
+				NextExercise ();
+			else
+				Invoke ("NextExercise", 1);
+		} else {
+			ShowLevelSelector (true);
+		}
+
 	}
 
 	void OnDestroy(){
@@ -54,6 +71,7 @@ public class Trivia : MonoBehaviour {
 		Events.ReplayArea -= AreaChange;
 		Events.BadAnswer -= BadAnswer;
 		Events.ShowLevelSelector -= ShowLevelSelector;
+		Events.ShowLevelMenu -= ShowMenu;
 	}
 
 	public void PrevModule()
@@ -90,6 +108,7 @@ public class Trivia : MonoBehaviour {
 		title.text = modulesManager.actualModule.title;
 		debug.text = modulesManager.actualModule.data.title.Replace('#',' ');
 		Utils.RemoveAllChildsIn (buttonsContainer);
+		audiosource.Play ();
 		for(int i=0;i<modulesManager.actualModule.results.Count;i++){
 			ResultButton button = Instantiate (resultButton_to_instantiate);
 			button.transform.SetParent (buttonsContainer);
@@ -124,8 +143,28 @@ public class Trivia : MonoBehaviour {
 		}
 	}
 
-	public void ShowLevelSelector(bool enable){
+	public void ShowLevelSelector(bool enable){	
+		Data.Instance.interfaceSfx.ClickSfx (1.1f);
 		levelSelector.SetActive(enable);
+		if (enable) {			
+			menu.SetActive (false);
+			creditos.SetActive(false);
+		}
+	}
+
+	public void ShowMenu(bool enable){
+		menu.SetActive(enable);
+		Data.Instance.interfaceSfx.ClickSfx (0.9f);
+		if (enable) {			
+			levelSelector.SetActive (false);
+			creditos.SetActive(false);
+		}
+	}
+
+	public void ShowCredits(bool enable){
+		if(enable)
+			Data.Instance.interfaceSfx.ClickSfx (1.2f);
+		creditos.SetActive(enable);
 	}
 
 	void AreaChange(int i){		
@@ -134,28 +173,65 @@ public class Trivia : MonoBehaviour {
 	}
 
 	void BadAnswer(){
+		comboCount = 0;
 		Invoke ("HideQuestions", 1);
 	}
 
 	void AddScore(){
 		Invoke ("HideQuestions", 1);
 		puntos.fillAmount += (1f/Data.Instance.levelData.CurrentLevel.length);
+		comboCount++;
 		if (puntos.fillAmount > 0.98f) {
-			winFX.SetActive (true);
-			Data.Instance.levelData.AddStars ();
-			Invoke ("CloseWFx", 2f);
+			OnWin ();
 		} else {
 			rightFX.SetActive (true);
-			Invoke ("CloseRFx", 2);
+			Invoke ("CloseRFx", 2f);
 		}
+	}
+
+	void OnWin(){
+		Data.Instance.interfaceSfx.WinLevelSfx ();
+		winFX.SetActive (true);
+		levelCompleteSign.SetActive(true);
+		Data.Instance.levelData.AddStars ();
+		Invoke ("CloseWFx", 4f);
 	}
 
 	void CloseRFx(){
 		rightFX.SetActive (false);
+		Debug.Log ("CloseRFX");
+		if (Data.Instance.levelData.CurrentLevel.comboReward>0 && comboCount >= Data.Instance.levelData.CurrentLevel.comboCondition) {
+			Data.Instance.interfaceSfx.ComboSfx ();
+			puntos.fillAmount += (Data.Instance.levelData.CurrentLevel.comboReward*1f/Data.Instance.levelData.CurrentLevel.length);
+			Data.Instance.playerData.AddScore (Data.Instance.levelData.CurrentLevel.comboReward);
+			comboFX.SetActive (true);
+			combo.SetActive (true);
+			comboText.text = "+" + Data.Instance.levelData.CurrentLevel.comboReward;
+			comboCount = 0;
+			Invoke ("CloseComboFx", 2f);
+		} else {
+			Data.Instance.levelData.SetCurrentLevel ();
+			Events.NextExercise ();
+		}
+	}
+
+	void CloseComboFx(){
+		comboFX.SetActive (false);
+		combo.SetActive (false);
+		if (puntos.fillAmount > 0.98f) {
+			OnWin ();
+		} else {
+			Data.Instance.levelData.SetCurrentLevel ();
+			Events.NextExercise ();
+		}
 	}
 
 	void CloseWFx(){
 		winFX.SetActive (false);
+		levelCompleteSign.SetActive(false);
+		Debug.Log ("CloseWFX");
+		Data.Instance.levelData.SetCurrentLevel ();
+		//Events.NextExercise ();
 	}
 
 	public void SelectArea(int id){

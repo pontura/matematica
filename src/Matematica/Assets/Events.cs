@@ -16,6 +16,7 @@ public static class Events {
 
 	public static System.Action<int> LevelSelectorUpdate = delegate { };
 	public static System.Action<bool> ShowLevelSelector = delegate { };
+	public static System.Action<bool> ShowLevelMenu = delegate { };
 
 	public static System.Action NextDialog = delegate { };
 
@@ -24,4 +25,6 @@ public static class Events {
 	public static System.Action<int> AddStar = delegate { };
 
 	public static System.Action<int> ReplayArea = delegate { };
+
+	public static System.Action<bool> KunakSfx = delegate { };
 }
