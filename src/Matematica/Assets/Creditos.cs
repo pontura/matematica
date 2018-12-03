@@ -11,7 +11,7 @@ public class Creditos : MonoBehaviour {
 
 	Vector3 originalPos;
 	bool run;
-	float yLimit = 2300;
+	float yLimit = 3600;
 
 	// Use this for initialization
 	void Start () {
@@ -22,11 +22,11 @@ public class Creditos : MonoBehaviour {
 	void OnEnable(){
 		if (rt == null) {
 			rt = GetComponent<RectTransform> ();
-			originalPos = rt.position;
+			originalPos = rt.localPosition;
 		}
 		run = false;
 
-		rt.position = originalPos;
+		rt.localPosition = originalPos;
 		Invoke ("Run", pausaInicial);
 	}
 
@@ -37,16 +37,14 @@ public class Creditos : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(run){
-			Vector3 p =	rt.position;
+			Vector3 p =	rt.localPosition;
 
-			rt.position = new Vector3 (p.x, p.y + speed, p.z);
+			rt.localPosition = new Vector3 (p.x, p.y + speed, p.z);
 			if (p.y >= yLimit) {
 				rt.position = new Vector3 (p.x, 0, p.z);
 				run = false;
 				Events.ShowLevelMenu (true);
 			}
 		}
-
-
 	}
 }

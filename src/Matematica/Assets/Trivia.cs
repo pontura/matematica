@@ -237,5 +237,6 @@ public class Trivia : MonoBehaviour {
 	public void SelectArea(int id){
 		Events.ReplayArea (id);
 		levelSelector.SetActive (false);
+		Events.NextExercise ();
 	}
 }
