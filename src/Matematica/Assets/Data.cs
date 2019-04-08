@@ -2,6 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System;
+using System.Threading.Tasks;
+using Firebase;
+using Firebase.Analytics;
+
 
 public class Data : MonoBehaviour
 {
@@ -17,8 +22,13 @@ public class Data : MonoBehaviour
 	public PlayerData playerData;
 	public LevelsData levelData;
 	public InterfaceSfx interfaceSfx;
+	public Users users;
+	public bool esAlumno;
+	public Firebase.FirebaseApp app;
 
-	public static Data Instance
+    bool firebaseInitialized;
+
+    public static Data Instance
     {
         get
         {
@@ -46,6 +56,7 @@ public class Data : MonoBehaviour
     void Awake()
     {
 		QualitySettings.vSyncCount = 1;
+		app = null;
 
         if (!mInstance)
             mInstance = this;
@@ -65,8 +76,13 @@ public class Data : MonoBehaviour
 		playerData = GetComponent<PlayerData> ();
 		levelData = GetComponent<LevelsData> ();
 		interfaceSfx = GetComponent<InterfaceSfx> ();
+		users = GetComponent<Users> ();
 
-		//PlayerPrefs.DeleteAll ();
+        PlayerPrefs.DeleteAll ();
+
+        if (esAlumno)
+            FBase_Login();
+		
 
     }
     void Update()
@@ -75,5 +91,49 @@ public class Data : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+
+    public void FBase_Login()
+    {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == DependencyStatus.Available)
+            {
+                // Create and hold a reference to your FirebaseApp,
+                // where app is a Firebase.FirebaseApp property of your application class.
+                //app = Firebase.FirebaseApp.DefaultInstance;
+                InitializeFirebase();
+
+                // Set a flag here to indicate whether Firebase is ready to use by your app.
+            }
+            else
+            {
+                Debug.LogError(System.String.Format(
+                    "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                // Firebase Unity SDK is not safe to use here.
+            }
+        });
+    }
+
+    void InitializeFirebase()
+    {
+        Debug.Log("Enabling data collection.");
+        FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+
+        Debug.Log("Set user properties.");
+        // Set the user's sign up method.
+        FirebaseAnalytics.SetUserProperty(
+          FirebaseAnalytics.UserPropertySignUpMethod,
+          "Google");
+        // Set the user ID.
+        FirebaseAnalytics.SetUserId(SystemInfo.deviceUniqueIdentifier);
+        
+        // Set default session duration values.
+        FirebaseAnalytics.SetMinimumSessionDuration(new TimeSpan(0, 0, 10));
+        FirebaseAnalytics.SetSessionTimeoutDuration(new TimeSpan(0, 30, 0));
+        firebaseInitialized = true;
+
+        Debug.Log("Logging a login event.");
+        FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLogin);
     }
 }

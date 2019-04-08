@@ -14,11 +14,16 @@ public class Kunak : MonoBehaviour {
 	public float fadeSpeed;
 	public Tween kunakDTween;
 	public Tween buttonTween;
+	public Tween sesionTween;
 	public AudioSource kunaksfx;
 	AudioSource source;
 
+	public GameObject login;
+	public GameObject noLogin;
+	public InputField id;
+    public InputField nombre;
 
-	bool loadDone;
+    bool loadDone;
 	bool fadeOut;
 
 	// Use this for initialization
@@ -36,6 +41,33 @@ public class Kunak : MonoBehaviour {
 			StartCoroutine (AsynchronousLoad ("Game"));
 		}
 		Invoke ("CloseHumoFx", 3f);
+        //ShowLogin();
+
+    }
+
+	void ShowLogin(){
+        Debug.Log("Alumno: " + Data.Instance.esAlumno);
+		sesionTween.gameObject.SetActive(!Data.Instance.esAlumno);
+	}
+
+	public void ShowLogin(bool enable){
+		login.SetActive (enable);
+	}
+
+	public void Register(){
+		bool val = Data.Instance.users.IsUser (id.text,nombre.text);
+		ShowLogin ();		
+        if (!val){
+            noLogin.SetActive(true);
+            Invoke("HideMessage", 3);
+        }
+        login.SetActive(false);
+    }
+
+	void HideMessage(){
+        id.text = "";
+        nombre.text = "";
+        noLogin.SetActive (false);
 	}
 
 	void OnDestroy(){
@@ -75,6 +107,8 @@ public class Kunak : MonoBehaviour {
 			kunakDTween.doTween = true;
 			buttonTween.reverse = true;
 			buttonTween.doTween = true;
+			sesionTween.reverse = true;
+			sesionTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
 			source.pitch = 0.5f;
@@ -85,6 +119,8 @@ public class Kunak : MonoBehaviour {
 			kunakDTween.doTween = true;
 			buttonTween.reverse = true;
 			buttonTween.doTween = true;
+			sesionTween.reverse = true;
+			sesionTween.doTween = true;
 			humoFX.SetActive (true);
 			KunakAvatar.SetActive (false);
 			source.pitch = 0.5f;

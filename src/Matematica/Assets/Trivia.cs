@@ -21,8 +21,12 @@ public class Trivia : MonoBehaviour {
 	public GameObject combo;
 	public Text comboText;
 	public GameObject levelCompleteSign;
+    public InputField id;
+    public InputField nombre;
+    public Button login;
+    public GameObject noLogin;
 
-	AudioSource audiosource;
+    AudioSource audiosource;
 
 	Tween preguntaTween,buttonsTween,nroTween;
 
@@ -62,6 +66,7 @@ public class Trivia : MonoBehaviour {
 			ShowLevelSelector (true);
 		}
 
+        ShowLogin();
 	}
 
 	void OnDestroy(){
@@ -113,7 +118,7 @@ public class Trivia : MonoBehaviour {
 			ResultButton button = Instantiate (resultButton_to_instantiate);
 			button.transform.SetParent (buttonsContainer);
 			button.transform.localScale = Vector3.one;
-			button.Init (modulesManager.actualModule.values [i], i == 0);
+			button.Init (modulesManager.actualModule.values [i], i);
 		}
 		ShuffleChildOrder (buttonsContainer);
 	}
@@ -239,4 +244,35 @@ public class Trivia : MonoBehaviour {
 		levelSelector.SetActive (false);
 		Events.NextExercise ();
 	}
+
+    void ShowLogin()
+    {
+        Debug.Log("Alumno: " + Data.Instance.esAlumno);
+        if (Data.Instance.esAlumno)
+        {
+            id.text = PlayerPrefs.GetString("id");
+            nombre.text = PlayerPrefs.GetString("nombre");
+        }
+        
+        id.interactable = !Data.Instance.esAlumno;
+        nombre.interactable = !Data.Instance.esAlumno;
+        login.interactable = !Data.Instance.esAlumno;
+    }
+
+    public void Register()
+    {
+        bool val = Data.Instance.users.IsUser(id.text,nombre.text);
+        ShowLogin();
+        if (!val){
+            noLogin.SetActive(true);
+            Invoke("HideMessage", 3);
+        }
+    }
+
+    void HideMessage()
+    {
+        id.text = "";
+        nombre.text = "";
+        noLogin.SetActive(false);
+    }
 }

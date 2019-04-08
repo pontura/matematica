@@ -1,21 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1781961477052422}
-  m_IsPrefabAsset: 1
 --- !u!1 &1781961477052422
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4359069997194776}
@@ -27,6 +17,7 @@ GameObject:
   - component: {fileID: 114061336573561616}
   - component: {fileID: 114069653257105406}
   - component: {fileID: 82730770874538928}
+  - component: {fileID: 6878575754068211131}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -36,9 +27,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4359069997194776
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781961477052422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 960, y: 540, z: 0}
@@ -47,11 +39,197 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114123126304911576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd39300bb87ea8149bc992e98937ad4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArcade: 0
+  settings: {fileID: 114872714505283540}
+  modulesManager: {fileID: 0}
+  externalTexts: {fileID: 0}
+  playerData: {fileID: 0}
+  levelData: {fileID: 0}
+  interfaceSfx: {fileID: 0}
+  users: {fileID: 0}
+  esAlumno: 0
+  currentLevel: 
+--- !u!114 &114872714505283540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1968bdbbe2d4e284d9e0279caaaf4ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+    exercises: []
+--- !u!114 &114109487064868242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331c177386d40f94cbcaaed57efaeec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualModule:
+    module: 0
+    title: 
+    results: []
+    values: []
+    data:
+      module: 0
+      title: 
+      results: []
+  moduleIndex: 0
+--- !u!114 &114435964010891740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbc616cf1d89ab4a83e94b9c8dbbbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filename: Frases_Kumak.csv
+  texts: []
+--- !u!114 &114172111592411436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa937f5ec2a14464480551f754d3f735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctAnswers: 99
+--- !u!114 &114061336573561616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2014f48d4416273468c3f17cf57801d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - id: 1
+    length: 3
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 0
+    comboReward: 0
+  - id: 2
+    length: 5
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 4
+    comboReward: 1
+  - id: 3
+    length: 8
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 5
+    comboReward: 2
+  - id: 4
+    length: 13
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 6
+    comboReward: 3
+  - id: 5
+    length: 18
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 7
+    comboReward: 4
+  - id: 6
+    length: 24
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 8
+    comboReward: 5
+  - id: 7
+    length: 29
+    localPoints: 0
+    lastLevelQuestion: 0
+    unlocked: 0
+    levelCompleted: 0
+    stars: 0
+    comboCondition: 9
+    comboReward: 6
+  currentLevel: 0
+  currentLevelIndex: 0
+  subAreaIndex: 0
+  playingLevelIndex: 0
+  triviaCount: 99
+  allAreasCompleted: 0
+  replay: 0
+  kunakState: 0
+--- !u!114 &114069653257105406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781961477052422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4d8fadbc8d6164ca117f9a298ff2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 8300000, guid: a5de23e38ce29da469a471b44a4ee2c1, type: 3}
+  combo: {fileID: 8300000, guid: 375856414dca3d9478afcaff91a1743e, type: 3}
+  winLevel: {fileID: 8300000, guid: 5e98ce41e66f3254abdc14c8567f1abc, type: 3}
+  winGame: {fileID: 8300000, guid: c89086f0a8bf635458a3498174b00968, type: 3}
 --- !u!82 &82730770874538928
 AudioSource:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781961477052422}
   m_Enabled: 1
   serializedVersion: 4
@@ -142,179 +320,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114061336573561616
+--- !u!114 &6878575754068211131
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781961477052422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2014f48d4416273468c3f17cf57801d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b452f48baea50d48bec5a75a684a21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - id: 1
-    length: 3
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 0
-    comboReward: 0
-  - id: 2
-    length: 5
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 4
-    comboReward: 1
-  - id: 3
-    length: 8
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 5
-    comboReward: 2
-  - id: 4
-    length: 13
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 6
-    comboReward: 3
-  - id: 5
-    length: 18
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 7
-    comboReward: 4
-  - id: 6
-    length: 24
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 8
-    comboReward: 5
-  - id: 7
-    length: 29
-    localPoints: 0
-    lastLevelQuestion: 0
-    unlocked: 0
-    levelCompleted: 0
-    stars: 0
-    comboCondition: 9
-    comboReward: 6
-  currentLevel: 0
-  currentLevelIndex: 0
-  subAreaIndex: 0
-  playingLevelIndex: 0
-  triviaCount: 99
-  allAreasCompleted: 0
-  replay: 0
-  kunakState: 0
---- !u!114 &114069653257105406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e4d8fadbc8d6164ca117f9a298ff2fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  click: {fileID: 8300000, guid: a5de23e38ce29da469a471b44a4ee2c1, type: 3}
-  combo: {fileID: 8300000, guid: 375856414dca3d9478afcaff91a1743e, type: 3}
-  winLevel: {fileID: 8300000, guid: 5e98ce41e66f3254abdc14c8567f1abc, type: 3}
-  winGame: {fileID: 8300000, guid: c89086f0a8bf635458a3498174b00968, type: 3}
---- !u!114 &114109487064868242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331c177386d40f94cbcaaed57efaeec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualModule:
-    module: 0
-    title: 
-    results: []
-    values: []
-    data:
-      module: 0
-      title: 
-      results: []
-  moduleIndex: 0
---- !u!114 &114123126304911576
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd39300bb87ea8149bc992e98937ad4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isArcade: 0
-  settings: {fileID: 114872714505283540}
-  modulesManager: {fileID: 0}
-  externalTexts: {fileID: 0}
-  playerData: {fileID: 0}
-  levelData: {fileID: 0}
-  interfaceSfx: {fileID: 0}
-  currentLevel: 
---- !u!114 &114172111592411436
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa937f5ec2a14464480551f754d3f735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctAnswers: 99
---- !u!114 &114435964010891740
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fbc616cf1d89ab4a83e94b9c8dbbbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filename: Frases_Kumak.csv
-  texts: []
---- !u!114 &114872714505283540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781961477052422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1968bdbbe2d4e284d9e0279caaaf4ff2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  all:
-    exercises: []
+  users: []
+  urls:
+  - ListadoAlumnosEscobar.csv
+  - ListadoAlumnosPelle.csv
+  - ListadoAlumnosCNBA.csv
+  isWeb: 0

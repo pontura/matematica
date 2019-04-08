@@ -16,7 +16,7 @@ public class Creditos : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rt = GetComponent<RectTransform> ();
-		originalPos = rt.position;
+		originalPos = rt.localPosition;
 	}
 
 	void OnEnable(){

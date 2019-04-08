@@ -54,8 +54,8 @@ public class Tween : MonoBehaviour {
 		SetTween (targetPos);
 	}
 
-	public void SetTween(Vector3 targetPos){
-		targetPos = targetPos;
+	public void SetTween(Vector3 targetPos_){
+		targetPos = targetPos_;
 		originPos = transform.localPosition;
 		doTween = true;
 	}
