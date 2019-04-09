@@ -80,6 +80,13 @@ public class Data : MonoBehaviour
 
         //PlayerPrefs.DeleteAll ();
 
+        int val = PlayerPrefs.GetInt ("user");
+		Debug.Log (val);
+
+		if (val > 0)
+			Data.Instance.esAlumno = true;
+
+
         if (esAlumno)
             FBase_Login(false);
 		

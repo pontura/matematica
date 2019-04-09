@@ -20,14 +20,7 @@ public class Users : MonoBehaviour{
 	}
 
     // Start is called before the first frame update
-    void Start(){
-
-		int val = PlayerPrefs.GetInt ("user");
-		Debug.Log (val);
-
-		if (val > 0)
-			Data.Instance.esAlumno = true;
-
+    void Start(){		
 		foreach(string url in urls)
 			StartCoroutine (LoadCSV(url));
     }
