@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
-  <string name="firebase_database_url" translatable="false">https://quipumatica-c264a.firebaseio.com</string>
-  <string name="gcm_defaultSenderId" translatable="false">378322402393</string>
-  <string name="google_storage_bucket" translatable="false">quipumatica-c264a.appspot.com</string>
-  <string name="project_id" translatable="false">quipumatica-c264a</string>
-  <string name="google_api_key" translatable="false">AIzaSyAcs9mvsgRPQo6Q2WEd7cLVoe1aO81kPO0</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAcs9mvsgRPQo6Q2WEd7cLVoe1aO81kPO0</string>
-  <string name="google_app_id" translatable="false">1:378322402393:android:219d18cebdbde8a0</string>
-  <string name="default_web_client_id" translatable="false">378322402393-2t8toc3sncqii9b6lf73m97tjdq789ij.apps.googleusercontent.com</string>
+  <string name="firebase_database_url" translatable="false">https://quipumatica-uba.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">71420392547</string>
+  <string name="google_storage_bucket" translatable="false">quipumatica-uba.appspot.com</string>
+  <string name="project_id" translatable="false">quipumatica-uba</string>
+  <string name="google_api_key" translatable="false">AIzaSyBa8X78usZjNgk4z6tKtBpuexN-xwD6guY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBa8X78usZjNgk4z6tKtBpuexN-xwD6guY</string>
+  <string name="google_app_id" translatable="false">1:71420392547:android:dc229cdb350a8759</string>
+  <string name="default_web_client_id" translatable="false">71420392547-q1v79r6bueitfepuabu3pfets3dm9upb.apps.googleusercontent.com</string>
 </resources>

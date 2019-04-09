@@ -165,8 +165,8 @@ public class LevelsData : MonoBehaviour {
 	void SetAllLevelCompleted(){
 
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
-          Firebase.Analytics.FirebaseAnalytics.EventTutorialComplete, new Firebase.Analytics.Parameter(
-                "JUEGO TERMINADO", "preguntas: "+triviaCount));
+          Firebase.Analytics.FirebaseAnalytics.EventTutorialComplete, new Firebase.Analytics.Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterCreativeName,
+                "JUEGO TERMINADO&preguntas:"+triviaCount));
 
         if (!loading)
 			Data.Instance.interfaceSfx.WinGameSfx ();
@@ -184,7 +184,7 @@ public class LevelsData : MonoBehaviour {
             new Firebase.Analytics.Parameter(
                 Firebase.Analytics.FirebaseAnalytics.ParameterLevel, (index+1)),            
             new Firebase.Analytics.Parameter(
-                "Nivel Completo", "nivel:"+(index+1)+"&preguntas:"+triviaCount)
+                Firebase.Analytics.FirebaseAnalytics.ParameterCharacter,"nivel:"+(index+1)+"&preguntas:"+triviaCount)
         };
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
           Firebase.Analytics.FirebaseAnalytics.EventLevelUp,

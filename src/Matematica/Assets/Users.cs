@@ -89,11 +89,7 @@ public class Users : MonoBehaviour{
             PlayerPrefs.SetString("nombre", nombre);
             PlayerPrefs.SetString("id", id);
             PlayerPrefs.SetInt("user", 1);
-            Data.Instance.FBase_Login();
-
-            Firebase.Analytics.FirebaseAnalytics.LogEvent(
-                Firebase.Analytics.FirebaseAnalytics.EventTutorialComplete, new Firebase.Analytics.Parameter(
-                    "JUEGO INICIADO", 0));
+            Data.Instance.FBase_Login(true);           
         }
 		return Data.Instance.esAlumno;
 	}

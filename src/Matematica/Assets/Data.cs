@@ -78,10 +78,10 @@ public class Data : MonoBehaviour
 		interfaceSfx = GetComponent<InterfaceSfx> ();
 		users = GetComponent<Users> ();
 
-        PlayerPrefs.DeleteAll ();
+        //PlayerPrefs.DeleteAll ();
 
         if (esAlumno)
-            FBase_Login();
+            FBase_Login(false);
 		
 
     }
@@ -93,7 +93,7 @@ public class Data : MonoBehaviour
         }
     }
 
-    public void FBase_Login()
+    public void FBase_Login(bool firstLogin)
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
@@ -102,7 +102,7 @@ public class Data : MonoBehaviour
                 // Create and hold a reference to your FirebaseApp,
                 // where app is a Firebase.FirebaseApp property of your application class.
                 //app = Firebase.FirebaseApp.DefaultInstance;
-                InitializeFirebase();
+                InitializeFirebase(firstLogin);
 
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
             }
@@ -115,7 +115,7 @@ public class Data : MonoBehaviour
         });
     }
 
-    void InitializeFirebase()
+    void InitializeFirebase(bool firstLogin)
     {
         Debug.Log("Enabling data collection.");
         FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
@@ -135,5 +135,12 @@ public class Data : MonoBehaviour
 
         Debug.Log("Logging a login event.");
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLogin);
+
+        if (firstLogin)
+        {
+            Firebase.Analytics.FirebaseAnalytics.LogEvent(
+               Firebase.Analytics.FirebaseAnalytics.EventTutorialBegin, new Firebase.Analytics.Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterCreativeName,
+                   "JUEGO INICIADO&preguntas:0"));
+        }
     }
 }
