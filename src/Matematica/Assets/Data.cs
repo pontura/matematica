@@ -26,7 +26,7 @@ public class Data : MonoBehaviour
 	public bool esAlumno;
 	public Firebase.FirebaseApp app;
 
-    bool firebaseInitialized;
+    public bool firebaseInitialized;
 
     public static Data Instance
     {

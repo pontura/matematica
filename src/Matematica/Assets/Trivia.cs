@@ -248,7 +248,7 @@ public class Trivia : MonoBehaviour {
     void ShowLogin()
     {
         Debug.Log("Alumno: " + Data.Instance.esAlumno);
-        if (Data.Instance.esAlumno)
+        if (Data.Instance.esAlumno && Data.Instance.firebaseInitialized)
         {
             id.text = PlayerPrefs.GetString("id");
             nombre.text = PlayerPrefs.GetString("nombre");

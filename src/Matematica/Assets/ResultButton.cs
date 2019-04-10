@@ -63,7 +63,7 @@ public class ResultButton : MonoBehaviour {
             Invoke("NextExercise", 2);
         }
 
-        if (Data.Instance.esAlumno) {
+        if (Data.Instance.esAlumno && Data.Instance.firebaseInitialized) {
             /* Firebase.Analytics.Parameter[] scoreParameters = {
                  new Firebase.Analytics.Parameter("ModuloNro",Data.Instance.modulesManager.actualModule.module),
                  new Firebase.Analytics.Parameter("Opcion_modelo",Data.Instance.modulesManager.actualModule.results[id]),

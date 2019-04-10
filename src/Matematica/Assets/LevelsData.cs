@@ -163,7 +163,7 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void SetAllLevelCompleted(){
-        if (Data.Instance.esAlumno) { 
+        if (Data.Instance.esAlumno && Data.Instance.firebaseInitialized) { 
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
           Firebase.Analytics.FirebaseAnalytics.EventTutorialComplete, new Firebase.Analytics.Parameter(Firebase.Analytics.FirebaseAnalytics.ParameterCreativeName,
                 "JUEGO TERMINADO&preguntas:"+triviaCount));
@@ -181,7 +181,8 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	void SetLevelCompleted(int index){
-        if (Data.Instance.esAlumno){
+        if (Data.Instance.esAlumno && Data.Instance.firebaseInitialized)
+        {
             Firebase.Analytics.Parameter[] LevelUpParameters = {
             new Firebase.Analytics.Parameter(
                 Firebase.Analytics.FirebaseAnalytics.ParameterLevel, (index+1)),
