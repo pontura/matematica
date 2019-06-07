@@ -31,15 +31,21 @@ public class Kunak : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 		Events.KunakSfx += KunakSfx;
 		Debug.Log (Data.Instance.levelData.kunakState);
-		if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
-			loadingBar.transform.parent.gameObject.SetActive (true);
-			StartCoroutine (AsynchronousLoad ("Kunak"));
-		} else {
-			entradaBg.SetActive (false);
-			loadingBar.transform.parent.gameObject.SetActive (false);
-			KunakSfx (true);
-			StartCoroutine (AsynchronousLoad ("Game"));
-		}
+        if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio && !Data.Instance.levelData.allAreasCompleted) {
+            Debug.Log(0);
+            loadingBar.transform.parent.gameObject.SetActive(true);
+            StartCoroutine(AsynchronousLoad("Kunak"));
+        } else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
+            Debug.Log(1);
+            StartCoroutine(AsynchronousLoad("Game"));
+            //}else if (!Data.Instance.levelData.allAreasCompleted) {
+        }else{ 
+            Debug.Log(2);
+            entradaBg.SetActive(false);
+                loadingBar.transform.parent.gameObject.SetActive(false);
+                KunakSfx(true);
+                StartCoroutine(AsynchronousLoad("Game"));
+        }
 		Invoke ("CloseHumoFx", 3f);
         //ShowLogin();
 

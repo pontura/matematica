@@ -87,25 +87,56 @@ public class LevelsData : MonoBehaviour {
 
 	}*/
 
-	public void SetCurrentLevel(){
+	public void SetLevel(int puntos = 1){
 		if (replay)
-			ReplayingLevel ();
+			ReplayingLevel (puntos);
 		else
 			SetCurrentLevel (Data.Instance.playerData.correctAnswers);		
 	}
 
-	void ReplayingLevel(){
-		levels [playingLevelIndex].localPoints++;
+	void ReplayingLevel(int puntos){
+        Level level = CurrentLevel;
+        Debug.Log((levels[playingLevelIndex].localPoints + puntos) + " = " + (0.5 * levels[playingLevelIndex].length));
+        if (levels[playingLevelIndex].localPoints+ puntos > 0.5 * levels[playingLevelIndex].length) {
+            if (subAreaIndex == 0)
+                LevelSubareaChange(playingLevelIndex,puntos);
+            else {
+                levels[playingLevelIndex].localPoints += puntos;
+                if (levels[playingLevelIndex].localPoints >= levels[playingLevelIndex].length) {
+                    subAreaIndex = 0;
+                    if (playingLevelIndex+1 >= levels.Count) {
+                        playingLevelIndex = 0;
+                        replay = false;
+                        SetAllLevelCompleted();
+                    } else {
+                        SetLevelCompleted(playingLevelIndex);
+                        playingLevelIndex++;
+                        if (SceneManager.GetActiveScene().name == "Game") {
+                            Data.Instance.levelData.kunakState = KunakStates.area;
+                            Data.Instance.LoadScene("Kunak");
+                        }
+                    }
+                }
+            }
+        } else {
+            levels[playingLevelIndex].localPoints+=puntos;            
+        }
+
+        Debug.Log("localPoints: " + levels[playingLevelIndex].localPoints);
+
+        /*Events.LevelSelectorUpdate(playingLevelIndex);     
+
+        levels [playingLevelIndex].localPoints++;
 		if (levels [playingLevelIndex].localPoints >= levels [playingLevelIndex].length) {
 			SetLevelCompleted (playingLevelIndex);
-		} else if (levels [playingLevelIndex].localPoints > (levels [playingLevelIndex].lastLevelQuestion + 1) - 0.5 * levels [playingLevelIndex].length) {
+		} else if (levels [playingLevelIndex].localPoints > 0.5 * levels [playingLevelIndex].length) {
 			if (subAreaIndex == 0)
 				LevelSubareaChange (playingLevelIndex);			
-		}
+		}*/
 	}
 
 	void ReplayArea(int id){
-		if (id != currentLevel) {
+		if (id != currentLevel || (currentLevel==levels.Count && allAreasCompleted)) {
 			replay = true;
 			replayAreaId = id;
 			playingLevelIndex = levels.FindIndex (x => x.id == id);
@@ -119,7 +150,7 @@ public class LevelsData : MonoBehaviour {
 		if (correctAnswers > 99) {
 			if (!allAreasCompleted)
 				SetAllLevelCompleted ();
-		} else {
+        } else {
 			for (int i = 0; i < levels.Count; i++) {
 				if (correctAnswers <= levels [i].lastLevelQuestion) {
 					if (levels [i].id != currentLevel) {
@@ -156,8 +187,8 @@ public class LevelsData : MonoBehaviour {
 		}
 	}
 
-	void LevelSubareaChange(int i){
-		levels [i].localPoints++;
+	void LevelSubareaChange(int i, int puntos=1){
+		levels [i].localPoints+=puntos;
 		subAreaIndex = 1;
 		Events.SubAreaChange (subAreaIndex);
 	}
@@ -196,9 +227,12 @@ public class LevelsData : MonoBehaviour {
 
         levels [index].localPoints = 0;
 		levels [index].levelCompleted = true;
-		if (replay) {
-			Events.ShowLevelSelector (true);
-		} else {
+        subAreaIndex = 0;
+
+        if (replay) {
+            //Events.ShowLevelSelector (true);
+            Events.LevelSelectorUpdate(index);
+        } else {
 			Events.LevelSelectorUpdate (index);
 		}
 	}

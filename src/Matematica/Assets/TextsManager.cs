@@ -38,14 +38,20 @@ public class TextsManager : MonoBehaviour {
 				eText = Data.Instance.externalTexts.texts [0];
 			} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {
 				jugarButton.SetActive (true);
-				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
-				dialog_index = 0;
+                if(!Data.Instance.levelData.allAreasCompleted)
+				    eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
+                else
+                    eText = Array.Find(Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.playingLevelIndex+1 && e.dialog_index == 0);
+                dialog_index = 0;
 				if (eText.next)
 					Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 			} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
 				jugarButton.SetActive (true);
-				eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
-				if (!eText.next)
+                if (!Data.Instance.levelData.allAreasCompleted)
+                    eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
+                else
+                    eText = Array.Find(Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.playingLevelIndex+1 && e.dialog_index == dialog_index);
+                if (!eText.next)
 					Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 			}
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
@@ -57,14 +63,20 @@ public class TextsManager : MonoBehaviour {
 			}
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.area) {			
 			jugarButton.SetActive (true);
-			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
+            if (!Data.Instance.levelData.allAreasCompleted)
+                eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==0);
+            else
+                eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.playingLevelIndex+1 && e.dialog_index==0);
 			dialog_index = 0;
 			if (eText.next) 
 				Data.Instance.levelData.kunakState = LevelsData.KunakStates.dialog;
 		} else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.dialog) {
 			jugarButton.SetActive (true);
-			eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
-			if (!eText.next)
+            if (!Data.Instance.levelData.allAreasCompleted)
+                eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.currentLevel && e.dialog_index==dialog_index);
+            else
+                eText = Array.Find (Data.Instance.externalTexts.texts, e => e.area_id == Data.Instance.levelData.playingLevelIndex+1 && e.dialog_index == dialog_index);
+            if (!eText.next)
 				Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
 		}else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.allcomplete) {
 			jugarButton.SetActive (true);

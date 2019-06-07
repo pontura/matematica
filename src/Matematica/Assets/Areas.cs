@@ -13,7 +13,10 @@ public class Areas : MonoBehaviour {
 		Events.AreaChange += AreaChange;
 		Events.SubAreaChange += SubAreaChange;
 		Events.ReplayArea += AreaChange;
-		AreaChange (Data.Instance.levelData.currentLevel);
+        if(Data.Instance.levelData.allAreasCompleted)
+            AreaChange(Data.Instance.levelData.playingLevelIndex+1);
+        else
+            AreaChange (Data.Instance.levelData.currentLevel);
 		SubAreaChange (Data.Instance.levelData.subAreaIndex);
 	}
 

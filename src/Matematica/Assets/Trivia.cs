@@ -34,7 +34,8 @@ public class Trivia : MonoBehaviour {
 
 	int nPregunta;
 
-	int comboCount;
+    int comboCount;
+    bool isCombo;
 
 	void Start()
 	{
@@ -57,7 +58,7 @@ public class Trivia : MonoBehaviour {
 		buttonsTween = buttonsContainer.GetComponent<Tween> ();
 		nroTween = NumPregunta.GetComponentInParent<Tween> ();
 
-		if (!Data.Instance.levelData.allAreasCompleted) {
+		if (!Data.Instance.levelData.allAreasCompleted || Data.Instance.levelData.replay) {
 			if (Data.Instance.settings.all.exercises.Count > 0)
 				NextExercise ();
 			else
@@ -213,9 +214,10 @@ public class Trivia : MonoBehaviour {
 			combo.SetActive (true);
 			comboText.text = "+" + Data.Instance.levelData.CurrentLevel.comboReward;
 			comboCount = 0;
+            isCombo = true;
 			Invoke ("CloseComboFx", 2f);
 		} else {
-			Data.Instance.levelData.SetCurrentLevel ();
+			Data.Instance.levelData.SetLevel ();
 			Events.NextExercise ();
 		}
 	}
@@ -226,8 +228,9 @@ public class Trivia : MonoBehaviour {
 		if (puntos.fillAmount > 0.98f) {
 			OnWin ();
 		} else {
-			Data.Instance.levelData.SetCurrentLevel ();
-			Events.NextExercise ();
+			Data.Instance.levelData.SetLevel (Data.Instance.levelData.CurrentLevel.comboReward+1);
+            Events.NextExercise();
+            isCombo = false;
 		}
 	}
 
@@ -235,7 +238,12 @@ public class Trivia : MonoBehaviour {
 		winFX.SetActive (false);
 		levelCompleteSign.SetActive(false);
 		Debug.Log ("CloseWFX");
-		Data.Instance.levelData.SetCurrentLevel ();
+        if(isCombo == false)
+		    Data.Instance.levelData.SetLevel ();
+        else {
+            Data.Instance.levelData.SetLevel(Data.Instance.levelData.CurrentLevel.comboReward + 1);
+            isCombo = false;
+        }
 		//Events.NextExercise ();
 	}
 
