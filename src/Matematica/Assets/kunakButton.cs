@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class kunakButton : MonoBehaviour {
 
+    public bool tweenOnEnable;
 	Tween tween;
 
 	// Use this for initialization
@@ -12,9 +13,11 @@ public class kunakButton : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		if(tween == null)
-			tween = GetComponent<Tween> ();
-		tween.doTween = true;
+        if (tweenOnEnable) {
+            if (tween == null)
+                tween = GetComponent<Tween>();
+            tween.doTween = true;
+        }
 	}
 	
 	// Update is called once per frame

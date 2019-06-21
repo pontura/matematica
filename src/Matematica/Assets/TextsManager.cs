@@ -12,13 +12,13 @@ public class TextsManager : MonoBehaviour {
 	public Tween textTween;
 	public Tween buttonTween;
 
-	int dialog_index;
+    int dialog_index;
 
 	// Use this for initialization
 	void Start () {
 		Events.NextDialog += Init;
-		Events.AllAreasCompleted += AllAreasCompleted;
-		Invoke ("Init", 1);
+        Events.AllAreasCompleted += AllAreasCompleted;        
+        Invoke ("Init", 1);
 	}
 
 	void OnDestroy(){
@@ -86,8 +86,8 @@ public class TextsManager : MonoBehaviour {
 		}
 		kunakText.text = eText.frase;
 		buttonText.text = eText.button_text;
-		textTween.doTween = true;
-		buttonTween.doTween = true;
+        textTween.doTween = true;
+        buttonTween.doTween = true;        
 		if (eText.next) {
 			dialog_index++;
 		}
