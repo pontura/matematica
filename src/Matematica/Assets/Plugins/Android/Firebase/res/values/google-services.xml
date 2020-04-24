@@ -6,6 +6,6 @@
   <string name="project_id" translatable="false">quipumatica-uba</string>
   <string name="google_api_key" translatable="false">AIzaSyBa8X78usZjNgk4z6tKtBpuexN-xwD6guY</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBa8X78usZjNgk4z6tKtBpuexN-xwD6guY</string>
-  <string name="google_app_id" translatable="false">1:71420392547:android:dc229cdb350a8759</string>
+  <string name="google_app_id" translatable="false">1:71420392547:android:a3669bca6633f814</string>
   <string name="default_web_client_id" translatable="false">71420392547-q1v79r6bueitfepuabu3pfets3dm9upb.apps.googleusercontent.com</string>
 </resources>
