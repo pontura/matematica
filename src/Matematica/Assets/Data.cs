@@ -10,7 +10,7 @@ using Firebase.Analytics;
 
 public class Data : MonoBehaviour
 {
-
+    public bool resetData;
     public bool isArcade;
 
     const string PREFAB_PATH = "Data";
@@ -78,7 +78,8 @@ public class Data : MonoBehaviour
 		interfaceSfx = GetComponent<InterfaceSfx> ();
 		users = GetComponent<Users> ();
 
-        //PlayerPrefs.DeleteAll ();
+        if(resetData)
+            PlayerPrefs.DeleteAll ();
 
         int val = PlayerPrefs.GetInt ("user");
 		Debug.Log (val);

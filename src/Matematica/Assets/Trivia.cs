@@ -12,8 +12,9 @@ public class Trivia : MonoBehaviour {
 	public Image puntos;
 	public Text NumPregunta;
 	public Text debug;
-	public GameObject levelSelector;
-	public GameObject menu;
+    public GameObject levelSelector;
+    public GameObject modeSelector;
+    public GameObject menu;
 	public GameObject creditos;
 	public GameObject rightFX;
 	public GameObject winFX;
@@ -58,7 +59,9 @@ public class Trivia : MonoBehaviour {
 		buttonsTween = buttonsContainer.GetComponent<Tween> ();
 		nroTween = NumPregunta.GetComponentInParent<Tween> ();
 
-		if (!Data.Instance.levelData.allAreasCompleted || Data.Instance.levelData.replay) {
+        if (Data.Instance.playerData.mode < 0)
+            ShowModeSelector(true);
+        if (!Data.Instance.levelData.allAreasCompleted || Data.Instance.levelData.replay) {
 			if (Data.Instance.settings.all.exercises.Count > 0)
 				NextExercise ();
 			else
@@ -158,7 +161,16 @@ public class Trivia : MonoBehaviour {
 		}
 	}
 
-	public void ShowMenu(bool enable){
+    public void ShowModeSelector(bool enable) {
+        Data.Instance.interfaceSfx.ClickSfx(1.1f);
+        modeSelector.SetActive(enable);
+        if (enable) {
+            menu.SetActive(false);
+            creditos.SetActive(false);
+        }
+    }
+
+    public void ShowMenu(bool enable){
 		menu.SetActive(enable);
 		Data.Instance.interfaceSfx.ClickSfx (0.9f);
 		if (enable) {			

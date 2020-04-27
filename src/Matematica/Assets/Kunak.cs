@@ -31,11 +31,12 @@ public class Kunak : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 		Events.KunakSfx += KunakSfx;
 		Debug.Log (Data.Instance.levelData.kunakState);
-        if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio && !Data.Instance.levelData.allAreasCompleted) {
+        /*if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio && !Data.Instance.levelData.allAreasCompleted) {
             Debug.Log(0);
             loadingBar.transform.parent.gameObject.SetActive(true);
             StartCoroutine(AsynchronousLoad("Kunak"));
-        } else if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
+        } else */
+        if (Data.Instance.levelData.kunakState == LevelsData.KunakStates.inicio) {
             Debug.Log(1);
             StartCoroutine(AsynchronousLoad("Game"));
             //}else if (!Data.Instance.levelData.allAreasCompleted) {

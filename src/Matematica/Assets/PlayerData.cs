@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour {
 
 	public int correctAnswers;
+    public int mode;
 
 	// Use this for initialization
 	void Awake(){
 		correctAnswers = PlayerPrefs.GetInt ("correctAnswers");
-	}
+        mode = PlayerPrefs.GetInt("mode",-1);
+    }
 
 	void Start () {		
 		Events.AddScore += AddScore;
@@ -37,4 +39,9 @@ public class PlayerData : MonoBehaviour {
 			PlayerPrefs.SetInt ("correctAnswers", correctAnswers);
 		}
 	}
+
+    public void SetMode(int m) {
+        mode = m;
+        PlayerPrefs.SetInt("mode", mode);
+    }
 }
