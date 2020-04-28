@@ -2,7 +2,7 @@
 	"exercises":
 	[
 		{
-		"module": "1",
+		"module": "Module1",
 		"title":"¿Cuál es el resultado de #1a.bcd x n?#",
 		"results":
 			[
@@ -12,7 +12,7 @@
 			]
 		},
 		{
-		"module": "2",
+		"module": "Module2",
 		"title":"¿Cuál es el resultado de #abcm : n?#",
 		"results":
 			[
@@ -22,7 +22,7 @@
 			]
 		},
 		{
-		"module": "7",
+		"module": "Module7",
 		"title":"¿Cuál es el resultado de #a+bxc?#",
 		"results":
 			[
@@ -32,7 +32,7 @@
 			]
 		},
 		{
-		"module": "8",
+		"module": "Module8",
 		"title":"¿Cuál es el resultado de #a0-bxc?#",
 		"results":
 			[
@@ -42,7 +42,7 @@
 			]
 		},
 		{
-		"module": "9",
+		"module": "Module9",
 		"title":"¿Cuál es el resultado de #a0+b0:c?#",
 		"results":
 			[
@@ -53,7 +53,7 @@
 		},
 
 		{
-		"module": "10",
+		"module": "Module10",
 		"title":"Elegí el cálculo que traduce la siguiente frase: la diferencia entre *X y *Y supera a *Z",
 		"results":
 			[
@@ -64,7 +64,7 @@
 		},
 
 		{
-		"module": "11",
+		"module": "Module11",
 		"title":"Elegí la frase que traduce el siguiente cálculo: *a x *n + *m",
 		"results":
 			[

@@ -7,7 +7,7 @@ using System.Linq;
 [Serializable]
 public class ModuleData  {
 
-	public int module;
+	public string module;
 	public string title;
 	public List<string> results;
 	public List<string> values;

@@ -61,8 +61,8 @@ public class Trivia : MonoBehaviour {
 
         if (Data.Instance.playerData.mode < 0)
             ShowModeSelector(true);
-        if (!Data.Instance.levelData.allAreasCompleted || Data.Instance.levelData.replay) {
-			if (Data.Instance.settings.all.exercises.Count > 0)
+        else if (!Data.Instance.levelData.allAreasCompleted || Data.Instance.levelData.replay) {
+			if (Data.Instance.settings.GetActualRecorrido().ejercicios.exercises.Count > 0)
 				NextExercise ();
 			else
 				Invoke ("NextExercise", 1);
@@ -93,8 +93,8 @@ public class Trivia : MonoBehaviour {
 	public void NextModule()
 	{
 		modulesManager.moduleIndex++;
-		if (modulesManager.moduleIndex >= Data.Instance.settings.all.exercises.Count-1)
-			modulesManager.moduleIndex = Data.Instance.settings.all.exercises.Count-1;
+		if (modulesManager.moduleIndex >= Data.Instance.settings.GetActualRecorrido().ejercicios.exercises.Count-1)
+			modulesManager.moduleIndex = Data.Instance.settings.GetActualRecorrido().ejercicios.exercises.Count-1;
 		CreateNewModule ();
 	}
 
@@ -104,7 +104,7 @@ public class Trivia : MonoBehaviour {
 		nPregunta++;
 		NumPregunta.text = "" + nPregunta;
 		modulesManager.moduleIndex++;
-		if (modulesManager.moduleIndex > Data.Instance.settings.all.exercises.Count-1)
+		if (modulesManager.moduleIndex > Data.Instance.settings.GetActualRecorrido().ejercicios.exercises.Count-1)
 			modulesManager.moduleIndex=0;
 		CreateNewModule ();
 	}

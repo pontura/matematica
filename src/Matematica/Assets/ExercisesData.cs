@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 [Serializable]
 public class ExercisesData {
-	public int module;
+	public string module;
 	public string title;
 	public List<string> results;
 }

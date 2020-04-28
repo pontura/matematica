@@ -6,15 +6,43 @@ using System.IO;
 
 public class Settings : MonoBehaviour{
 
-	public All all;
+	public List<Recorrido> recorridos;
+    public Recorrido selectedRecorrido;
 
 	void Start () {
-		TextAsset jsonObj = Resources.Load(Path.Combine("JSON","data")) as TextAsset;
-		all =  JsonUtility.FromJson< All >(jsonObj.text);
-	}
+        recorridos = new List<Recorrido>();
+        AddJsonData("data",0);
+        AddJsonData("recorrido1",1);
+    }
+
+    void AddJsonData(string jsonName, int id) {
+        TextAsset json = Resources.Load(Path.Combine("JSON", jsonName)) as TextAsset;
+        Recorrido a = new Recorrido();
+        a.id = id;
+        a.ejercicios = JsonUtility.FromJson<Ejercicios>(json.text);
+        recorridos.Add(a);
+    }
+
 	[Serializable]
-	public class All
+	public class Recorrido
 	{
-		public List<ExercisesData> exercises;
+        public int id;
+		public Ejercicios ejercicios;
 	}
+
+    [Serializable]
+    public class Ejercicios {
+        public List<ExercisesData> exercises;
+    }
+
+    public Recorrido GetModulesFromMode(int id) {
+        return recorridos.Find(x => x.id == id);
+    }
+
+    public Recorrido GetActualRecorrido() {
+        if (selectedRecorrido == null || selectedRecorrido.ejercicios.exercises.Count<=0) {
+            selectedRecorrido = recorridos.Find(x => x.id == Data.Instance.playerData.mode);
+        }
+        return selectedRecorrido;
+    }
 }
