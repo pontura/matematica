@@ -13,6 +13,7 @@ public class Settings : MonoBehaviour{
         recorridos = new List<Recorrido>();
         AddJsonData("data",0);
         AddJsonData("recorrido1",1);
+        AddJsonData("recorrido3", 3);
     }
 
     void AddJsonData(string jsonName, int id) {

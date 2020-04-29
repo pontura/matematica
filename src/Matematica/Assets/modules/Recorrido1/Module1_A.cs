@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module1_1 : ModuleData {
+public class Module1_A : ModuleData {
 
 	int value_a;
 	int value_b;
@@ -44,12 +44,8 @@ public class Module1_1 : ModuleData {
 	void SetResults(List<string> data)
 	{
 		results = data;
-		values = new List<string> ();		
-
-		string numberOfZeros = "";
-		for (int a = 0; a < value_number_of_zeros; a++) {
-			numberOfZeros += "0";
-		}
+		values = new List<string> ();
+		
         SetValue((100f * value_b / value_a) + " %");
         SetValue ((100f*value_a/value_b) + " %" );        
         SetValue((1f * value_b / value_a) + " %");

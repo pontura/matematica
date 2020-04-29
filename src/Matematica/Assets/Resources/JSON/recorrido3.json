@@ -1,0 +1,27 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module3_A",
+		"title":"La distancia entre #N y M# es:",
+		"results":
+			[
+			"N - M", 
+			"M - N", 
+			"N + M"
+			]
+		},
+
+		{
+		"module": "Module3_B",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"x ≤ N", 
+			"x < N", 
+			"x > N"
+			]
+		}
+
+	]
+}

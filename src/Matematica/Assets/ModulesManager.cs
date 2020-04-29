@@ -13,7 +13,7 @@ public class ModulesManager : MonoBehaviour {
         Settings.Recorrido all = Data.Instance.settings.GetActualRecorrido();
         if (all != null) {
             ExercisesData data = all.ejercicios.exercises[moduleIndex];
-
+            Debug.Log(data.module);
             var type = Type.GetType(data.module);
             actualModule = (ModuleData)Activator.CreateInstance(type);
 

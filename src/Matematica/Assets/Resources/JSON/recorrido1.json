@@ -2,12 +2,23 @@
 	"exercises":
 	[
 		{
-		"module": "Module1_1",
+		"module": "Module1_A",
 		"title":"¿Qué porcentaje de #N es M?#",
 		"results":
 			[
 			"(N:M).100 %", 
 			"(M:N).100 %", 
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module1_B",
+		"title":"¿Qué porcentaje es #M de N?#",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
 			"(M:N) %"
 			]
 		}
