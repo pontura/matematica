@@ -21,6 +21,116 @@
 			"x < N", 
 			"x > N"
 			]
+		},
+
+		{
+		"module": "Module3_C",
+		"title":"El producto de #N.M.O# es:",
+		"results":
+			[
+			"Menor que 0", 
+			"Mayor que 0", 
+			"Igual a 0"
+			]
+		},
+
+		{
+		"module": "Module3_D",
+		"title":"El producto de #N.M.P.Q# es:",
+		"results":
+			[
+			"Mayor que 0", 
+			"Menor que 0", 
+			"Igual a 0"
+			]
+		},
+
+		{
+		"module": "Module3_E",
+		"title":"El resultado del siguiente cálculo #N.(M+(P))# es:",
+		"results":
+			[
+			"Mayor que 0", 
+			"Menor que 0", 
+			"Igual a 0"
+			]
+		},
+
+		{
+		"module": "Module3_F",
+		"title":"El resultado del siguiente cálculo #N.(M-(P))# es:",
+		"results":
+			[
+			"Menor que 0", 
+			"Mayor que 0", 
+			"Igual a 0"
+			]
+		},
+
+		{
+		"module": "Module3_G",
+		"title":"El valor absoluto de #(N).M# es:",
+		"results":
+			[
+			"-N.M", 
+			"N.M", 
+			"-2.N.M"
+			]
+		},
+
+		{
+		"module": "Module3_H",
+		"title":"El valor absoluto de #2.(N).(M)# es:",
+		"results":
+			[
+			"N.M", 
+			"-N.M", 
+			"2.N.M"
+			]
+		},
+
+		{
+		"module": "Module3_I",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| ≤ N", 
+			"|x| > N", 
+			"|x| < N"
+			]
+		},
+
+		{
+		"module": "Module3_J",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| > N", 
+			"|x| < N", 
+			"|x| ≤ N"
+			]
+		},
+
+		{
+		"module": "Module3_K",
+		"title":"El número -#N# es solución de la ecuación:",
+		"results":
+			[
+			"|x| = N", 
+			"|x| = -N", 
+			"|x| ≤ N"
+			]
+		},
+
+		{
+		"module": "Module3_L",
+		"title":"Si a < 0 y b > 0, el resultado del siguiente cálculo #p.a.b# es :",
+		"results":
+			[
+			"|x| = N", 
+			"|x| = -N", 
+			"|x| ≤ N"
+			]
 		}
 
 	]

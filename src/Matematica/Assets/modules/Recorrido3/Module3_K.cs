@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module3_B : ModuleData {
+public class Module3_K : ModuleData {
 
-	int value_a;
+    int value_a;
 	string textToDecode;
 
 	public override void Init(ExercisesData data) 
@@ -20,12 +20,13 @@ public class Module3_B : ModuleData {
 	{
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
-        value_a = UnityEngine.Random.Range(-20, 20);
+        value_a = UnityEngine.Random.Range(2,40);
+          
         for (int b = 0; b < arr.Length; b++)
 			if (textToDecode [b].ToString () == "N") {				
-				newTitle += value_a;			
+				newTitle += (value_a);			
 			} else
-				newTitle += textToDecode [b].ToString ();			
+                newTitle += textToDecode [b].ToString ();			
 
 			title = title.Replace("#",newTitle);
 			SetResults (data.results);
@@ -37,10 +38,10 @@ public class Module3_B : ModuleData {
 	{
 		results = data;
 		values = new List<string> ();
-		
-        SetValue("X ≤ "+ value_a);
-        SetValue("X < " + value_a);
-        SetValue("X > " + value_a);
+
+        SetValue("|x| = " + value_a);
+        SetValue("|x| = -" + value_a);
+        SetValue("|x| = 0");
     }
 	void SetValue(string number)
 	{
