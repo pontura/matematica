@@ -14,6 +14,7 @@ public class Settings : MonoBehaviour{
         AddJsonData("data",0);
         AddJsonData("recorrido1",1);
         AddJsonData("recorrido3", 3);
+        AddJsonData("recorrido6", 6);
     }
 
     void AddJsonData(string jsonName, int id) {

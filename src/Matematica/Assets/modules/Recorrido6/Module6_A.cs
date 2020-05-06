@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module3_I : ModuleData {
+public class Module6_A : ModuleData {
 
     int value_a;
 	string textToDecode;

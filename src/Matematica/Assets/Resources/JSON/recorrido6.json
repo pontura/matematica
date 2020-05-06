@@ -1,0 +1,126 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module6_A",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| ≤ N", 
+			"|x| > N", 
+			"|x| < 0"
+			]
+		},
+
+		{
+		"module": "Module6_B",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| ≤ N", 
+			"|x| > N", 
+			"|x| < 0"
+			]
+		},
+
+		{
+		"module": "Module6_C",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| > N", 
+			"|x| < N", 
+			"|x| ≤ N"
+			]
+		},
+
+		{
+		"module": "Module6_D",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| > N", 
+			"|x| < N", 
+			"|x| ≤ N"
+			]
+		},
+
+		{
+		"module": "Module6_E",
+		"title":"El número #N# es solución de la inecuación:",
+		"results":
+			[
+			"|x| = N", 
+			"|x| = -N", 
+			"|x| = 0"
+			]
+		},
+
+		{
+		"module": "Module6_F",
+		"title":"La ecuación #xb = a#  tiene exactamente:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module6_G",
+		"title":"La ecuación #xb + a = 0#  tiene exactamente:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module6_H",
+		"title":"El conjunto solución en Z de la ecuación #|x| ≤ a# tiene:",
+		"results":
+			[
+			"Sólo una solución", 
+			"Más de una solución", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module6_I",
+		"title":"El conjunto solución en Z de la ecuación #|x| ≥ a# tiene:",
+		"results":
+			[
+			"Más de una solución",
+			"Sólo una solución",		
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module6_J",
+		"title":"El conjunto solución en Q de la ecuación #ax+b=0# tiene:",
+		"results":
+			[
+			"Sólo una solución",
+			"Más de una solución",			
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module6_K",
+		"title":"El conjunto solución en Z de la ecuación #ax=b# tiene:",
+		"results":
+			[
+			"Ninguna solución",
+			"Sólo una solución",
+			"Más de una solución"			
+			]
+		}
+
+	]
+}
