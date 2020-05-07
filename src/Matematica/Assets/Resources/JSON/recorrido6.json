@@ -120,6 +120,28 @@
 			"Sólo una solución",
 			"Más de una solución"			
 			]
+		},
+
+		{
+		"module": "Module6_L",
+		"title":"El conjunto #{a, a + 1, a + 2, ...}# es la solución en Z de la inecuación:",
+		"results":
+			[
+			"x ≥ a",
+			"x > a",
+			"x < a"
+			]
+		},
+
+		{
+		"module": "Module6_M",
+		"title":"El conjunto #{..., a - 3, a - 2, a - 1}# es la solución en Z de la inecuación:",
+		"results":
+			[
+			"x < a",
+			"x > a",
+			"x ≤ a"			
+			]
 		}
 
 	]
