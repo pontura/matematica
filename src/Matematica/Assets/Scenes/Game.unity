@@ -20434,7 +20434,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 171959822}
   m_OnClick:
     m_PersistentCalls:
@@ -20906,10 +20906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "Los n\xFAmeros racionales. El conjunto\_Q\_de los n\xFAmeros racionales."
 --- !u!222 &201667761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21195,7 +21192,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 244045168}
   m_OnClick:
     m_PersistentCalls:
@@ -29216,10 +29213,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "Los n\xFAmeros enteros. Valor absoluto. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
+    y divisi\xF3n en\_el conjunto Z."
 --- !u!222 &654767675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30681,7 +30676,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 832116762}
   m_OnClick:
     m_PersistentCalls:
@@ -30810,7 +30805,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 864332211}
   m_OnClick:
     m_PersistentCalls:
@@ -47276,10 +47271,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "\xC1ngulos. Complemento y suplemento. Bisectriz. \xC1ngulos entre paralelas.
+    Tri\xE1ngulos. Clasificaci\xF3n. Propiedades sobre lados y \xE1ngulos."
 --- !u!222 &1164853729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47653,10 +47646,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "Potenciaci\xF3n y radicaci\xF3n en\_Q\_.\_Potenciaci\xF3n. Propiedades.
+    Cuadrado de un binomio. Radicaci\xF3n. Propiedades. Teorema de Pit\xE1goras."
 --- !u!222 &1189756027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77180,7 +77171,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.8
   m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
     Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
     en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
@@ -77650,10 +77641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "Conteo y probabilidades. Problemas de conteo y c\xE1lculo de probabilidades."
 --- !u!222 &2014391416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -87762,10 +87750,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: "N\xFAmeros racionales no negativos. Porcentaje. Adici\xF3n, sustracci\xF3n,
+    multiplicaci\xF3n y divisi\xF3n en el conjunto Q mayor que cero"
 --- !u!222 &2090578095
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92892,10 +92878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Los n\xFAmeros racionales. El conjunto Q de los n\xFAmeros racionales.
-    Los n\xFAmeros racionales. Expresiones decimales exactas y peri\xF3dicas. Conversi\xF3n
-    en fracci\xF3n. Orden. Densidad. Adici\xF3n, sustracci\xF3n, multiplicaci\xF3n
-    y divisi\xF3n."
+  m_Text: Ecuaciones e inecuaciones en los conjuntos N, Z, Q y R.
 --- !u!222 &2141056937
 CanvasRenderer:
   m_ObjectHideFlags: 0

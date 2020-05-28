@@ -19,12 +19,13 @@ public class ModeSelector : MonoBehaviour
         
     }
 
-    public void ShowDetalle(int i) {
-        detalle[i].SetActive(true);
+    public void ShowDetalle(int index) {
+        for(int i=0;i<detalle.Count;i++)
+            detalle[i].SetActive(i==index);
     }
 
-    public void HideDetalle(int i) {
-        detalle[i].SetActive(false);
+    public void HideDetalle(int index) {
+        detalle[index].SetActive(false);
     }
 
     public void SelectMode(int i) {

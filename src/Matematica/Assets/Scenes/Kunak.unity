@@ -163,6 +163,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114123126304911576, guid: ceaf6c11bf6f453468b1cb5457bd0e31,
+        type: 3}
+      propertyPath: resetData
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceaf6c11bf6f453468b1cb5457bd0e31, type: 3}
 --- !u!224 &399763087 stripped
@@ -1253,7 +1258,7 @@ GameObject:
 --- !u!199 &1049824274
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199395285960064880, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -7056,7 +7061,7 @@ Transform:
 --- !u!199 &1373820350
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199519092443648630, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -12110,7 +12115,7 @@ Transform:
 --- !u!199 &1468601825
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199607677357027998, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -17289,7 +17294,7 @@ Transform:
 --- !u!199 &1704758254
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199131552327866136, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -22395,7 +22400,7 @@ Transform:
 --- !u!199 &2008524823
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199003477510557394, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -27246,7 +27251,7 @@ Transform:
 --- !u!199 &2057588364
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199888628875782644, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -32015,7 +32020,7 @@ Transform:
 --- !u!199 &2104368657
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199607677357027998, guid: dd372c23b735bc64795dbef11b053931,
     type: 3}
   m_PrefabInstance: {fileID: 0}
