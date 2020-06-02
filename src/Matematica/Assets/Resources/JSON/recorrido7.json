@@ -1,0 +1,60 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module7_A",
+		"title":"La medida del ángulo complementario de #A#° es:",
+		"results":
+			[
+			"(90 - a)°", 
+			"(180 -a)°", 
+			"a°"
+			]
+		},
+
+		{
+		"module": "Module7_B",
+		"title":"La medida del ángulo suplementario de #A#° es:",
+		"results":
+			[
+			"(180 -a)°", 
+			"90 - a)°", 
+			"a°"
+			]
+		},
+
+		{
+		"module": "Module7_C",
+		"title":"La medida del ángulo adyacente a otro de #A#° es:",
+		"results":
+			[
+			"(180 -a)°", 
+			"90 - a)°", 
+			"a°"
+			]
+		},
+
+		{
+		"module": "Module7_D",
+		"title":"La medida del ángulo opuesto por el vértice a otro de #A#° es:",
+		"results":
+			[
+			"a°",
+			"(180 -a)°", 
+			"90 - a)°"			
+			]
+		},
+
+		{
+		"module": "Module7_E",
+		"title":"Un triángulo tiene dos ángulos de #A° y B°#. Su tercer ángulo mide:",
+		"results":
+			[
+			"(180-a-b)°",
+			"(90-a-b)°",
+			"a+b°"
+			]
+		}
+
+	]
+}
