@@ -54,6 +54,171 @@
 			"(90-a-b)°",
 			"a+b°"
 			]
+		},
+
+		{
+		"module": "Module7_F",
+		"title":"Un rombo tiene dos ángulos de #A#°. Los otros dos ángulos miden:",
+		"results":
+			[
+			"(180-a)°",
+			"(90-a)°",
+			"2a°"
+			]
+		},
+
+		{
+		"module": "Module7_G",
+		"title":"Un paralelogramo tiene dos ángulos de #A#°. Los otros dos ángulos miden:",
+		"results":
+			[
+			"(180-a)°",
+			"(90-a)°",
+			"2a°"
+			]
+		},
+
+		{
+		"module": "Module7_H",
+		"title":"Un romboide  tiene dos ángulos de #A° y otro de B#°. El otro ángulo mide:",
+		"results":
+			[
+			"(360-2a-b)°",
+			"(360-a-b)°",
+			"(180-2a-b)°"
+			]
+		},
+
+		{
+		"module": "Module7_I",
+		"title":"Un triángulo isósceles tiene dos ángulos de #A#°. Su tercer ángulo mide:",
+		"results":
+			[
+			"(180-2a)°",
+			"(90-2a)°",
+			"(2a)°"
+			]
+		},
+
+		{
+		"module": "Module7_J",
+		"title":"Los lados de un triángulo isósceles tienen las siguientes medidas:",
+		"results":
+			[
+			"a, a y a+2",
+			"a, a+1 y a+2",
+			"a, a+2 y a+3°"
+			]
+		},
+
+		{
+		"module": "Module7_K",
+		"title":"Los lados de un triángulo escaleno tienen las siguientes medidas:",
+		"results":
+			[
+			"a, a+1 y a+2",
+			"a, a y a+2",			
+			"a, a y a°"
+			]
+		},
+
+		{
+		"module": "Module7_L",
+		"title":"La medida del ángulo en que queda dividido otro de #A#° por la bisectriz es:",
+		"results":
+			[
+			"(a:2)°",
+			"(90 - a)°",			
+			"(2.a)°"
+			]
+		},
+
+		{
+		"module": "Module7_M",
+		"title":"Los lados de un triángulo equilátero tienen las siguientes medidas:",
+		"results":
+			[
+			"a, a y a°",
+			"a, a+1 y a+2",
+			"a, a y a+2"			
+			]
+		},
+
+		{
+		"module": "Module7_N",
+		"title":"La medida del ángulo exterior de un triángulo al ángulo interior de #A#° es:",
+		"results":
+			[
+			"(180 -a)°",
+			"(90 - a)°",			
+			"a°"
+			]
+		},
+
+		{
+		"module": "Module7_N2",
+		"title":"La medida del ángulo exterior de un paralelogramo al ángulo interior de #A#° es:",
+		"results":
+			[
+			"(180 -a)°",
+			"(90 - a)°",			
+			"a°"
+			]
+		},
+
+		{
+		"module": "Module7_O",
+		"title":"La medida del ángulo correspondiente entre paralelas a otro de #A#° es:",
+		"results":
+			[
+			"a°",
+			"(180 -a)°",
+			"(90 - a)°"		
+			]
+		},
+
+		{
+		"module": "Module7_P",
+		"title":"La medida del ángulo alterno interno entre paralelas a otro de #A#° es:",
+		"results":
+			[
+			"a°",
+			"(180 -a)°",
+			"(90 - a)°"		
+			]
+		},
+
+		{
+		"module": "Module7_Q",
+		"title":"La medida del ángulo alterno externo entre paralelas a otro de #A#° es:",
+		"results":
+			[
+			"a°",
+			"(180 -a)°",
+			"(90 - a)°"		
+			]
+		},
+
+		{
+		"module": "Module7_R",
+		"title":"La medida del ángulo conjugado interno entre paralelas a otro de #A#° es:",
+		"results":
+			[
+			"(180 -a)°",
+			"a°",			
+			"(90 - a)°"		
+			]
+		},
+
+		{
+		"module": "Module7_S",
+		"title":"La medida del ángulo conjugado externo entre paralelas a otro de #A#° es:",
+		"results":
+			[
+			"(180 -a)°",
+			"a°",			
+			"(90 - a)°"		
+			]
 		}
 
 	]
