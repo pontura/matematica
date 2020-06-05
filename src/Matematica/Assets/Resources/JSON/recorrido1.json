@@ -21,6 +21,17 @@
 			"(N:M).100 %",
 			"(M:N) %"
 			]
+		},
+
+		{
+		"module": "Module1_C",
+		"title":"El resultado de *A + C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
 		}
 
 	]
