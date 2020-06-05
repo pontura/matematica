@@ -38,6 +38,8 @@ public class Trivia : MonoBehaviour {
     int comboCount;
     bool isCombo;
 
+    GameObject titleClone;
+
 	void Start()
 	{
 		audiosource = GetComponent<AudioSource> ();
@@ -49,6 +51,7 @@ public class Trivia : MonoBehaviour {
 		Events.ReplayArea += AreaChange;
 		Events.ShowLevelSelector += ShowLevelSelector;
 		Events.ShowLevelMenu += ShowMenu;
+        Events.SetTitleDenom += SetTitleDenom;
 
 		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -81,7 +84,8 @@ public class Trivia : MonoBehaviour {
 		Events.BadAnswer -= BadAnswer;
 		Events.ShowLevelSelector -= ShowLevelSelector;
 		Events.ShowLevelMenu -= ShowMenu;
-	}
+        Events.SetTitleDenom -= SetTitleDenom;
+    }
 
 	public void PrevModule()
 	{
@@ -127,7 +131,16 @@ public class Trivia : MonoBehaviour {
 		ShuffleChildOrder (buttonsContainer);
 	}
 
-	void ShowQuestions (bool enable){
+    void SetTitleDenom(string t) {
+        titleClone = GameObject.Instantiate(title.gameObject);
+        titleClone.transform.parent = title.transform.parent;
+        titleClone.transform.SetAsFirstSibling();
+        Text text = titleClone.GetComponent<Text>();
+        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.text = t;        
+    }
+
+    void ShowQuestions (bool enable){
 		buttonsTween.reverse = !enable;
 		buttonsTween.doTween = true;
 		preguntaTween.reverse = !enable;
