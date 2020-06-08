@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module1_C : ModuleData {
+public class Module1_D : ModuleData {
 
 	int value_a;
 	int value_b;
@@ -24,10 +24,11 @@ public class Module1_C : ModuleData {
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
         string newTitle2 = "";
-        value_a = UnityEngine.Random.Range(2, 9);
-        value_b = UnityEngine.Random.Range(2, 9);
-        value_c = UnityEngine.Random.Range(2, 9);
-        value_d = UnityEngine.Random.Range(2, 9);
+        value_a = UnityEngine.Random.Range(3, 15);
+        value_d = UnityEngine.Random.Range(3, 15);
+        value_b = UnityEngine.Random.Range(2, value_d);
+        value_c = UnityEngine.Random.Range(2, value_a);
+        
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
                 newTitle += "<size=18>\u0305" + value_b + "\u0305</size>";
@@ -41,7 +42,7 @@ public class Module1_C : ModuleData {
             }
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
-        newTitle2 = newTitle2.Replace("+", "<color=#8A00C9>+</color>");
+        newTitle2 = newTitle2.Replace("-", "<color=#8A00C9>-</color>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
@@ -57,9 +58,9 @@ public class Module1_C : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f * (value_a * value_d) + (value_b * value_c)) / (value_b * value_d)));
-        SetValue(""+(1f*(value_a + value_c) / (value_b + value_d)));
-        SetValue("" + (1f*(value_a + value_c) / (value_b * value_d)));
+        SetValue("" + ((1.0f*(value_a * value_d)-(value_b*value_c)) / (value_b * value_d)));
+        SetValue(""+(1.0f*(value_a - value_c) / (value_b - value_d)));
+        SetValue("" + (1.0f * (value_a - value_c) / (value_b * value_d)));
     }
 	void SetValue(string number)
 	{

@@ -53,7 +53,7 @@ public class Trivia : MonoBehaviour {
 		Events.ShowLevelMenu += ShowMenu;
         Events.SetTitleDenom += SetTitleDenom;
 
-		LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
+        LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
 		puntos.fillAmount = 1f * l.localPoints / l.length;
 
 		nPregunta = Data.Instance.levelData.triviaCount;
@@ -140,6 +140,10 @@ public class Trivia : MonoBehaviour {
         text.text = t;        
     }
 
+    void ClearTitleDenom() {
+        Destroy(titleClone);
+    }
+
     void ShowQuestions (bool enable){
 		buttonsTween.reverse = !enable;
 		buttonsTween.doTween = true;
@@ -153,7 +157,8 @@ public class Trivia : MonoBehaviour {
 
 	void HideQuestions(){
 		ShowQuestions (false);
-	}
+        ClearTitleDenom();
+    }
 
 	public void ShuffleChildOrder(Transform container){
 		for (int i = 0; i < container.childCount; i++) {

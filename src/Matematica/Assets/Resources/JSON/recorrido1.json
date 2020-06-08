@@ -32,6 +32,39 @@
 			"(N:M).100 %",
 			"(M:N) %"
 			]
+		},
+
+		{
+		"module": "Module1_D",
+		"title":"El resultado de *A - C* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_E",
+		"title":"El resultado de *A . C* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_F",
+		"title":"El resultado de *A : C* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
 		}
 
 	]
