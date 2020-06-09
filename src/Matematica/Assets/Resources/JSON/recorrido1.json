@@ -65,6 +65,61 @@
 			"B",
 			"C"
 			]
+		},
+
+		{
+		"module": "Module1_G",
+		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_H",
+		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_I",
+		"title":"La fracción equivalente a la expresión decimal 0,#ABC# es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_J",
+		"title":" La expresión decimal equivalente a la  fracción *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module1_K",
+		"title":" La expresión decimal equivalente a la  fracción *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
 		}
 
 	]

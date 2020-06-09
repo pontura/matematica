@@ -18,6 +18,8 @@ public static class Events {
 	public static System.Action<bool> ShowLevelSelector = delegate { };
 	public static System.Action<bool> ShowLevelMenu = delegate { };
     public static System.Action<string> SetTitleDenom = delegate { };
+    public static System.Action<string> SetTitleDenomUp = delegate { };
+    public static System.Action<string> SetTitleDenomDown = delegate { };
 
     public static System.Action NextDialog = delegate { };
 
