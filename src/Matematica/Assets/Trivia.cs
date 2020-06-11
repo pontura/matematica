@@ -38,10 +38,13 @@ public class Trivia : MonoBehaviour {
     int comboCount;
     bool isCombo;
 
+    ConjuntosManager conjuntos;
+
     GameObject titleClone, titleCloneUp, titleCloneDown;
 
     void Start() {
         audiosource = GetComponent<AudioSource>();
+        conjuntos = GetComponent<ConjuntosManager>();
         modulesManager = Data.Instance.modulesManager;
         Events.NextExercise += NextExercise;
         Events.AddScore += AddScore;
@@ -53,6 +56,8 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenom += SetTitleDenom;
         Events.SetTitleDenomUp += SetTitleDenomUp;
         Events.SetTitleDenomDown += SetTitleDenomDown;
+        Events.SetOp2A += SetOp2;
+        Events.SetOp2B += SetOp2;
 
         LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
         puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -88,6 +93,8 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenom -= SetTitleDenom;
         Events.SetTitleDenomUp -= SetTitleDenomUp;
         Events.SetTitleDenomDown -= SetTitleDenomDown;
+        Events.SetOp2A -= SetOp2;
+        Events.SetOp2B -= SetOp2;
     }
 
     public void PrevModule() {
@@ -161,6 +168,21 @@ public class Trivia : MonoBehaviour {
         Destroy(titleClone);
         Destroy(titleCloneDown);
         Destroy(titleCloneUp);
+        Vector2 s = title.rectTransform.sizeDelta;
+        title.rectTransform.sizeDelta = new Vector2(s.x, 210);
+        conjuntos.container.SetActive(false);
+
+    }
+
+    void SetOp2(int a, int b) {
+        Debug.Log("ACA");
+        //Invoke("ShowConjunto",0.5f);
+        Vector2 s = title.rectTransform.sizeDelta;
+        title.rectTransform.sizeDelta = new Vector2(s.x, 100);
+    }
+
+    void ShowConjunto() {
+        conjuntos.container.SetActive(true);
     }
 
     void ShowQuestions(bool enable) {

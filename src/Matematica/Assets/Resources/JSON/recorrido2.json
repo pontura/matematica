@@ -1,0 +1,38 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module2_A",
+		"title":"¿Qué operación entre conjuntos corresponde al siguiente diagrama de Venn?",
+		"results":
+			[
+			"A", 
+			"B", 
+			"C"
+			]
+		},
+
+		{
+		"module": "Module2_B",
+		"title":"¿Qué operación entre conjuntos corresponde al siguiente diagrama de Venn?",
+		"results":
+			[
+			"A", 
+			"B", 
+			"C"
+			]
+		},
+
+		{
+		"module": "Module2_C",
+		"title":"¿Cuál es la cantidad de elementos del conjunto #T#?",
+		"results":
+			[
+			"A", 
+			"B", 
+			"C"
+			]
+		}
+
+	]
+}
