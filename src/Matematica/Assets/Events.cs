@@ -23,6 +23,7 @@ public static class Events {
 
     public static System.Action<int,int> SetOp2A = delegate { };
     public static System.Action<int, int> SetOp2B = delegate { };
+    public static System.Action<int, int, int, int, int, int, int> SetOp2C = delegate { };
 
     public static System.Action NextDialog = delegate { };
 

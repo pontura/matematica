@@ -11,16 +11,20 @@ public class ConjuntosManager : MonoBehaviour
 
     string[] op = { "\u2239", "\u223A", "-" }; // &&, ||, -
 
+    string[] conj = { "A", "B", "C", "A\u2229B", "A\u2229C", "B\u2229C", "A\u2229B\u2229C" }; // A, B, C, A&&B, A&&C, B&&C, A&&B&&C
+
     // Start is called before the first frame update
     void Awake()
     {
         Events.SetOp2A += SetOp2A;
         Events.SetOp2B += SetOp2B;
+        Events.SetOp2C += SetOp2C;
     }
 
     private void OnDestroy() {
         Events.SetOp2A -= SetOp2A;
         Events.SetOp2B -= SetOp2B;
+        Events.SetOp2C -= SetOp2C;
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class ConjuntosManager : MonoBehaviour
         Debug.Log(a + " : " + b);
         container.SetActive(true);
         HideAll();
+        HideAllText();
         if (a == 0) {
             if (b == 0) {
                 ABC.SetActive(true);
@@ -78,6 +83,7 @@ public class ConjuntosManager : MonoBehaviour
         Debug.Log(a + " : " + b);
         container.SetActive(true);
         HideAll();
+        HideAllText();
         if (a == 0) {
             if (b == 0) {
                 ABC.SetActive(true);
@@ -115,6 +121,20 @@ public class ConjuntosManager : MonoBehaviour
                 A.SetActive(true);
             }
         }
+    }
+
+    void SetOp2C(int a, int b, int c, int ab, int bc, int ac, int abc) {
+        Debug.Log(a+" : "+ b + " : " + c + " : " + ab + " : " + bc + " : " + ac + " : " + abc);
+        container.SetActive(true);
+        HideAll();
+        ShowAllText();
+        textA.text = "" + a;
+        textB.text = "" + b;
+        textC.text = "" + c;
+        textAB.text = "" + ab;
+        textBC.text = "" + bc;
+        textAC.text = "" + ac;
+        textABC.text = "" + abc;
     }
 
     void HideAll() {

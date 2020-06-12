@@ -58,6 +58,7 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenomDown += SetTitleDenomDown;
         Events.SetOp2A += SetOp2;
         Events.SetOp2B += SetOp2;
+        Events.SetOp2C += SetOp2;
 
         LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
         puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -95,6 +96,7 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenomDown -= SetTitleDenomDown;
         Events.SetOp2A -= SetOp2;
         Events.SetOp2B -= SetOp2;
+        Events.SetOp2C -= SetOp2;
     }
 
     public void PrevModule() {
@@ -174,7 +176,15 @@ public class Trivia : MonoBehaviour {
 
     }
 
+    void SetOp2(int a, int b, int c, int ab, int ac, int bc, int abc) {
+        SetOp2();
+    }
+
     void SetOp2(int a, int b) {
+        SetOp2();
+    }
+
+    void SetOp2() {
         Debug.Log("ACA");
         //Invoke("ShowConjunto",0.5f);
         Vector2 s = title.rectTransform.sizeDelta;
