@@ -1,0 +1,71 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module4_A",
+		"title":"El resultado de *A + C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module4_B",
+		"title":"El resultado de *A - C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module4_C",
+		"title":"El resultado de *A . C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module4_D",
+		"title":"El resultado de *A : C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module4_E",
+		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_F",
+		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		}
+
+	]
+}

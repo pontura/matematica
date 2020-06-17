@@ -32,6 +32,61 @@
 			"B", 
 			"C"
 			]
+		},
+
+		{
+		"module": "Module2_D",
+		"title":"Un mazo de  #N cartas tiene M# palos distintos. Elegís un palo y sacás una carta al azar. ¿Cuál es la probabilidad de que sea del palo que elegiste?",
+		"results":
+			[
+			"1/M", 
+			"1/N", 
+			"M/N"
+			]
+		},
+
+		{
+		"module": "Module2_E",
+		"title":"Un mazo de  #N cartas tiene M# palos distintos. Elegís un palo y sacás una carta al azar. ¿Cuál es la probabilidad de que NO sea del palo que elegiste?",
+		"results":
+			[
+			"(M-1)/M", 
+			"1/N", 
+			"(M-1)/N"
+			]
+		},
+
+		{
+		"module": "Module2_F",
+		"title":"Se tiran al mismo tiempo 2 dados de #N caras numerados del 1 al N#. ¿Cuál es la probabilidad de que ambos números sumados den 2?",
+		"results":
+			[
+			"1/(NxN)", 
+			"1/N", 
+			"2/N"
+			]
+		},
+
+		{
+		"module": "Module2_G",
+		"title":"Se tiran al mismo tiempo 2 dados de #N caras numerados del 1 al N. ¿Cuál es la probabilidad de que ambos números sumados den M#?",
+		"results":
+			[
+			"1/(NxN)", 
+			"1/N", 
+			"2/N"
+			]
+		},
+
+		{
+		"module": "Module2_H",
+		"title":"Se tiran al mismo tiempo 2 dados de #N caras numerados del 1 al N#. ¿Cuál es la probabilidad de que ambos números sean iguales?",
+		"results":
+			[
+			"N/(NxN)", 
+			"1/(NxN)", 
+			"2/(NxN)"
+			]
 		}
 
 	]

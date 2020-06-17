@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module1_C : ModuleData {
+public class Module4_A : ModuleData {
 
 	int value_a;
 	int value_b;
@@ -24,16 +24,16 @@ public class Module1_C : ModuleData {
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
         string newTitle2 = "";
-        value_a = UnityEngine.Random.Range(2, 9);
+        value_a = UnityEngine.Random.Range(-2, -9);
         value_b = UnityEngine.Random.Range(2, 9);
-        value_c = UnityEngine.Random.Range(2, 9);
+        value_c = UnityEngine.Random.Range(-2, -9);
         value_d = UnityEngine.Random.Range(2, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305" + value_b + "\u0305</size>";
+                newTitle += "<size=18>\u0305\u0305 " + value_b + "\u0305\u0305</size>";
                 newTitle2 += "</color><size=18>" + value_a + "</size>";
             } else if (textToDecode[b].ToString() == "C") {
-                newTitle += "<size=18>\u0305" + value_d + "\u0305</size>";
+                newTitle += "<size=18>\u0305\u0305 " + value_d + "\u0305\u0305</size>";
                 newTitle2 += "<size=18>" + value_c + " </size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
