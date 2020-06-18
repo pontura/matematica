@@ -1,4 +1,4 @@
-{
+﻿{
 	"exercises":
 	[
 		{
@@ -59,6 +59,39 @@
 		{
 		"module": "Module4_F",
 		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_G",
+		"title":"La fracción equivalente a la expresión decimal -0,#ABC# es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_H",
+		"title":" La expresión decimal equivalente a la  fracción -*A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_I",
+		"title":" La expresión decimal equivalente a la  fracción -*A* es:",
 		"results":
 			[
 			"A",

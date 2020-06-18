@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module4_B: ModuleData {
+public class Module4_I : ModuleData {
 
 	int value_a;
 	int value_b;
     int value_c;
-    int value_d;
 	string textToDecode;
 
 	public override void Init(ExercisesData data) 
@@ -24,24 +23,19 @@ public class Module4_B: ModuleData {
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
         string newTitle2 = "";
-        value_a = UnityEngine.Random.Range(-3, -9);
-        value_b = UnityEngine.Random.Range(3, 9);
-        value_c = UnityEngine.Random.Range(-2, value_a);
-        value_d = UnityEngine.Random.Range(2, value_b);
+        value_a = UnityEngine.Random.Range(1, 9);
+        value_b = UnityEngine.Random.Range(0, 9);
+        value_c = UnityEngine.Random.Range(1, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305\u0305 " + value_b + "\u0305\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size>";
-            } else if (textToDecode[b].ToString() == "C") {
-                newTitle += "<size=18>\u0305\u0305 " + value_d + "\u0305\u0305</size>";
-                newTitle2 += "<size=18>" + value_c + " </size><color=#8A00C9>";
+                newTitle += "<size=16>\u03051\u03050\u03050\u03050\u0305</size>";
+                newTitle2 += "</color><size=16>" + value_a + value_b +value_c + "</size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
             }
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
-        newTitle = newTitle.Replace("-", "<color=#8A00C9>-</color>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
@@ -57,9 +51,9 @@ public class Module4_B: ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f * (value_a * value_d) - (value_b * value_c)) / (value_b * value_d)));
-        SetValue(""+(1f*(value_a - value_c) / (value_b - value_d)));
-        SetValue("" + (1f*(value_a - value_c) / (value_b * value_d)));
+        SetValue("-0," + value_a + value_b + value_c);
+        SetValue("0," + value_a + value_b + value_c);
+        SetValue("-" + value_a +","+value_b+value_c);
     }
 	void SetValue(string number)
 	{

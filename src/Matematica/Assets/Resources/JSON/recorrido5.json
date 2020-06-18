@@ -1,0 +1,27 @@
+{
+	"exercises":
+	[
+		{
+		"module": "Module5_A",
+		"title":"El resultado de#(a)b# es:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_B",
+		"title":"El resultado de (*A )C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		}
+
+	]
+}
