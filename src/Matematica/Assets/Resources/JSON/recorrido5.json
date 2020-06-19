@@ -3,7 +3,7 @@
 	[
 		{
 		"module": "Module5_A",
-		"title":"El resultado de#(a)b# es:",
+		"title":"El resultado de #(a)b# es:",
 		"results":
 			[
 			"1 solución", 
@@ -20,6 +20,28 @@
 			"(M:N).100 %",
 			"(N:M).100 %",
 			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module5_C",
+		"title":"El resultado de #(a)b.(a)c.(a)d# es:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_D",
+		"title":"El resultado de #(a)b.(c)b.(d)b# es:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
 			]
 		}
 
