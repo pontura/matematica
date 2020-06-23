@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module5_B : ModuleData {
+public class Module5_F : ModuleData {
 
 	int value_a;
 	int value_b;
@@ -26,15 +26,18 @@ public class Module5_B : ModuleData {
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
         string newTitle2 = "";
-        value_a = UnityEngine.Random.Range(-1,-5);
-        value_b = UnityEngine.Random.Range(2, 5);
-        value_c = UnityEngine.Random.Range(0, 4);
+        if (UnityEngine.Random.value > 0.5f) {
+            value_a = UnityEngine.Random.Range(-10, -1);
+        } else {
+            value_a = UnityEngine.Random.Range(2, 10);
+        }
+        value_b = UnityEngine.Random.Range(1, 5);
+        value_c = UnityEngine.Random.Range(1, 5);
+
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=18><color=#8A00C9>-</color>\u0305\u0305" + value_b + "\u0305\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size><color=#8A00C9>";
-            } else if (textToDecode[b].ToString() == "C") {
-                newTitle += uPow[value_c];
+                newTitle += " <size=18><color=#8A00C9></color>\u0305(\u0305" + value_a + "\u0305)\u0305"+ uPow[value_c] + "</size>";
+                newTitle2 += "</color><size=18>(" + value_a + ")"+ uPow[value_b]+"</size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
@@ -57,9 +60,15 @@ public class Module5_B : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + Mathf.Pow(1f*value_a/value_b,value_c));
-        SetValue("" + Mathf.Pow(1f*value_a / value_b, value_c+1));
-        SetValue("" + (-1*Mathf.Pow(value_a / value_b, value_c)));
+        if (value_b - value_c < 0)
+            SetValue("(" + value_a + ")\u207b" + uPow[Mathf.Abs(value_b - value_c)]);
+        else
+            SetValue("(" + value_a + ")" + uPow[value_b - value_c]);
+        SetValue("(" + value_a + ")" + uPow[value_b + value_c]);
+        if (value_b - value_c + 1 < 0)
+            SetValue("(" + value_a + ")\u2070" + uPow[Mathf.Abs(value_b - value_c + 1)]);
+        else
+            SetValue("(" + value_a + ")" + uPow[value_b - value_c + 1]);
     }
 	void SetValue(string number)
 	{

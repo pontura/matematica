@@ -43,6 +43,28 @@
 			"2 soluciones", 
 			"Ninguna solución"
 			]
+		},
+
+		{
+		"module": "Module5_E",
+		"title":"El resultado de #(a)b:(a)c# es:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_F",
+		"title":"El resultado de *A* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
 		}
 
 	]
