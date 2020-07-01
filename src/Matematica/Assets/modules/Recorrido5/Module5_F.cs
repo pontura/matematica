@@ -64,9 +64,9 @@ public class Module5_F : ModuleData {
             SetValue("(" + value_a + ")\u207b" + uPow[Mathf.Abs(value_b - value_c)]);
         else
             SetValue("(" + value_a + ")" + uPow[value_b - value_c]);
-        SetValue("(" + value_a + ")" + uPow[value_b + value_c]);
+            SetValue("(" + value_a + ")" + uPow[value_b + value_c]);
         if (value_b - value_c + 1 < 0)
-            SetValue("(" + value_a + ")\u2070" + uPow[Mathf.Abs(value_b - value_c + 1)]);
+            SetValue("(" + value_a + ")\u207b" + uPow[Mathf.Abs(value_b - value_c + 1)]);
         else
             SetValue("(" + value_a + ")" + uPow[value_b - value_c + 1]);
     }

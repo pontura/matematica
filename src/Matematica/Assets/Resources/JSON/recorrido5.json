@@ -65,6 +65,50 @@
 			"(N:M).100 %",
 			"(M:N) %"
 			]
+		},
+
+		{
+		"module": "Module5_G",
+		"title":"El resultado de #(a)b:(c)b# es:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_G2",
+		"title":"La ecuación x#b=a# tiene exactamente:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_H",
+		"title":"La ecuación x#b+a#=0 tiene exactamente:",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_I",
+		"title":"El resultado de\n*(A)C . (B)D* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
 		}
 
 	]
