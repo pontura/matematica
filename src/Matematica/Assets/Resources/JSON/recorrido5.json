@@ -109,6 +109,39 @@
 			"(N:M).100 %",
 			"(M:N) %"
 			]
+		},
+
+		{
+		"module": "Module5_J",
+		"title":"El resultado de\n*(A)C : (B)D* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module5_K",
+		"title":"El resultado de *(A)C* es:",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
+		},
+
+		{
+		"module": "Module5_L",
+		"title":"¿Cuál de los siguientes 3 números cumplen el Teorema de Pitágoras?",
+		"results":
+			[
+			"(M:N).100 %",
+			"(N:M).100 %",
+			"(M:N) %"
+			]
 		}
 
 	]

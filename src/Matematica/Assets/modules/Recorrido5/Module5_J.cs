@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module5_I : ModuleData {
+public class Module5_J : ModuleData {
 
 	int value_a;
 	int value_b;
@@ -92,14 +92,14 @@ public class Module5_I : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        if (value_c + value_d < 0)
-            SetValue("(" + value_a + "/" + value_b + ")\u207b" + uPow[Mathf.Abs(value_c + value_d)]);
-        else
-            SetValue("(" + value_a + "/" + value_b + ")" + uPow[value_c + value_d]);
-        if (value_c - value_d<0)
+        if (value_c - value_d < 0)
             SetValue("(" + value_a + "/" + value_b + ")\u207b" + uPow[Mathf.Abs(value_c - value_d)]);
         else
             SetValue("(" + value_a + "/" + value_b + ")" + uPow[value_c - value_d]);
+        if (value_c + value_d<0)
+            SetValue("(" + value_a + "/" + value_b + ")\u207b" + uPow[Mathf.Abs(value_c + value_d)]);
+        else
+            SetValue("(" + value_a + "/" + value_b + ")" + uPow[value_c + value_d]);
 
         SetValue("(" + value_a + "/" + value_b + ")" + uPow[value_c * value_d]);
     }
