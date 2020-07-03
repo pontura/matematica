@@ -22,6 +22,7 @@ public class Settings : MonoBehaviour{
     }
 
     void AddJsonData(string jsonName, int id) {
+        Debug.Log("ID: " + id);
         TextAsset json = Resources.Load(Path.Combine("JSON", jsonName)) as TextAsset;
         Recorrido a = new Recorrido();
         a.id = id;

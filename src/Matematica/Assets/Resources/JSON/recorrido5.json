@@ -142,6 +142,39 @@
 			"(N:M).100 %",
 			"(M:N) %"
 			]
+		},
+
+		{
+		"module": "Module5_M",
+		"title":"¿Cuál de las siguientes expresiones es equivalente a #(a+b)c#?",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_N",
+		"title":"¿Cuál de las siguientes expresiones es equivalente a #(a-b)c#?",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
+		},
+
+		{
+		"module": "Module5_N2",
+		"title":"¿Cuál de las siguientes expresiones es equivalente a #(a-b).(a+b)#?",
+		"results":
+			[
+			"1 solución", 
+			"2 soluciones", 
+			"Ninguna solución"
+			]
 		}
 
 	]
