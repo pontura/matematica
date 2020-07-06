@@ -31,10 +31,16 @@ public class Module5_N : ModuleData {
         }
 
         for (int b = 0; b < arr.Length; b++)
-			if (textToDecode [b].ToString () == "a") {				
-				newTitle += value_a;
-			} else if (textToDecode[b].ToString() == "b") {
-                newTitle += value_b;
+			if (textToDecode [b].ToString () == "a") {
+                if (value_a < 0)
+                    newTitle += "(" + value_a + ")";
+                else
+                    newTitle += value_a;
+            } else if (textToDecode[b].ToString() == "b") {
+                if (value_b < 0)
+                    newTitle += "(" + value_b + ")";
+                else
+                    newTitle += value_b;
             } else if (textToDecode[b].ToString() == "c") {
                 newTitle += uPow[2];
             } else
@@ -50,10 +56,21 @@ public class Module5_N : ModuleData {
 	{
 		results = data;
 		values = new List<string> ();
+        string a = "";
+        string b = "";
+        if (value_a < 0)
+            a += "(" + value_a + ")";
+        else
+            a += value_a;
 
-        SetValue(value_a+ uPow[2]+"+"+value_b + uPow[2]+"-2."+ value_a + "." + value_b);
-        SetValue(value_a + uPow[2] + "-" + value_b + uPow[2] );
-        SetValue(value_a + uPow[2] + "-" + value_b + uPow[2] + "-2." + value_a + "." + value_b);
+        if (value_b < 0)
+            b += "(" + value_b + ")";
+        else
+            b += value_b;
+
+        SetValue(a+ uPow[2]+"+"+b + uPow[2]+"-2."+ a + "." + b);
+        SetValue(a + uPow[2] + "-" + b + uPow[2] );
+        SetValue(a + uPow[2] + "-" + b + uPow[2] + "-2." + a + "." + b);
         
     }
 	void SetValue(string number)

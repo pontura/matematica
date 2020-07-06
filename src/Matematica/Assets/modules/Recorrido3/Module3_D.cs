@@ -23,11 +23,15 @@ public class Module3_D : ModuleData {
 	{
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
+        string par1 = "";
+        string par2 = "";
         value_a = UnityEngine.Random.Range(1, 20);
         value_d = UnityEngine.Random.Range(1,20);
         if (UnityEngine.Random.value >= 0.5) {
             value_b = UnityEngine.Random.Range(-20, -1);
             value_c = UnityEngine.Random.Range(-20, -1);
+            par1 = "(";
+            par2 = ")";
         } else {
             value_b = UnityEngine.Random.Range(1,20);
             value_c = UnityEngine.Random.Range(1,20);
@@ -37,9 +41,9 @@ public class Module3_D : ModuleData {
 			if (textToDecode [b].ToString () == "N") {				
 				newTitle += value_a;			
 			} else if (textToDecode[b].ToString() == "M") {
-                newTitle += value_b;
+                newTitle += par1+value_b+par2;
             } else if (textToDecode[b].ToString() == "P") {
-                newTitle += value_c;
+                newTitle += par1+value_c+par2;
             } else if (textToDecode[b].ToString() == "Q") {
                 newTitle += value_d;
             } else

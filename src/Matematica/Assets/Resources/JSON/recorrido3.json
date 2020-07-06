@@ -47,7 +47,7 @@
 
 		{
 		"module": "Module3_E",
-		"title":"El resultado del siguiente cálculo #N.(M+(P))# es:",
+		"title":"El resultado del siguiente cálculo #(N).((M)+(P))# es:",
 		"results":
 			[
 			"Mayor que 0", 
@@ -58,7 +58,7 @@
 
 		{
 		"module": "Module3_F",
-		"title":"El resultado del siguiente cálculo #N.(M-(P))# es:",
+		"title":"El resultado del siguiente cálculo #(N).(M-(P))# es:",
 		"results":
 			[
 			"Menor que 0", 
@@ -124,7 +124,7 @@
 
 		{
 		"module": "Module3_L",
-		"title":"Si a < 0 y b > 0, el resultado del siguiente cálculo #p.a.b# es :",
+		"title":"Si a < 0 y b > 0, el resultado del siguiente cálculo #(p).a.b# es :",
 		"results":
 			[
 			"|x| = N", 

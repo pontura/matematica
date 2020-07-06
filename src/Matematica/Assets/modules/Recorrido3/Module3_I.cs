@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Module3_C : ModuleData {
+public class Module3_I : ModuleData {
 
     int value_a;
-    int value_b;
-    int value_c;
 	string textToDecode;
 
 	public override void Init(ExercisesData data) 
@@ -22,27 +20,12 @@ public class Module3_C : ModuleData {
 	{
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
-        string par1 = "";
-        string par2 = "";
-        value_a = UnityEngine.Random.Range(-20, -1);
-        if (UnityEngine.Random.value >= 0.5) {
-            value_b = UnityEngine.Random.Range(-20, -1);
-            value_c = UnityEngine.Random.Range(-20, -1);
-            par1 = "(";
-            par2 = ")";
-        } else {
-            value_b = UnityEngine.Random.Range(1,20);
-            value_c = UnityEngine.Random.Range(1,20);
-        }
+        value_a = UnityEngine.Random.Range(10,40);
           
         for (int b = 0; b < arr.Length; b++)
 			if (textToDecode [b].ToString () == "N") {				
-				newTitle += "("+value_a+")";
-			} else if (textToDecode[b].ToString() == "M") {
-                newTitle += par1+value_b+par2;
-            } else if (textToDecode[b].ToString() == "O") {
-                newTitle += par1+value_c+ par2;
-            } else
+				newTitle += (value_a-1);			
+			} else
                 newTitle += textToDecode [b].ToString ();			
 
 			title = title.Replace("#",newTitle);
@@ -55,10 +38,10 @@ public class Module3_C : ModuleData {
 	{
 		results = data;
 		values = new List<string> ();
-		
-        SetValue(data[0]);
-        SetValue(data[1]);
-        SetValue(data[2]);
+
+        SetValue("|x| ≤ " + value_a);
+        SetValue("|x| < 0");
+        SetValue("|x| > " + value_a);
     }
 	void SetValue(string number)
 	{

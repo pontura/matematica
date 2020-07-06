@@ -55,9 +55,9 @@ public class Module5_K : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + (Mathf.Pow(value_a,value_b*value_c)));
-        SetValue("" + (Mathf.Pow(value_a, value_b + value_c)));
-        SetValue("" + (Mathf.Pow(value_a, Mathf.Pow(value_b,value_c))));
+        SetValue("" + string.Format("{0:0.###}", Mathf.Pow(value_a,value_b*value_c)));
+        SetValue("" + string.Format("{0:0.###}", Mathf.Pow(value_a, value_b + value_c)));
+        SetValue("" + string.Format("{0:0.###}", Mathf.Pow(value_a, Mathf.Pow(value_b,value_c))));
     }
 	void SetValue(string number)
 	{

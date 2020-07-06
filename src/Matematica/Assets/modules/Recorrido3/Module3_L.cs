@@ -24,7 +24,7 @@ public class Module3_L : ModuleData {
           
         for (int b = 0; b < arr.Length; b++)
 			if (textToDecode [b].ToString () == "p") {				
-				newTitle += (value_a);			
+				newTitle += value_a;			
 			} else
                 newTitle += textToDecode [b].ToString ();			
 
