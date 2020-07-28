@@ -58,14 +58,18 @@ public class Module5_G : ModuleData {
         results = data;
         values = new List<string>();
 
+        string c = ""+value_c;
+        if (value_c < 0)
+            c = "(" + value_c + ")";
+
         if (value_b < 0) { 
-            SetValue("(" + value_a + ":" + value_c + ")\u207b" + uPow[Mathf.Abs(value_b)]);
-            SetValue("(" + value_a + ":" + value_c + ")\u207b" + uPow[Mathf.Abs(2 * value_b)]);
+            SetValue("(" + value_a + ":" + c + ")\u207b" + uPow[Mathf.Abs(value_b)]);
+            SetValue("(" + value_a + ":" + c + ")\u207b" + uPow[Mathf.Abs(2 * value_b)]);
         } else {
-            SetValue("(" + value_a + ":" + value_c + ")" + uPow[value_b]);
-            SetValue("(" + value_a + ":" + value_c + ")" + uPow[2 * value_b]);
+            SetValue("(" + value_a + ":" + c + ")" + uPow[value_b]);
+            SetValue("(" + value_a + ":" + c + ")" + uPow[2 * value_b]);
         }
-        SetValue("(" + value_a + ":" + value_c + ")" + uPow[0]);
+        SetValue("(" + value_a + ":" + c + ")" + uPow[0]);
 
     }
 	void SetValue(string number)

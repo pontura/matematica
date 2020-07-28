@@ -46,23 +46,30 @@ public class LevelsData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		loading = true;
-		kunakState = KunakStates.inicio;
-		//Events.AddScore += AddScore;
-		Events.ReplayArea += ReplayArea;
-		triviaCount = PlayerPrefs.GetInt ("triviaCount");
-		int count=-1;
-		for (int i = 0; i < levels.Count; i++) {
-			count += levels [i].length; 
-			levels [i].lastLevelQuestion = count;
-			levels[i].stars = PlayerPrefs.GetInt("stars_"+i);
-		}
-		for (int i = 0; i < Data.Instance.playerData.correctAnswers+1; i++) {
-			SetCurrentLevel (i);
-		}
+        loading = true;
+        kunakState = KunakStates.inicio;
+        //Events.AddScore += AddScore;
+        Events.ReplayArea += ReplayArea;
+        Init();
+        loading = false;
+    }
 
-		loading = false;
-	}
+    public void Init() {        
+        triviaCount = PlayerPrefs.GetInt("triviaCount");
+        int count = -1;
+        for (int i = 0; i < levels.Count; i++) {
+            count += levels[i].length;
+            levels[i].lastLevelQuestion = count;
+            levels[i].stars = PlayerPrefs.GetInt("stars_" + i);
+            levels[i].localPoints = 0;
+            levels[i].levelCompleted = false;
+            if (i > 0)
+                levels[i].unlocked = false;
+        }
+        for (int i = 0; i < Data.Instance.playerData.correctAnswers + 1; i++) {
+            SetCurrentLevel(i);
+        }        
+    }
 
 	void OnDestroy(){
 		//Events.AddScore -= AddScore;
@@ -164,6 +171,7 @@ public class LevelsData : MonoBehaviour {
 						else
 							levels [i].localPoints++;
 					} else {
+                        if(correctAnswers>0)
 						levels [i].localPoints++;
 					}
 					Events.LevelSelectorUpdate (i);
@@ -250,4 +258,11 @@ public class LevelsData : MonoBehaviour {
 			return levels [playingLevelIndex];
 		}
 	}
+
+    public void ResetRecorrido() {
+        PlayerPrefs.DeleteKey("triviaCount");
+        for (int i = 0; i < levels.Count; i++) {
+            PlayerPrefs.DeleteKey("stars_" + i);
+        }
+    }
 }

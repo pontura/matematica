@@ -26,13 +26,13 @@ public class Module5_D : ModuleData {
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
         if (UnityEngine.Random.value > 0.5f) {
-            value_a = UnityEngine.Random.Range(-5, 0);
-            value_c = UnityEngine.Random.Range(-5, 0);
-            value_d = UnityEngine.Random.Range(-5, 0);
+            value_a = UnityEngine.Random.Range(-5, -2);
+            value_c = UnityEngine.Random.Range(value_a, -1);
+            value_d = UnityEngine.Random.Range(value_c, 0);
         } else {
-            value_a = UnityEngine.Random.Range(1,5);
-            value_c = UnityEngine.Random.Range(1,5);
-            value_d = UnityEngine.Random.Range(1,5);
+            value_a = UnityEngine.Random.Range(1,3);
+            value_c = UnityEngine.Random.Range(value_a, 4);
+            value_d = UnityEngine.Random.Range(value_c, 5);
         }
 
         value_b = UnityEngine.Random.Range(2, 5);
@@ -59,10 +59,19 @@ public class Module5_D : ModuleData {
 	{
 		results = data;
 		values = new List<string> ();
+        string a = ""+value_a;
+        if (value_a < 0)
+            a = "(" + value_a + ")";
+        string c = ""+value_c;
+        if (value_c < 0)
+            c = "(" + value_c + ")";
+        string d = "" + value_d;
+        if (value_d < 0)
+            d = "(" + value_d + ")";
 
-        SetValue("("+ value_a +"."+value_c+"."+value_d+")"+uPow[value_b]);
-        SetValue("(" + value_a + "." + value_c + "." + value_d + ")" + uPow[2*value_b]);
-        SetValue("(" + value_a + "." + value_c + "." + value_d + ")" + uPow[value_b+1]);
+        SetValue("("+ a +"."+c+"."+d+")"+uPow[value_b]);
+        SetValue("(" + a + "." + c + "." + d + ")" + uPow[2*value_b]);
+        SetValue("(" + a + "." + c + "." + d + ")" + uPow[value_b+1]);
         
     }
 	void SetValue(string number)

@@ -14,25 +14,31 @@ public class LevelSelector : MonoBehaviour {
 		Events.LevelSelectorUpdate += LevelSelectorUpdate;
 		Events.AddStar += AddStar;
 		Events.AreaChange += AreaChange;
-		for (int i = 0; i < Data.Instance.levelData.currentLevelIndex+1; i++) {			
-			levelButtons [i].interactable = true;
-			if (i < Data.Instance.levelData.currentLevelIndex) {
-				puntajes [i].fillAmount = 1f;
-			} else {
-				LevelSelectorUpdate (i);
-			}
-		}
+        Events.ResetRecorrido += Init;
+        Init();
+    }
 
-		for (int i = 0; i < stars.Count; i++) {
-			stars[i].SetStars(Data.Instance.levelData.levels[i].stars);
-		}
-	}
+    public void Init() {
+        for (int i = 0; i < Data.Instance.levelData.currentLevelIndex + 1; i++) {
+            levelButtons[i].interactable = true;
+            if (i < Data.Instance.levelData.currentLevelIndex) {
+                puntajes[i].fillAmount = 1f;
+            } else {
+                LevelSelectorUpdate(i);
+            }
+        }
+
+        for (int i = 0; i < stars.Count; i++) {
+            stars[i].SetStars(Data.Instance.levelData.levels[i].stars);
+        }
+    }
 
 	void OnDestroy(){
 		Events.LevelSelectorUpdate -= LevelSelectorUpdate;
 		Events.AddStar -= AddStar;
-		Events.AreaChange -= AreaChange;
-	}
+        Events.AreaChange -= AreaChange;
+        Events.ResetRecorrido -= Init;
+    }
 
 	void AddStar(int index){
 		stars[index].SetStars(Data.Instance.levelData.levels[index].stars);

@@ -30,12 +30,14 @@ public class Module5_I : ModuleData {
             value_a = UnityEngine.Random.Range(-5, -1);
             value_c = UnityEngine.Random.Range(-5, 0);
             value_d = UnityEngine.Random.Range(-5, 0);
+            value_b = UnityEngine.Random.Range(2, 8);
         } else {
             value_a = UnityEngine.Random.Range(2, 6);
             value_c = UnityEngine.Random.Range(1, 5);
             value_d = UnityEngine.Random.Range(1, 5);
+            value_b = UnityEngine.Random.Range(value_a+1, 9);
         }
-        value_b = UnityEngine.Random.Range(2, 8);
+        
 
         //while (value_d/(value_d-1)==value_c) {
         while ((value_c *  (value_d - 1)) == value_d) {

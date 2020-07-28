@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 114123126304911576, guid: ceaf6c11bf6f453468b1cb5457bd0e31,
         type: 3}
       propertyPath: resetData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceaf6c11bf6f453468b1cb5457bd0e31, type: 3}

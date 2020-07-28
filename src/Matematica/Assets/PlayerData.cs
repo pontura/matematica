@@ -7,10 +7,14 @@ public class PlayerData : MonoBehaviour {
 	public int correctAnswers;
     public int mode;
 
-	// Use this for initialization
-	void Awake(){
-		correctAnswers = PlayerPrefs.GetInt ("correctAnswers");
-        mode = PlayerPrefs.GetInt("mode",-1);
+    // Use this for initialization
+    void Awake() {
+        Init();
+    }
+
+    public void Init() {
+        correctAnswers = PlayerPrefs.GetInt("correctAnswers");
+        mode = PlayerPrefs.GetInt("mode", -1);
     }
 
 	void Start () {		
@@ -43,5 +47,10 @@ public class PlayerData : MonoBehaviour {
     public void SetMode(int m) {
         mode = m;
         PlayerPrefs.SetInt("mode", mode);
+    }
+
+    public void ResetRecorrido() {
+        PlayerPrefs.DeleteKey("correctAnswers");
+        PlayerPrefs.DeleteKey("mode");
     }
 }

@@ -47,9 +47,15 @@ public class Settings : MonoBehaviour{
     }
 
     public Recorrido GetActualRecorrido() {
-        if (selectedRecorrido == null || selectedRecorrido.ejercicios.exercises.Count<=0) {
+        if (selectedRecorrido.id == -1|| selectedRecorrido.ejercicios.exercises.Count<=0) {
             selectedRecorrido = recorridos.Find(x => x.id == Data.Instance.playerData.mode);
         }
         return selectedRecorrido;
+    }
+
+    public void ResetRecorrido() {
+        Recorrido r = new Recorrido();
+        r.id = -1;
+        selectedRecorrido = r;
     }
 }

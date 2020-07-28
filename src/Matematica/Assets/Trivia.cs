@@ -26,6 +26,7 @@ public class Trivia : MonoBehaviour {
     public InputField nombre;
     public Button login;
     public GameObject noLogin;
+    public GameObject ResetDialog;
 
     AudioSource audiosource;
 
@@ -60,6 +61,11 @@ public class Trivia : MonoBehaviour {
         Events.SetOp2B += SetOp2;
         Events.SetOp2C += SetOp2;
 
+        Init();
+    }
+
+    void Init() {
+        ClearTitleDenom();
         LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
         puntos.fillAmount = 1f * l.localPoints / l.length;
 
@@ -254,6 +260,22 @@ public class Trivia : MonoBehaviour {
         creditos.SetActive(enable);
     }
 
+    public void ShowResetDialog(bool ok) {
+        ResetDialog.SetActive(ok);
+    }
+
+    public void ResetRecorrido() {
+        Data.Instance.playerData.ResetRecorrido();
+        Data.Instance.playerData.Init();
+        Data.Instance.levelData.ResetRecorrido();
+        Data.Instance.levelData.Init();
+        Data.Instance.settings.ResetRecorrido();
+        Events.ResetRecorrido();
+        Init();
+        ResetDialog.SetActive(false);
+        ShowModeSelector(true);
+    }
+
     void AreaChange(int i) {
         LevelsData.Level l = Data.Instance.levelData.CurrentLevel;
         puntos.fillAmount = 1f * l.localPoints / l.length;
@@ -329,6 +351,7 @@ public class Trivia : MonoBehaviour {
     }
 
     public void SelectArea(int id) {
+        ClearTitleDenom();
         Events.ReplayArea(id);
         levelSelector.SetActive(false);
         Events.NextExercise();

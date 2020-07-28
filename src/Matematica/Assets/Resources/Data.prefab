@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd39300bb87ea8149bc992e98937ad4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetData: 0
   isArcade: 0
   settings: {fileID: 114872714505283540}
   modulesManager: {fileID: 0}
@@ -60,6 +61,7 @@ MonoBehaviour:
   interfaceSfx: {fileID: 0}
   users: {fileID: 0}
   esAlumno: 0
+  firebaseInitialized: 0
   currentLevel: 
 --- !u!114 &114872714505283540
 MonoBehaviour:
@@ -73,8 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968bdbbe2d4e284d9e0279caaaf4ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  all:
-    exercises: []
+  recorridos: []
+  selectedRecorrido:
+    id: -1
+    ejercicios:
+      exercises: []
 --- !u!114 &114109487064868242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswers: 99
+  mode: 0
 --- !u!114 &114061336573561616
 MonoBehaviour:
   m_ObjectHideFlags: 0

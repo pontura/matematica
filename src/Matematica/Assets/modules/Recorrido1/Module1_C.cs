@@ -30,18 +30,19 @@ public class Module1_C : ModuleData {
         value_d = UnityEngine.Random.Range(2, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305" + value_b + "\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size>";
+                newTitle += "<size=24>\u0305" + value_b + "\u0305</size>";
+                newTitle2 += "</color><size=24>" + value_a + "</size>";
             } else if (textToDecode[b].ToString() == "C") {
-                newTitle += "<size=18>\u0305" + value_d + "\u0305</size>";
-                newTitle2 += "<size=18>" + value_c + " </size><color=#8A00C9>";
+                newTitle += "<size=24>\u0305" + value_d + "\u0305</size>";
+                newTitle2 += "<size=24>" + value_c + " </size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
             }
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
-        newTitle2 = newTitle2.Replace("+", "<color=#8A00C9>+</color>");
+        newTitle2 = newTitle2.Replace("+", "<color=#8A00C9><size=48>+</size></color>");
+        newTitle = newTitle.Replace("+", "<size=48>+</size>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
