@@ -31,18 +31,19 @@ public class Module1_E : ModuleData {
         
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305" + value_b + "\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size>";
+                newTitle += " <size=24>\u0305" + value_b + "\u0305 </size>";
+                newTitle2 += "</color><size=24>  " + value_a + " </size>";
             } else if (textToDecode[b].ToString() == "C") {
-                newTitle += "<size=18>\u0305" + value_d + "\u0305</size>";
-                newTitle2 += "<size=18>" + value_c + " </size><color=#8A00C9>";
+                newTitle += " <size=24> \u0305" + value_d + "\u0305 </size>";
+                newTitle2 += " <size=24>" + value_c + " </size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
             }
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
-        newTitle = newTitle.Replace(".", "<color=#8A00C9>.</color>");
+        newTitle = newTitle.Replace(".", "<color=#8A00C9><size=50>.</size></color>");
+        newTitle2 = newTitle2.Replace(".", "<size=50>.</size>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
@@ -58,9 +59,9 @@ public class Module1_E : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f*(value_a * value_c)) / (value_b * value_d)));
-        SetValue("" + ((1.0f * (value_a * value_d)) / (value_b * value_c)));
-        SetValue("" + ((1.0f * (value_a * value_b)) / (value_d * value_c)));
+        SetValue("" + ((1.0f*(value_a * value_c)) + "/" + (value_b * value_d)));
+        SetValue("" + ((1.0f * (value_a * value_d)) + "/" + (value_b * value_c)));
+        SetValue("" + ((1.0f * (value_a * value_b)) + "/" + (value_d * value_c)));
     }
 	void SetValue(string number)
 	{

@@ -150,7 +150,8 @@ public class Trivia : MonoBehaviour {
         titleClone.transform.parent = title.transform.parent;
         titleClone.transform.SetAsFirstSibling();
         Text text = titleClone.GetComponent<Text>();
-        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 55, title.rectTransform.localPosition.z);
         text.text = t;
     }
 
@@ -159,7 +160,8 @@ public class Trivia : MonoBehaviour {
         titleCloneUp.transform.parent = title.transform.parent;
         titleCloneUp.transform.SetAsFirstSibling();
         Text text = titleCloneUp.GetComponent<Text>();
-        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 80, title.rectTransform.localPosition.z);
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 80, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 110, title.rectTransform.localPosition.z);
         text.text = t;
     }
 
@@ -168,7 +170,8 @@ public class Trivia : MonoBehaviour {
         titleCloneDown.transform.parent = title.transform.parent;
         titleCloneDown.transform.SetAsLastSibling();
         Text text = titleCloneDown.GetComponent<Text>();
-        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y - 50, title.rectTransform.localPosition.z);
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y - 50, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y - 55, title.rectTransform.localPosition.z);
         text.text = t;
     }
 

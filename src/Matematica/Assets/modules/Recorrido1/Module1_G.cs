@@ -33,10 +33,10 @@ public class Module1_G : ModuleData {
 
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305" + value_c + "\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size><color=#8A00C9>";
-                newTitle3 += "</color><size=18>\u0305" + value_b + "\u0305</size><color=#8A00C9>";
-                newTitle4 += "</color><size=18>\u0305" + value_d + "\u0305</size><color=#8A00C9>";
+                newTitle += " <size=24> \u0305 \u0305" + value_c + "\u0305 \u0305 </size>";
+                newTitle2 += " </color><size=24> " + value_a + " </size><color=#8A00C9>";
+                newTitle3 += " </color><size=24> \u0305" + value_b + "\u0305 </size><color=#8A00C9>";
+                newTitle4 += " </color><size=24> \u0305" + value_d + "\u0305 </size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
@@ -62,9 +62,9 @@ public class Module1_G : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f * (value_a * value_d)) / (value_b * value_c)));
-        SetValue("" + ((1.0f*(value_a * value_c)) / (value_b * value_d)));        
-        SetValue("" + ((1.0f * (value_a * value_b)) / (value_d * value_c)));
+        SetValue("" + ((1.0f * (value_a * value_d)) +"/"+ (value_b * value_c)));
+        SetValue("" + ((1.0f*(value_a * value_c)) + "/" + (value_b * value_d)));        
+        SetValue("" + ((1.0f * (value_a * value_b)) + "/" + (value_d * value_c)));
     }
 	void SetValue(string number)
 	{

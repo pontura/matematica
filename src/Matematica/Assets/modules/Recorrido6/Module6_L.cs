@@ -25,7 +25,11 @@ public class Module6_L : ModuleData {
         for (int b = 0; b < arr.Length; b++)
 			if (textToDecode [b].ToString () == "a") {				
 				newTitle += value_a;
-			} else
+			} else if (textToDecode[b].ToString() == "b") {
+                newTitle += (value_a+1);
+            } else if (textToDecode[b].ToString() == "c") {
+                newTitle += (value_a + 2);
+            } else
                 newTitle += textToDecode [b].ToString ();			
 
 			title = title.Replace("#",newTitle);

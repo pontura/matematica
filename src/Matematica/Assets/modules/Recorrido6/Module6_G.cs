@@ -27,9 +27,12 @@ public class Module6_G : ModuleData {
         value_b = 2*UnityEngine.Random.Range(1, 5);
 
         for (int b = 0; b < arr.Length; b++)
-			if (textToDecode [b].ToString () == "a") {				
-				newTitle += value_a;
-			} else if (textToDecode[b].ToString() == "b") {
+			if (textToDecode [b].ToString () == "a") {
+                if(value_a<0)
+				    newTitle += "("+value_a+")";
+                else
+                    newTitle += value_a;
+            } else if (textToDecode[b].ToString() == "b") {
                 newTitle += uPow[value_b];
             } else
                 newTitle += textToDecode [b].ToString ();			

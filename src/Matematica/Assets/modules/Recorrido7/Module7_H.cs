@@ -21,7 +21,7 @@ public class Module7_H : ModuleData {
 	{
 		string[] arr = new string[textToDecode.Length];
 		string newTitle = "";
-        value_a = UnityEngine.Random.Range(10,40);
+        value_a = UnityEngine.Random.Range(90,140);
         value_b = UnityEngine.Random.Range(10,70);
 
         for (int b = 0; b < arr.Length; b++)

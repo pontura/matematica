@@ -33,7 +33,10 @@ public class Module6_J : ModuleData {
 			if (textToDecode [b].ToString () == "a") {				
 				newTitle += value_a;
 			} else if (textToDecode[b].ToString() == "b") {
-                newTitle += value_b;
+                if(value_b<0)
+                    newTitle += "("+value_b+")";
+                else
+                    newTitle += value_b;
             } else
                 newTitle += textToDecode [b].ToString ();			
 
