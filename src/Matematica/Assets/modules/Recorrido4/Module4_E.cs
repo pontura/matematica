@@ -30,18 +30,13 @@ public class Module4_E : ModuleData {
         value_b = UnityEngine.Random.Range(4, Mathf.Abs(value_a));
         value_c = UnityEngine.Random.Range(-3, -1*value_b);
         value_d = UnityEngine.Random.Range(2, Mathf.Abs(value_c));
-
-        value_a = UnityEngine.Random.Range(5, 9);
-        value_b = UnityEngine.Random.Range(4, value_a);
-        value_c = UnityEngine.Random.Range(3, value_b);
-        value_d = UnityEngine.Random.Range(2, value_c);
-
+                
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305\u0305" + value_c + "\u0305\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size><color=#8A00C9>";
-                newTitle3 += "</color><size=18>\u0305" + value_b + "\u0305</size><color=#8A00C9>";
-                newTitle4 += "</color><size=18>\u0305" + value_d + "\u0305</size><color=#8A00C9>";
+                newTitle += " <size=24> \u0305-\u0305" + Mathf.Abs(value_c) + "\u0305 \u0305 </size>";
+                newTitle2 += " </color><size=24> " + value_a + " </size><color=#8A00C9>";
+                newTitle3 += " </color><size=24>  \u0305" + value_b + "\u0305 </size><color=#8A00C9>";
+                newTitle4 += " </color><size=24>  \u0305" + value_d + "\u0305 </size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
@@ -67,9 +62,9 @@ public class Module4_E : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f * (value_a * value_d)) / (value_b * value_c)));
-        SetValue("" + ((1.0f*(value_a * value_c)) / (value_b * value_d)));        
-        SetValue("" + ((1.0f * (value_a * value_b)) / (value_d * value_c)));
+        SetValue("" + ((1.0f * (value_a * value_d)) +"/"+ (value_b * value_c)));
+        SetValue("" + ((1.0f*(value_a * value_c)) + "/" + (value_b * value_d)));        
+        SetValue("" + ((1.0f * (value_a * value_b)) + "/" + (value_d * value_c)));
     }
 	void SetValue(string number)
 	{

@@ -29,19 +29,30 @@ public class Module4_D : ModuleData {
         value_c = UnityEngine.Random.Range(3, value_b);
         value_d = UnityEngine.Random.Range(2, value_c);
         for (int b = 0; b < arr.Length; b++)
-            if (textToDecode[b].ToString() == "A") {                
-                newTitle += "<size=18>\u0305\u0305 " + value_b + "\u0305\u0305</size>";
-                newTitle2 += "</color><size=18>" + value_a + "</size>";
+            if (textToDecode[b].ToString() == "A") {
+                if (value_a < 0) {
+                    newTitle += "\n <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size>";
+                    newTitle2 += "\n  <size=55>-</size></color><size=24> " + Mathf.Abs(value_a) + "  </size><color=#8A00C9></color>";
+                } else {
+                    newTitle += " <size=24> \u0305" + value_b + "\u0305 </size>";
+                    newTitle2 += " </color><size=24> " + value_a + " </size>";
+                }
             } else if (textToDecode[b].ToString() == "C") {
-                newTitle += "<size=18>\u0305\u0305 " + value_d + "\u0305\u0305</size>";
-                newTitle2 += "<size=18>" + value_c + " </size><color=#8A00C9>";
+                if (value_c < 0) {
+                    newTitle += "<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_d + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=24>" + Mathf.Abs(value_c) + "  </size><color=#8A00C9><size=45>)</size>";
+                } else {
+                    newTitle += " <size=24>\u0305" + value_d + "\u0305 </size>";
+                    newTitle2 += " <size=24>" + value_c + " </size><color=#8A00C9>";
+                }
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();
             }
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
-        newTitle2 = newTitle2.Replace(":", "<color=#8A00C9>:</color>");
+        newTitle2 = newTitle2.Replace(":", "<color=#8A00C9><size=50>:</size></color>");
+        newTitle = newTitle.Replace(":", "<size=50>:</size>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
@@ -57,9 +68,9 @@ public class Module4_D : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + ((1.0f * value_a * value_d) / (value_b * value_c)));
-        SetValue("" + ((1.0f * value_a * value_b) / (value_d * value_c)));
-        SetValue("" + ((1.0f * value_a * value_c) / (value_d * value_b)));
+        SetValue("" + ((1.0f * value_a * value_d) +"/"+ (value_b * value_c)));
+        SetValue("" + ((1.0f * value_a * value_b) + "/" + (value_d * value_c)));
+        SetValue("" + ((1.0f * value_a * value_c) + "/" + (value_d * value_b)));
     }
 	void SetValue(string number)
 	{

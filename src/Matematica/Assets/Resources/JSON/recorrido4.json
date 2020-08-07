@@ -80,7 +80,7 @@
 
 		{
 		"module": "Module4_H",
-		"title":" La expresión decimal equivalente a la  fracción -*A* es:",
+		"title":" La expresión decimal equivalente a la  fracción *A* es:",
 		"results":
 			[
 			"A",
@@ -91,7 +91,18 @@
 
 		{
 		"module": "Module4_I",
-		"title":" La expresión decimal equivalente a la  fracción -*A* es:",
+		"title":" La expresión decimal equivalente a la  fracción *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_J",
+		"title":"La fracción equivalente a la expresión decimal #ABC# es:",
 		"results":
 			[
 			"A",

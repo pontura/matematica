@@ -31,18 +31,18 @@ public class Module4_B: ModuleData {
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
                 if (value_a < 0) {
-                    newTitle += "\n<size=45>(</size> <size=24> \u0305\u0305 " + value_b + "\u0305\u0305 </size><size=45>)</size>";
-                    newTitle2 += "\n <size=45>(</size></color><size=24> " + value_a + " </size><color=#8A00C9><size=45>)</size></color>";
+                    newTitle += "\n<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "\n <size=45>(</size> <size=55>-</size></color><size=24> " + Mathf.Abs(value_a) + "   </size><color=#8A00C9><size=45>)</size></color>";
                 } else {
-                    newTitle += " <size=24> \u0305\u0305 " + value_b + "\u0305\u0305 </size>";
+                    newTitle += " <size=24> \u0305" + value_b + "\u0305 </size>";
                     newTitle2 += " </color><size=24> " + value_a + " </size>";
                 }
             } else if (textToDecode[b].ToString() == "C") {
                 if (value_c < 0) {
-                    newTitle += "<size=45>(</size> <size=24>\u0305\u0305 " + value_d + "\u0305\u0305 </size><size=45>)</size>";
-                    newTitle2 += "<color=#8A00C9><size=45>(</size></color> <size=24>" + value_c + " </size><color=#8A00C9><size=45>)</size>";
+                    newTitle += "<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_d + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=24>" + Mathf.Abs(value_c) + "  </size><color=#8A00C9><size=45>)</size>";
                 } else {
-                    newTitle += " <size=24>\u0305\u0305 " + value_d + "\u0305\u0305 </size>";
+                    newTitle += " <size=24>\u0305" + value_d + "\u0305 </size>";
                     newTitle2 += " <size=24>" + value_c + " </size><color=#8A00C9>";
                 }
             } else {

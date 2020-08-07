@@ -41,7 +41,7 @@ public class Trivia : MonoBehaviour {
 
     ConjuntosManager conjuntos;
 
-    GameObject titleClone, titleCloneUp, titleCloneDown;
+    GameObject titleClone, titleCloneUp, titleCloneDown, titlePeriodic;
 
     void Start() {
         audiosource = GetComponent<AudioSource>();
@@ -57,6 +57,7 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenom += SetTitleDenom;
         Events.SetTitleDenomUp += SetTitleDenomUp;
         Events.SetTitleDenomDown += SetTitleDenomDown;
+        Events.SetPeriodicTitle += SetPeriodicTitle;
         Events.SetOp2A += SetOp2;
         Events.SetOp2B += SetOp2;
         Events.SetOp2C += SetOp2;
@@ -100,6 +101,7 @@ public class Trivia : MonoBehaviour {
         Events.SetTitleDenom -= SetTitleDenom;
         Events.SetTitleDenomUp -= SetTitleDenomUp;
         Events.SetTitleDenomDown -= SetTitleDenomDown;
+        Events.SetPeriodicTitle -= SetPeriodicTitle;
         Events.SetOp2A -= SetOp2;
         Events.SetOp2B -= SetOp2;
         Events.SetOp2C -= SetOp2;
@@ -145,6 +147,17 @@ public class Trivia : MonoBehaviour {
         ShuffleChildOrder(buttonsContainer);
     }
 
+    void SetPeriodicTitle(string t) {
+        titlePeriodic = GameObject.Instantiate(title.gameObject);
+        titlePeriodic.transform.parent = title.transform.parent;
+        titlePeriodic.transform.SetAsFirstSibling();
+        Text text = titlePeriodic.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(-22.4f, -37, 0);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
+        text.text = t;
+    }
+
     void SetTitleDenom(string t) {
         titleClone = GameObject.Instantiate(title.gameObject);
         titleClone.transform.parent = title.transform.parent;
@@ -179,6 +192,7 @@ public class Trivia : MonoBehaviour {
         Destroy(titleClone);
         Destroy(titleCloneDown);
         Destroy(titleCloneUp);
+        Destroy(titlePeriodic);
         Vector2 s = title.rectTransform.sizeDelta;
         title.rectTransform.sizeDelta = new Vector2(s.x, 210);
         conjuntos.container.SetActive(false);
