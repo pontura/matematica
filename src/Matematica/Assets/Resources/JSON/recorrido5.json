@@ -14,7 +14,7 @@
 
 		{
 		"module": "Module5_B",
-		"title":"El resultado de (*A )C* es:",
+		"title":"El resultado de *AC* es:",
 		"results":
 			[
 			"(M:N).100 %",
@@ -124,7 +124,7 @@
 
 		{
 		"module": "Module5_K",
-		"title":"El resultado de *(A)C* es:",
+		"title":"Una expresión equivalente a *(A)C* es:",
 		"results":
 			[
 			"(M:N).100 %",

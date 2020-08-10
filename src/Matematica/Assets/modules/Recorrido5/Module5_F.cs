@@ -35,9 +35,14 @@ public class Module5_F : ModuleData {
         value_c = UnityEngine.Random.Range(1, 5);
 
         for (int b = 0; b < arr.Length; b++)
-            if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=18><color=#8A00C9></color>\u0305(\u0305" + value_a + "\u0305)\u0305"+ uPow[value_c] + "</size>";
-                newTitle2 += "</color><size=18>(" + value_a + ")"+ uPow[value_b]+"</size><color=#8A00C9>";
+            if (textToDecode[b].ToString() == "A") {
+                if (value_a < 0) {
+                    newTitle += " <size=24><color=#8A00C9></color>\u0305(\u0305-\u0305" + Mathf.Abs(value_a) + "\u0305)\u0305" + uPow[value_c] + "</size>";
+                    newTitle2 += "</color><size=24>(" + value_a + ")" + uPow[value_b] + "</size><color=#8A00C9>";
+                } else {
+                    newTitle += " <size=24><color=#8A00C9></color>\u0305(\u0305" + value_a + "\u0305)\u0305" + uPow[value_c] + "</size>";
+                    newTitle2 += "</color><size=24>(" + value_a + ")" + uPow[value_b] + "</size><color=#8A00C9>";
+                }
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();

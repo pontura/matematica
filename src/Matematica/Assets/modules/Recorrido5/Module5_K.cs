@@ -26,7 +26,7 @@ public class Module5_K : ModuleData {
 		string newTitle = "";
         value_a = UnityEngine.Random.Range(-2, -10);
         value_b = UnityEngine.Random.Range(2, 5);
-        value_c = UnityEngine.Random.Range(2, 5);
+        value_c = UnityEngine.Random.Range(3, 5);
 
         while (((value_c *  value_b) == (value_c + value_b))||((value_c * value_b)==Mathf.Pow(value_b,value_c))) {
             value_c = UnityEngine.Random.Range(2, 5);
@@ -35,7 +35,7 @@ public class Module5_K : ModuleData {
 
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=18>(" + value_a + ")"+ uPow[value_b] + "</size>";
+                newTitle += " <size=24>(" + value_a + ")"+ uPow[value_b] + "</size>";
             } else if (textToDecode[b].ToString() == "C") {
                 newTitle += uPow[value_c];
             } else {
@@ -55,10 +55,27 @@ public class Module5_K : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + string.Format("{0:0.###}", System.Math.Pow(value_a,value_b*value_c)));
+        /*SetValue("" + string.Format("{0:0.###}", System.Math.Pow(value_a,value_b*value_c)));
         SetValue("" + string.Format("{0:0.###}", System.Math.Pow(value_a, value_b + value_c)));
-        SetValue("" + string.Format("{0:0.###}", System.Math.Pow(value_a, System.Math.Pow(value_b,value_c))));
+        SetValue("" + string.Format("{0:0.###}", System.Math.Pow(value_a, System.Math.Pow(value_b,value_c))));*/
+        SetValue("(" + value_a + ")" + GetPowerVal(value_b * value_c));
+        SetValue("(" + value_a + ")" + GetPowerVal(value_b + value_c));
+        SetValue("(" + value_a + ")" + GetPowerVal(Mathf.Pow(value_b, value_c)));
+
     }
+
+    string GetPowerVal(float v) {
+        string result = "";
+        string val = "" + v;
+        for(int i = 0; i < val.Length; i++) {
+            int index = int.Parse(""+val[i]);
+            result += uPow[index];
+        }
+
+
+        return result;
+    }
+
 	void SetValue(string number)
 	{
         Debug.Log(number);
