@@ -21,7 +21,9 @@ public static class Events {
     public static System.Action<string> SetTitleDenomUp = delegate { };
     public static System.Action<string> SetTitleDenomDown = delegate { };
     public static System.Action<string> SetPeriodicTitle = delegate { };
-    
+    public static System.Action<string,string> SetPeriodicTitle2 = delegate { };
+    public static System.Action<string> SetPeriodicTitle3 = delegate { };
+
     public static System.Action<int,int> SetOp2A = delegate { };
     public static System.Action<int, int> SetOp2B = delegate { };
     public static System.Action<int, int, int, int, int, int, int> SetOp2C = delegate { };

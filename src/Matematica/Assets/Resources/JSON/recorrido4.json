@@ -109,6 +109,39 @@
 			"B",
 			"C"
 			]
+		},
+
+		{
+		"module": "Module4_K",
+		"title":" La expresión decimal equivalente a la  fracción *A* es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_L",
+		"title":"El menor número racional entre estos tres #A, B y C# es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
+		},
+
+		{
+		"module": "Module4_M",
+		"title":"El número racional que está comprendido entre #A y B# es:",
+		"results":
+			[
+			"A",
+			"B",
+			"C"
+			]
 		}
 
 	]

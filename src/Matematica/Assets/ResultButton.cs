@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Reflection;
 
 public class ResultButton : MonoBehaviour {
 
@@ -20,9 +21,112 @@ public class ResultButton : MonoBehaviour {
 
 	public void Init(string text, int id_)
 	{
-		field.text = text;
+        string[] s = text.Split('@');
+		field.text = s[0];
 		id = id_;
+        if (s.Length > 1) {
+            System.Type thisType = this.GetType();
+            MethodInfo theMethod = thisType.GetMethod(s[1]);
+            theMethod.Invoke(this, null);
+        }
+
 	}
+
+    public void PeriodicABC() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(50, 35, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 70;
+        text.raycastTarget = false;
+    }
+
+    public void PeriodicC() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(75, 30, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 40;
+        text.raycastTarget = false;
+    }
+
+    public void PeriodicB() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(60, 30, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 40;
+        text.raycastTarget = false;
+    }
+
+    public void PeriodicA() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(35, 30, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 40;
+        text.raycastTarget = false;
+    }
+
+    public void PeriodicAB() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(45, 30, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 63;
+        text.raycastTarget = false;
+    }
+
+    public void PeriodicBC() {
+        GameObject perioT = GameObject.Instantiate(field.gameObject);
+        perioT.transform.parent = field.transform.parent;
+        perioT.transform.SetAsLastSibling();
+        Text text = perioT.GetComponent<Text>();
+        //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
+        text.rectTransform.localPosition = new Vector3(65, 30, 0);
+        text.rectTransform.sizeDelta = new Vector2(100, 100);
+        text.rectTransform.rotation = Quaternion.Euler(0f, 0f, -90f);
+        text.rectTransform.localScale = Vector3.one;
+        text.text = "(";
+        text.resizeTextForBestFit = false;
+        text.fontSize = 63;
+        text.raycastTarget = false;
+    }
 
     public void SetResult()
     {
