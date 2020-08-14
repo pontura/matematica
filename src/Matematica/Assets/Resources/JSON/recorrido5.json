@@ -102,7 +102,7 @@
 
 		{
 		"module": "Module5_I",
-		"title":"El resultado de\n*(A)C . (B)D* es:",
+		"title":"El resultado de *AC . BD* es:",
 		"results":
 			[
 			"(M:N).100 %",
@@ -113,7 +113,7 @@
 
 		{
 		"module": "Module5_J",
-		"title":"El resultado de\n*(A)C : (B)D* es:",
+		"title":"El resultado de *AC : BD* es:",
 		"results":
 			[
 			"(M:N).100 %",

@@ -28,8 +28,8 @@ public class Module5_J : ModuleData {
         string newTitle2 = "";
         if (UnityEngine.Random.value > 0.5f) {
             value_a = UnityEngine.Random.Range(-5, -1);
-            value_c = UnityEngine.Random.Range(-5, 0);
-            value_d = UnityEngine.Random.Range(-5, 0);
+            value_c = UnityEngine.Random.Range(-4, 0);
+            value_d = UnityEngine.Random.Range(-4, 0);
         } else {
             value_a = UnityEngine.Random.Range(2, 6);
             value_c = UnityEngine.Random.Range(1, 5);
@@ -40,7 +40,7 @@ public class Module5_J : ModuleData {
         //while (value_d/(value_d-1)==value_c) {
         while ((value_c *  (value_d - 1)) == value_d) {
             if (UnityEngine.Random.value > 0.5f) {
-                value_d = UnityEngine.Random.Range(-5, 0);
+                value_d = UnityEngine.Random.Range(-4, 0);
             } else {
                 value_d = UnityEngine.Random.Range(1, 5);
             }
@@ -48,27 +48,37 @@ public class Module5_J : ModuleData {
         
 
         for (int b = 0; b < arr.Length; b++)
-            if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=18><color=#8A00C9></color> \u0305" + value_b + "\u0305 </size>";
-                newTitle2 += "</color><size=18>   " + value_a + " </size><color=#8A00C9>";
+            if (textToDecode[b].ToString() == "A") {
+                if (value_a < 0) {
+                    newTitle += "\n<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "\n<size=45>(</size> <size=55>-</size></color><size=24>  " + Mathf.Abs(value_a) + "   </size><color=#8A00C9><size=45>)</size>  ";
+                } else {
+                    newTitle += "\n<size=45>(</size> <size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "\n<size=45>(</size> </color><size=24>  " + Mathf.Abs(value_a) + " </size><color=#8A00C9><size=45>)</size> ";
+                }
             } else if (textToDecode[b].ToString() == "B") {
-                newTitle += " <size=18><color=#8A00C9></color> \u0305" + value_b + "\u0305 </size>";
-                newTitle2 += "</color><size=18>   " + value_a + " </size><color=#8A00C9>";
+                if (value_c < 0) {
+                    newTitle += "<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=24> " + Mathf.Abs(value_a) + "  </size><color=#8A00C9><size=45>)</size>";
+                } else {
+                    newTitle += "<size=45>(</size> <size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size></color>  <size=24>" + Mathf.Abs(value_a) + "  </size><color=#8A00C9><size=45>)</size>";
+                }
             } else if (textToDecode[b].ToString() == "C") {
                 if (value_c < 0) {
-                    newTitle += "\u207b" + uPow[Mathf.Abs(value_c)];
-                    newTitle2 += "\u207b" + uPow[Mathf.Abs(value_c)];
+                    newTitle += "<size=45>\u207b" + uPow[Mathf.Abs(value_c)] + "</size>";
+                    newTitle2 += "<size=45>" + uPow[Mathf.Abs(value_c)] + "</size></color>";
                 } else {
-                    newTitle += uPow[value_c];
-                    newTitle2 += uPow[value_c];
+                    newTitle += "<size=45>" + uPow[value_c] + "</size>";
+                    newTitle2 += "<size=45>" + uPow[value_c] + "</size></color>";
                 }
             } else if (textToDecode[b].ToString() == "D") {
                 if (value_d < 0) {
-                    newTitle += "\u207b" + uPow[Mathf.Abs(value_d)];
-                    newTitle2 += "\u207b" + uPow[Mathf.Abs(value_d)];
+                    newTitle += "<size=45>\u207b" + uPow[Mathf.Abs(value_d)] + "</size>";
+                    newTitle2 += "<size=45>\u207b" + uPow[Mathf.Abs(value_d)] + "</size>";
                 } else {
-                    newTitle += uPow[value_d];
-                    newTitle2 += uPow[value_d];
+                    newTitle += "<size=45>" + uPow[value_d] + "</size>";
+                    newTitle2 += "<size=45>" + uPow[value_d] + "</size>";
                 }
             } else {
                 newTitle += textToDecode[b].ToString();
@@ -77,6 +87,8 @@ public class Module5_J : ModuleData {
         Debug.Log(newTitle);
         Debug.Log(newTitle2);
         //newTitle2 = newTitle2.Replace("+", "<color=#8A00C9>+</color>");
+        newTitle2 = newTitle2.Replace(":", "<color=#8A00C9><size=50>:</size></color>");
+        newTitle = newTitle.Replace(":", "<size=50>:</size>");
         string title2 = "<color=#8A00C9>" +title+ "</color>";
         title = title.Replace("*", newTitle);
         Debug.Log(title);
