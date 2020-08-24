@@ -24,16 +24,16 @@ public class Module4_M : ModuleData {
         value_b = UnityEngine.Random.Range(1, value_a);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
-                newTitle += "\n-<size=24>0,"+ value_a+value_b + "</size>";
+                newTitle += "\n-<size=28>0," + value_a+value_b + "</size>";
             } else if (textToDecode[b].ToString() == "B") {
-                newTitle += "<size=24>0," + value_a + value_b + "</size>";
+                newTitle += "<size=28>0," + value_a + value_b + "</size>";
             } else {
                 newTitle += textToDecode[b].ToString();
             }
         Debug.Log(newTitle);
         title = title.Replace("#", newTitle);
         Debug.Log(title);
-        Events.SetPeriodicTitle3("<size=25>)</size>");
+        Events.SetPeriodicTitle3("<size=30>)</size>");
         SetResults (data.results);
 			
 		CheckValues ();

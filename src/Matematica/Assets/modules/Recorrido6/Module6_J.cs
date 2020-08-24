@@ -20,7 +20,7 @@ public class Module6_J : ModuleData {
 	void Calculate()
 	{
 		string[] arr = new string[textToDecode.Length];
-		string newTitle = "";
+		string newTitle = "\n";
         do {
             value_a = UnityEngine.Random.Range(-10, 10);
         } while (value_a == 0);

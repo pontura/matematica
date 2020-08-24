@@ -35,7 +35,7 @@ public class Module5_K : ModuleData {
 
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=24>(" + value_a + ")"+ uPow[value_b] + "</size>";
+                newTitle += " <size=28>(" + value_a + ")"+ uPow[value_b] + "</size>";
             } else if (textToDecode[b].ToString() == "C") {
                 newTitle += uPow[value_c];
             } else {

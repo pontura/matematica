@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Trivia : MonoBehaviour {
     public Text moduleField;
-    public Text title;
+    public TextMeshProUGUI title;
     public Tween popupPregunta;
     public ResultButton resultButton_to_instantiate;
     public Transform buttonsContainer;
@@ -155,7 +156,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1 = GameObject.Instantiate(title.gameObject);
         titlePeriodic1.transform.parent = title.transform.parent;
         titlePeriodic1.transform.SetAsFirstSibling();
-        Text text = titlePeriodic1.GetComponent<Text>();
+        TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
         text.rectTransform.localPosition = new Vector3(-22.4f, -37, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -166,16 +167,16 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1 = GameObject.Instantiate(title.gameObject);
         titlePeriodic1.transform.parent = title.transform.parent;
         titlePeriodic1.transform.SetAsFirstSibling();
-        Text text = titlePeriodic1.GetComponent<Text>();
+        TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
-        text.rectTransform.localPosition = new Vector3(-216, -40, 0);
+        text.rectTransform.localPosition = new Vector3(-210, -40, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
         text.text = t1;
 
         titlePeriodic2 = GameObject.Instantiate(title.gameObject);
         titlePeriodic2.transform.parent = title.transform.parent;
         titlePeriodic2.transform.SetAsFirstSibling();
-        Text text2 = titlePeriodic2.GetComponent<Text>();
+        TextMeshProUGUI text2 = titlePeriodic2.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
         text2.rectTransform.localPosition = new Vector3(-48, -37, 0);
         text2.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -186,7 +187,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1 = GameObject.Instantiate(title.gameObject);
         titlePeriodic1.transform.parent = title.transform.parent;
         titlePeriodic1.transform.SetAsFirstSibling();
-        Text text = titlePeriodic1.GetComponent<Text>();
+        TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
         text.rectTransform.localPosition = new Vector3(-122, -37, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -197,7 +198,7 @@ public class Trivia : MonoBehaviour {
         titleClone = GameObject.Instantiate(title.gameObject);
         titleClone.transform.parent = title.transform.parent;
         titleClone.transform.SetAsFirstSibling();
-        Text text = titleClone.GetComponent<Text>();
+        TextMeshProUGUI text = titleClone.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
         text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 55, title.rectTransform.localPosition.z);
         text.text = t;
@@ -207,7 +208,7 @@ public class Trivia : MonoBehaviour {
         titleCloneUp = GameObject.Instantiate(title.gameObject);
         titleCloneUp.transform.parent = title.transform.parent;
         titleCloneUp.transform.SetAsFirstSibling();
-        Text text = titleCloneUp.GetComponent<Text>();
+        TextMeshProUGUI text = titleCloneUp.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 80, title.rectTransform.localPosition.z);
         text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 110, title.rectTransform.localPosition.z);
         text.text = t;
@@ -217,7 +218,7 @@ public class Trivia : MonoBehaviour {
         titleCloneDown = GameObject.Instantiate(title.gameObject);
         titleCloneDown.transform.parent = title.transform.parent;
         titleCloneDown.transform.SetAsLastSibling();
-        Text text = titleCloneDown.GetComponent<Text>();
+        TextMeshProUGUI text = titleCloneDown.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y - 50, title.rectTransform.localPosition.z);
         text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y - 55, title.rectTransform.localPosition.z);
         text.text = t;

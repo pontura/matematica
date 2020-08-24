@@ -69,7 +69,7 @@
 
 		{
 		"module": "Module4_G",
-		"title":"La fracción equivalente a la expresión decimal -0,#ABC# es:",
+		"title":"La fracción equivalente a la expresión decimal #ABC# es:",
 		"results":
 			[
 			"A",

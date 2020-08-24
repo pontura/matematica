@@ -26,7 +26,7 @@ public class Module4_G : ModuleData {
         value_c = UnityEngine.Random.Range(1, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
-                newTitle += ""+ value_a;
+                newTitle += "\n-0," + value_a;
             } else if (textToDecode[b].ToString() == "B") {
                 newTitle += "" + value_b;
             } else if (textToDecode[b].ToString() == "C") {

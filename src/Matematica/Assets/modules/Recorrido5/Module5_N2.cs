@@ -22,7 +22,7 @@ public class Module5_N2 : ModuleData {
 	void Calculate()
 	{
 		string[] arr = new string[textToDecode.Length];
-		string newTitle = "";
+		string newTitle = "\n";
         value_a = UnityEngine.Random.Range(-10,10);
         value_b = UnityEngine.Random.Range(-10,10);
 

@@ -31,8 +31,8 @@ public class Module5_B : ModuleData {
         value_c = UnityEngine.Random.Range(0, 4);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
-                newTitle += "\n<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size><size=45>)";
-                newTitle2 += "\n <size=45>(</size><size=55>-</size></color><size=24>" + Mathf.Abs(value_a) + "   </size><color=#8A00C9><size=45>)</size>";
+                newTitle += "\n<size=45>(</size> <size=55>-</size><size=28> " + value_b + " </size> <size=45>)";
+                newTitle2 += "\n <size=45>(</size><size=55>-</size></color><size=28><u> " + Mathf.Abs(value_a) + "   </u></size><color=#8A00C9>  <size=45>)</size>";
             } else if (textToDecode[b].ToString() == "C") {
                 newTitle += uPow[value_c]+"</size>";
             } else {
@@ -57,9 +57,13 @@ public class Module5_B : ModuleData {
 		results = data;
 		values = new List<string> ();
 
-        SetValue("" + Mathf.Pow(1f*value_a/value_b,value_c));
+        SetValue("" + Mathf.Pow(value_a,value_c)+"/"+Mathf.Pow(value_b, value_c));
+        SetValue("" + Mathf.Pow(value_a, value_c+1) + "/" + Mathf.Pow(value_b, value_c+1));
+        SetValue("" + (-1 * Mathf.Pow(value_a, value_c)) + "/" + Mathf.Pow(value_b, value_c));
+
+        /*SetValue("" + Mathf.Pow(1f*value_a/value_b,value_c));
         SetValue("" + Mathf.Pow(1f*value_a / value_b, value_c+1));
-        SetValue("" + (-1*Mathf.Pow(value_a / value_b, value_c)));
+        SetValue("" + (-1*Mathf.Pow(value_a / value_b, value_c)));*/
     }
 	void SetValue(string number)
 	{

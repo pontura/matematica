@@ -37,11 +37,11 @@ public class Module5_F : ModuleData {
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
                 if (value_a < 0) {
-                    newTitle += " <size=24><color=#8A00C9></color>\u0305(\u0305-\u0305" + Mathf.Abs(value_a) + "\u0305)\u0305" + uPow[value_c] + "</size>";
-                    newTitle2 += "</color><size=24>(" + value_a + ")" + uPow[value_b] + "</size><color=#8A00C9>";
+                    newTitle += " <size=28><color=#8A00C9></color> ( -" + Mathf.Abs(value_a) + " )" + uPow[value_c] + " </size>";
+                    newTitle2 += "</color><size=28><u> (" + value_a + ")" + uPow[value_b] + " </u></size><color=#8A00C9>";
                 } else {
-                    newTitle += " <size=24><color=#8A00C9></color>\u0305(\u0305" + value_a + "\u0305)\u0305" + uPow[value_c] + "</size>";
-                    newTitle2 += "</color><size=24>(" + value_a + ")" + uPow[value_b] + "</size><color=#8A00C9>";
+                    newTitle += " <size=28><color=#8A00C9></color> ( " + value_a + " )" + uPow[value_c] + " </size>";
+                    newTitle2 += "</color><size=28><u> (" + value_a + ")" + uPow[value_b] + " </u></size><color=#8A00C9>";
                 }
             } else {
                 newTitle += textToDecode[b].ToString();

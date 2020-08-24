@@ -24,7 +24,7 @@ public class Module5_D : ModuleData {
 	void Calculate()
 	{
 		string[] arr = new string[textToDecode.Length];
-		string newTitle = "";
+		string newTitle = "\n";
         if (UnityEngine.Random.value > 0.5f) {
             value_a = UnityEngine.Random.Range(-5, -2);
             value_c = UnityEngine.Random.Range(value_a, -1);

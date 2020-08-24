@@ -28,8 +28,8 @@ public class Module1_J : ModuleData {
         value_c = UnityEngine.Random.Range(1, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += "\n\n<size=24>\u03051\u03050\u03050\u0305</size> ";
-                newTitle2 += "\n\n</color><size=24>" + value_a + value_b +value_c + "</size><color=#8A00C9> ";
+                newTitle += "\n\n<size=28> 100 </size> ";
+                newTitle2 += "\n\n</color><size=28><u> " + value_a + value_b +value_c + " </u></size><color=#8A00C9> ";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();

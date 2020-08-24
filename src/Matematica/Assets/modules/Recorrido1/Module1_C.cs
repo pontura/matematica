@@ -30,11 +30,11 @@ public class Module1_C : ModuleData {
         value_d = UnityEngine.Random.Range(2, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {                
-                newTitle += " <size=24> \u0305" + value_b + "\u0305 </size>";
-                newTitle2 += " </color><size=24> " + value_a + " </size>";
+                newTitle += " <size=28> " + value_b + " </size>";
+                newTitle2 += " </color><size=28><u> " + value_a + " </u></size>";
             } else if (textToDecode[b].ToString() == "C") {
-                newTitle += " <size=24>\u0305" + value_d + "\u0305 </size>";
-                newTitle2 += " <size=24>" + value_c + " </size><color=#8A00C9>";
+                newTitle += "<size=28> " + value_d + " </size>";
+                newTitle2 += "<size=28><u> " + value_c + " </u></size><color=#8A00C9>";
             } else {
                 newTitle += textToDecode[b].ToString();
                 newTitle2 += textToDecode[b].ToString();

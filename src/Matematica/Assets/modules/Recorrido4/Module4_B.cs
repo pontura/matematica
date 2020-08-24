@@ -31,19 +31,19 @@ public class Module4_B: ModuleData {
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
                 if (value_a < 0) {
-                    newTitle += "\n<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_b + "\u0305  </size><size=45>)</size>";
-                    newTitle2 += "\n <size=45>(</size> <size=55>-</size></color><size=24> " + Mathf.Abs(value_a) + "   </size><color=#8A00C9><size=45>)</size></color>";
+                    newTitle += "\n<size=45>(</size> <size=55>-</size><size=28>  " + value_b + "  </size><size=45>)</size>";
+                    newTitle2 += "\n <size=45>(</size> <size=55>-</size></color><size=28><u> " + Mathf.Abs(value_a) + "  </u></size><color=#8A00C9><size=45>)</size></color>";
                 } else {
-                    newTitle += " <size=24> \u0305" + value_b + "\u0305 </size>";
-                    newTitle2 += " </color><size=24> " + value_a + " </size>";
+                    newTitle += " <size=28> " + value_b + " </size>";
+                    newTitle2 += " </color><size=28><u> " + value_a + " <u/></size>";
                 }
             } else if (textToDecode[b].ToString() == "C") {
                 if (value_c < 0) {
-                    newTitle += "<size=45>(</size> <size=55>-</size><size=24>  \u0305" + value_d + "\u0305  </size><size=45>)</size>";
-                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=24>" + Mathf.Abs(value_c) + "  </size><color=#8A00C9><size=45>)</size>";
+                    newTitle += "<size=45>(</size> <size=55>-</size><size=28>  " + value_d + "  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=28><u> " + Mathf.Abs(value_c) + "  </u></size><color=#8A00C9><size=45>)</size>";
                 } else {
-                    newTitle += " <size=24>\u0305" + value_d + "\u0305 </size>";
-                    newTitle2 += " <size=24>" + value_c + " </size><color=#8A00C9>";
+                    newTitle += " <size=28>" + value_d + " </size>";
+                    newTitle2 += " <size=28><u> " + value_c + " </u></size><color=#8A00C9>";
                 }
             } else {
                 newTitle += textToDecode[b].ToString();

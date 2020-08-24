@@ -26,7 +26,7 @@ public class Module4_J : ModuleData {
         value_c = UnityEngine.Random.Range(1, 9);
         for (int b = 0; b < arr.Length; b++)
             if (textToDecode[b].ToString() == "A") {
-                newTitle += "\n-<size=24>0,"+ value_a;
+                newTitle += "\n-<size=28>0,"+ value_a;
             } else if (textToDecode[b].ToString() == "B") {
                 newTitle += "" + value_b;
             } else if (textToDecode[b].ToString() == "C") {
@@ -37,7 +37,7 @@ public class Module4_J : ModuleData {
         Debug.Log(newTitle);
         title = title.Replace("#", newTitle);
         Debug.Log(title);
-        Events.SetPeriodicTitle("<size=30>)</size>");
+        Events.SetPeriodicTitle("<size=35>)</size>");
         SetResults (data.results);
 			
 		CheckValues ();
