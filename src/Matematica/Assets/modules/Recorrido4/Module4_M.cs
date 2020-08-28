@@ -33,7 +33,7 @@ public class Module4_M : ModuleData {
         Debug.Log(newTitle);
         title = title.Replace("#", newTitle);
         Debug.Log(title);
-        Events.SetPeriodicTitle3("<size=30>)</size>");
+        Events.SetPeriodicTitle3("<size=20>)</size>");
         SetResults (data.results);
 			
 		CheckValues ();
@@ -45,7 +45,7 @@ public class Module4_M : ModuleData {
 		values = new List<string> ();
 
         SetValue("-0," + value_a);        
-        SetValue("-0," + value_a + value_b + "@PeriodicB");
+        SetValue("0," + value_a + value_b + "@PeriodicB");
         SetValue("0," + value_a + "@PeriodicA");
 
     }

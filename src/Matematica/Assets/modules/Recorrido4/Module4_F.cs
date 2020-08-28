@@ -53,10 +53,15 @@ public class Module4_F : ModuleData {
 	{
 		results = data;
 		values = new List<string> ();
-
-        SetValue("" + ((1.0f * (value_d)) +"/"+ (value_c)));
-        SetValue("" + ((1.0f*(value_c)) + "/" + (value_d)));        
-        SetValue("" + (1.0f + "/" + (value_d * value_c)));
+        if (value_c * value_d > 0) {
+            SetValue("" + ((1.0f * Mathf.Abs(value_d)) + "/" + Mathf.Abs(value_c)));
+            SetValue("" + ((1.0f * Mathf.Abs(value_c)) + "/" + Mathf.Abs(value_d)));
+            SetValue("" + (1.0f + "/" + (value_d * value_c)));
+        } else {
+            SetValue("-" + ((1.0f * Mathf.Abs(value_d)) + "/" + Mathf.Abs(value_c)));
+            SetValue("-" + ((1.0f * Mathf.Abs(value_c)) + "/" + Mathf.Abs(value_d)));
+            SetValue("-" + (1.0f + "/" + Mathf.Abs(value_d * value_c)));
+        }
     }
 	void SetValue(string number)
 	{

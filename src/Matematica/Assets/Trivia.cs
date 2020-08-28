@@ -158,7 +158,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1.transform.SetAsFirstSibling();
         TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
-        text.rectTransform.localPosition = new Vector3(-22.4f, -37, 0);
+        text.rectTransform.localPosition = new Vector3(-22.4f, -45, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
         text.text = t;
     }
@@ -169,7 +169,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1.transform.SetAsFirstSibling();
         TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
-        text.rectTransform.localPosition = new Vector3(-210, -40, 0);
+        text.rectTransform.localPosition = new Vector3(-210, -48, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
         text.text = t1;
 
@@ -178,7 +178,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic2.transform.SetAsFirstSibling();
         TextMeshProUGUI text2 = titlePeriodic2.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
-        text2.rectTransform.localPosition = new Vector3(-48, -37, 0);
+        text2.rectTransform.localPosition = new Vector3(-48, -45, 0);
         text2.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
         text2.text = t2;
     }
@@ -189,7 +189,7 @@ public class Trivia : MonoBehaviour {
         titlePeriodic1.transform.SetAsFirstSibling();
         TextMeshProUGUI text = titlePeriodic1.GetComponent<TextMeshProUGUI>();
         //text.rectTransform.localPosition = new Vector3(title.rectTransform.localPosition.x, title.rectTransform.localPosition.y + 40, title.rectTransform.localPosition.z);
-        text.rectTransform.localPosition = new Vector3(-122, -37, 0);
+        text.rectTransform.localPosition = new Vector3(-105, -48, 0);
         text.rectTransform.rotation = Quaternion.Euler(0f, 0f, 90f);
         text.text = t;
     }
@@ -319,6 +319,7 @@ public class Trivia : MonoBehaviour {
     }
 
     public void ResetRecorrido() {
+        Data.Instance.levelData.kunakState = LevelsData.KunakStates.inicio;
         Data.Instance.playerData.ResetRecorrido();
         Data.Instance.playerData.Init();
         Data.Instance.levelData.ResetRecorrido();
@@ -328,6 +329,7 @@ public class Trivia : MonoBehaviour {
         Init();
         ResetDialog.SetActive(false);
         ShowModeSelector(true);
+        Data.Instance.levelData.kunakState = LevelsData.KunakStates.area;
     }
 
     void AreaChange(int i) {

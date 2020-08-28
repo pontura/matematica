@@ -39,8 +39,8 @@ public class Module4_D : ModuleData {
                 }
             } else if (textToDecode[b].ToString() == "C") {
                 if (value_a < 0) {
-                    newTitle += "<size=45>(</size> <size=55>-</size><size=28>  " + value_d + "  </size><size=45>)</size>";
-                    newTitle2 += "<color=#8A00C9><size=45>(</size> <size=55>-</size></color> <size=28><u> " + Mathf.Abs(value_c) + " </u></size><color=#8A00C9><size=45>)</size>";
+                    newTitle += "<size=45>(</size> <size=28>  " + value_d + "  </size><size=45>)</size>";
+                    newTitle2 += "<color=#8A00C9><size=45>(</size> </color> <size=28><u> " + Mathf.Abs(value_c) + " </u></size><color=#8A00C9><size=45>)</size>";
                 } else {
                     newTitle += " <size=28> " + value_d + " </size>";
                     newTitle2 += " <size=28><u> " + value_c + " </u></size><color=#8A00C9>";

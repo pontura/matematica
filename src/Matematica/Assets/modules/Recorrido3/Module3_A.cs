@@ -20,7 +20,7 @@ public class Module3_A : ModuleData {
 	void Calculate()
 	{
 		string[] arr = new string[textToDecode.Length];
-		string newTitle = "";
+		string newTitle = "\n";
         value_a = UnityEngine.Random.Range(-19, 20);
         value_b = UnityEngine.Random.Range(-20, value_a);
         for (int b = 0; b < arr.Length; b++)

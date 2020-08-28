@@ -63,15 +63,20 @@ public class Module4_C : ModuleData {
 		CheckValues ();
 
 	}
-	void SetResults(List<string> data)
-	{
-		results = data;
-		values = new List<string> ();
-
-        SetValue("" + ((1.0f * value_a * value_c) +"/"+ (value_b * value_d)));
-        SetValue("" + ((1.0f * value_a * value_d) +"/"+ (value_b * value_c)));
-        SetValue("" + ((1.0f * value_a * value_b) +"/"+ (value_d * value_c)));
+    void SetResults(List<string> data) {
+        results = data;
+        values = new List<string>();
+        if (value_a * value_c * value_b * value_d > 0) {
+            SetValue("" + (Mathf.Abs(1.0f * value_a * value_c) + "/" + Mathf.Abs(value_b * value_d)));
+            SetValue("" + (Mathf.Abs(1.0f * value_a * value_d) + "/" + Mathf.Abs(value_b * value_c)));
+            SetValue("" + (Mathf.Abs(1.0f * value_a * value_b) + "/" + Mathf.Abs(value_d * value_c)));
+        } else {
+            SetValue("-" + (Mathf.Abs(1.0f * value_a * value_c) + "/" + Mathf.Abs(value_b * value_d)));
+            SetValue("-" + (Mathf.Abs(1.0f * value_a * value_d) + "/" + Mathf.Abs(value_b * value_c)));
+            SetValue("-" + (Mathf.Abs(1.0f * value_a * value_b) + "/" + Mathf.Abs(value_d * value_c)));
+        }
     }
+
 	void SetValue(string number)
 	{
         Debug.Log(number);
